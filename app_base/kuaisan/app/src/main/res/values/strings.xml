@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">kuaisan</string>
+
+    <string name="update_message_prompt">Your app is outdated. Please update to the newest version. Thanks!</string>
+    <string name="update_btn">Update</string>
+    <string name="update_cancel">Cancel</string>
+    <string name="internet_slow">Internet connection is slow</string>
+</resources>
