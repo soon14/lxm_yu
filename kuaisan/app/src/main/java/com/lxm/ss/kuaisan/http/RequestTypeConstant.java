@@ -19,6 +19,7 @@ public class RequestTypeConstant {
 
 
 	public static final int REQUEST_STATUE_SWITCH = 10001;//进一步解析body
+	public static final int REQUEST_MY_SWITCH = 10002;//进一步解析body
 
 
 

@@ -22,7 +22,6 @@ public class DetailContentActivity extends BaseActivity {
 
     private String mContent ;
 
-
     /**
      * 启动详情页面
      *

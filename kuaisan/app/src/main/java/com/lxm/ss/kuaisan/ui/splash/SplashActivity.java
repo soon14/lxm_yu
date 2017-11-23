@@ -53,20 +53,19 @@ public class SplashActivity extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-//                if (mPreferenceUtils.getBooleanValue("is_first_install", true)) {
-//                    mPreferenceUtils.setBooleanValue("is_first_install", false);
-//                    AppGuideActivity.launchActivity(SplashActivity.this);
-//                } else {
-//                    getStatus();
-//                }
-//                finish();
-                getMySwitch();
+                if (mPreferenceUtils.getBooleanValue("is_first_install", true)) {
+                    mPreferenceUtils.setBooleanValue("is_first_install", false);
+                    AppGuideActivity.launchActivity(SplashActivity.this);
+                } else {
+                    getMySwitch();
+                }
+                finish();
+
             }
         }, DELAY_TIME);
     }
 
     private void getMySwitch() {
-//        HtmlParse.parseHtml();
 
         MyOkHttp.getInstance().getMySwitchStatus(  new OkHttpRequestListener() {
             @Override
@@ -77,16 +76,26 @@ public class SplashActivity extends BaseActivity {
                     String str = (String) o;
                     Zlog.ii("lxm getMySwitch:" + str);
 
+                    if (str.contains("index=0")) {
+                        Zlog.ii("lxm getMySwitch:1");
+                        getStatus();
+                    }else if (str.contains("index=1")) {
+                        Zlog.ii("lxm getMySwitch:2");
+                        enterMain();
+                    }else {
+                        Zlog.ii("lxm getMySwitch:3");
+                        getStatus();
+                    }
 
                 }else {
-                    enterMain();
+                    getStatus();
                 }
             }
 
             @Override
             public void onFailed(int code, String body, String message) {
                 super.onFailed(code, body, message);
-                enterMain();
+                getStatus();
             }
         });
     }

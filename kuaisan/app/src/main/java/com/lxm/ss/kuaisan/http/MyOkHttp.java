@@ -99,7 +99,7 @@ public class MyOkHttp {
         FFApplication.getFixThreadExecutor().execute(new Runnable() {
             @Override
             public void run() {
-                doPostHttpGet(RequestTypeConstant.REQUEST_STATUE_SWITCH, STATUE_MY_SWITCH ,
+                doPostHttpGet(RequestTypeConstant.REQUEST_MY_SWITCH, STATUE_MY_SWITCH ,
                         RequestTypeConstant.RETURN_JSON_MESSAGE,null,null,null,okHttpRequestListener);
             }
         });

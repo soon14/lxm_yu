@@ -53,6 +53,7 @@
 
         <activity
             android:name=".ui.splash.SplashActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,18 +69,22 @@
         <activity
             android:name=".ui.splash.AppGuideActivity"
             android:label="@string/title_activity_app_guide"
+            android:screenOrientation="portrait"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.web.WebViewActivity"
             android:label="@string/title_activity_web_view"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.main.DetailContentActivity"
+            android:screenOrientation="portrait"
             android:launchMode="singleTask" />
         <activity
             android:name=".ui.main.DetailWebViewActivity"
+            android:screenOrientation="portrait"
             android:launchMode="singleTask" />
 
         <!-- &lt;!&ndash; Rich push 核心功能 since 2.0.6&ndash;&gt; -->

@@ -94,7 +94,7 @@ public class DetailWebViewActivity extends BaseActivity {
         mCtlTitle.setListener(new CustomTitleLinearlayout.CustomTitleListener() {
             @Override
             public void clickLeft() {
-                finish();
+                goback();
             }
         });
     }
@@ -185,23 +185,32 @@ public class DetailWebViewActivity extends BaseActivity {
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (event.getAction() == KeyEvent.ACTION_DOWN) {
-            switch (keyCode) {
-                case KeyEvent.KEYCODE_BACK:
-                    return true;
-            }
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
-    @Override
     protected void onPause() {
         super.onPause();
         if (mWebView != null) {
             mWebView.onPause();
         }
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {// 当keyCode等于退出事件值时
+            goback();
+            return false;
+        } else {
+            return super.onKeyDown(keyCode, event);
+        }
+    }
+
+    private void goback() {
+
+        if (mWebView != null && mWebView.canGoBack()) {
+            mWebView.goBack();
+        }else {
+            finish();
+        }
+    }
+
 
     @Override
     public void onStart() {

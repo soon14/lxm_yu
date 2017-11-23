@@ -61,6 +61,8 @@ public class WebViewActivity extends AppCompatActivity {
         initView();
     }
 
+
+
     private void initView() {
         mLyWebview = (LinearLayout) findViewById(R.id.splash_webview_ly_webview);
 
@@ -175,17 +177,6 @@ public class WebViewActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (event.getAction() == KeyEvent.ACTION_DOWN) {
-            switch (keyCode) {
-                case KeyEvent.KEYCODE_BACK:
-                    return true;
-            }
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
-    @Override
     protected void onPause() {
         super.onPause();
         if (mWebView != null) {
@@ -203,6 +194,20 @@ public class WebViewActivity extends AppCompatActivity {
     public void onStop() {
         super.onStop();
         Zlog.ii("lxm ss detailpageactivity onStop");
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {// 当keyCode等于退出事件值时
+            if (mWebView != null && mWebView.canGoBack()) {
+                mWebView.goBack();
+            }else {
+                finish();
+            }
+            return false;
+        } else {
+            return super.onKeyDown(keyCode, event);
+        }
     }
 
     @Override

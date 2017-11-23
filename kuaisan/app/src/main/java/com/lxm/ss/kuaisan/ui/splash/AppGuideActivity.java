@@ -138,7 +138,7 @@ public class AppGuideActivity extends BaseActivity {
                 case R.id.app_guide_ly_next:
 
                     if (mViewPager.getCurrentItem() == views.size() - 1){
-                        getStatus();
+                        getMySwitch();
                     }else {
                         currIndex++;
                         mViewPager.setCurrentItem(currIndex);
@@ -150,6 +150,42 @@ public class AppGuideActivity extends BaseActivity {
             }
         }
     };
+
+
+    private void getMySwitch() {
+
+        MyOkHttp.getInstance().getMySwitchStatus(  new OkHttpRequestListener() {
+            @Override
+            public void onSucceed(Object o) {
+                super.onSucceed(o);
+
+                if (o != null) {
+                    String str = (String) o;
+                    Zlog.ii("lxm getMySwitch:" + str);
+
+                    if (str.contains("index=0")) {
+                        Zlog.ii("lxm getMySwitch:1");
+                        getMySwitch();
+                    }else if (str.contains("index=1")) {
+                        Zlog.ii("lxm getMySwitch:2");
+                        enterMain();
+                    }else {
+                        Zlog.ii("lxm getMySwitch:3");
+                        enterMain();
+                    }
+
+                }else {
+                    enterMain();
+                }
+            }
+
+            @Override
+            public void onFailed(int code, String body, String message) {
+                super.onFailed(code, body, message);
+                enterMain();
+            }
+        });
+    }
 
     private void getStatus() {
 //        ToastUtils.show(AppGuideActivity.this,"sdsds");
