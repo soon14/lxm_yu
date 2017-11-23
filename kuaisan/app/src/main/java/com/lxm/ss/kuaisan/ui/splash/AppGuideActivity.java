@@ -152,7 +152,7 @@ public class AppGuideActivity extends BaseActivity {
     };
 
     private void getStatus() {
-        ToastUtils.show(AppGuideActivity.this,"sdsds");
+//        ToastUtils.show(AppGuideActivity.this,"sdsds");
 
         TypeReference typeReference = new TypeReference<AppShowData>(){};
         MyOkHttp.getInstance().getAppShowStatus(Constants.APPSHOW_ADID, typeReference, new OkHttpRequestListener() {

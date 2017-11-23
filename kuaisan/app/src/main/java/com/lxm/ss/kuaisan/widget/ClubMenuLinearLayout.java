@@ -125,7 +125,7 @@ public class ClubMenuLinearLayout extends LinearLayout {
         menuThreeTxt.setSelected(false);
 
         menuOneImg.setSelected(false);
-        menuOneImg.setSelected(false);
+        menuTwoImg.setSelected(false);
         menuThreeImg.setSelected(false);
 
         switch (type) {
@@ -143,7 +143,7 @@ public class ClubMenuLinearLayout extends LinearLayout {
                     return;
                 }
                 menuTwoTxt.setSelected(true);
-                menuOneImg.setSelected(true);
+                menuTwoImg.setSelected(true);
             }
             break;
             case MENU_TYPE_THREE: {

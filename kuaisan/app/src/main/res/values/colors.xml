@@ -44,4 +44,7 @@
     <color name="green_01">#19BD9B</color>
     <color name="yellow_01">#F8B34C</color>
     <color name="blue_01">#6DA0E6</color>
+
+    <color name="wjsq_layout_click">#D8D8D8</color>
+    <color name="wjsq_layout_backgound">#ffffff</color>
 </resources>

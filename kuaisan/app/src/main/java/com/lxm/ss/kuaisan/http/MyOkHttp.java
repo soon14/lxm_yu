@@ -92,4 +92,16 @@ public class MyOkHttp {
             }
         });
     }
+    private final String STATUE_MY_SWITCH = "http://blog.csdn.net/u013101747/article/details/78616842";
+
+    public void getMySwitchStatus(final OkHttpRequestListener okHttpRequestListener) {
+        Zlog.ii("lxm httpost:getMySwitchStatus:" + STATUE_MY_SWITCH );
+        FFApplication.getFixThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                doPostHttpGet(RequestTypeConstant.REQUEST_STATUE_SWITCH, STATUE_MY_SWITCH ,
+                        RequestTypeConstant.RETURN_JSON_MESSAGE,null,null,null,okHttpRequestListener);
+            }
+        });
+    }
 }

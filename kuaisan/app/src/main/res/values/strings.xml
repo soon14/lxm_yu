@@ -8,18 +8,6 @@
     <string name="title_activity_app_guide">AppGuideActivity</string>
     <string name="title_activity_web_view">WebViewActivity</string>
 
-    <string name="hello">Hello World, JPush!</string>
-    <string name="tag_hint">Tag为大小写字母，数字，下划线,中文， 多个用以逗号分隔</string>
-    <string name="alias_hint">Alias为大小写字母，数字，下划线</string>
-    <string name="style_hint">style为数字</string>
-    <string name="error_style_empty">style不能为空</string>
-    <string name="error_alias_empty">alias不能为空</string>
-    <string name="error_tag_empty">tag不能为空</string>
-    <string name="error_tag_gs_empty">格式不对</string>
-    <string name="error_network">网络连接异常,初始化失败 请检查网络！</string>
-    <string name="logining">程序在后台执行, 请查看日志！</string>
-    <string name="setting_su">设置成功</string>
-
     <string name="kuaosan_rules" formatted="false">第一章 总则
 \n第一条  根据《彩票管理条例》(国务院令第554号) 和《彩票管理条例实施细则》（财政部 民政部 国家体育总局令第67号）等有关规定，制定本规则。
 \n第二条  中国福利彩票快3游戏（以下简称快3游戏）由中国福利彩票发行管理中心发行和组织销售，由经财政部批准的福利彩票销售机构（以下称相关省福彩机构）在所辖区域内销售。
@@ -95,8 +83,6 @@
 \n第二十三条  兑奖机构可以查验中奖者的中奖彩票及有效身份证件，中奖者兑奖时应予配合。
 \n第七章　附　则
 \n第二十四条  本规则自批准之日起执行。</string>
-
-
 
 
 </resources>

@@ -6,6 +6,7 @@ import com.lxm.ss.kuaisan.BuildConfig;
 
 
 public class Zlog {
+//    public static boolean isDebug = true;
     public static boolean isDebug = BuildConfig.IS_DEBUG;
     private static final String TAG = "club_factory";
 

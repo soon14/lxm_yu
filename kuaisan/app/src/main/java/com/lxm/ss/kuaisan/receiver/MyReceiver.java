@@ -6,7 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 
+import com.lxm.ss.kuaisan.FFApplication;
 import com.lxm.ss.kuaisan.Utils.Zlog;
+import com.lxm.ss.kuaisan.constant.Constants;
+import com.lxm.ss.kuaisan.ui.main.DetailContentActivity;
+import com.lxm.ss.kuaisan.ui.main.MainActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,7 +27,13 @@ import cn.jpush.android.api.JPushInterface;
  * 2) 接收不到自定义消息
  */
 public class MyReceiver extends BroadcastReceiver {
-	private static final String TAG = "lxm MyReceiver";
+	private static final String TAG = "lxm jiguang MyReceiver  ";
+
+	private final String ALERT = "cn.jpush.android.ALERT";
+	private final String NOTIFICATION_ID = "cn.jpush.android.NOTIFICATION_ID";
+	private final String ALERT_TYPE = "cn.jpush.android.ALERT_TYPE";
+	private final String NOTIFICATION_CONTENT_TITLE = "cn.jpush.android.NOTIFICATION_CONTENT_TITLE";
+	private final String MSG_ID = "cn.jpush.android.MSG_ID";
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
@@ -47,6 +57,26 @@ public class MyReceiver extends BroadcastReceiver {
 
 			} else if (JPushInterface.ACTION_NOTIFICATION_OPENED.equals(intent.getAction())) {
 				Zlog.ii(TAG+ "[MyReceiver] 用户点击打开了通知");
+
+				Intent intent1 = new Intent(context, DetailContentActivity.class);
+				intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP );
+				intent1.putExtra(Constants.INTENT_CONTENT,bundle.getString(ALERT));
+				context.startActivity(intent1);
+
+//				if (FFApplication.getInstance().isHasMainActivity()){
+//					Intent intent1 = new Intent(context, DetailContentActivity.class);
+//					intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP );
+//					intent1.putExtra(Constants.INTENT_CONTENT,bundle.getString(ALERT));
+//					context.startActivity(intent1);
+//				}else {
+//					Intent intent1 = new Intent(context, MainActivity.class);
+//					intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP );
+//
+//					Intent intent2 = new Intent(context, DetailContentActivity.class);
+//					intent2.putExtra(Constants.INTENT_CONTENT,bundle.getString(ALERT));
+//					intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP );
+//					context.startActivities(new Intent[]{intent,intent2});
+//				}
 
 				//打开自定义的Activity
 //				Intent i = new Intent(context, TestActivity.class);

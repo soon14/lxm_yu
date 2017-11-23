@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.lxm.ss.kuaisan.R;
+import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.constant.Constants;
 import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
@@ -31,7 +32,8 @@ public class DetailContentActivity extends BaseActivity {
         if (StringUtils.isNull(content)) {
             return;
         }
-        Intent intent = new Intent(context, DetailWebViewActivity.class);
+        Zlog.ii("lxm initView: launchActivity  " + content);
+        Intent intent = new Intent(context, DetailContentActivity.class);
         intent.putExtra(Constants.INTENT_CONTENT, content);
         context.startActivity(intent);
     }
@@ -48,6 +50,8 @@ public class DetailContentActivity extends BaseActivity {
     private void initView() {
         mCtlTitle = (CustomTitleLinearlayout) findViewById(R.id.ctl_title);
         mTxtCont = (TextView) findViewById(R.id.detail_content_txt_content);
+
+        Zlog.ii("lxm initView:" + mContent);
         mTxtCont.setText(mContent == null ?"":mContent);
     }
 

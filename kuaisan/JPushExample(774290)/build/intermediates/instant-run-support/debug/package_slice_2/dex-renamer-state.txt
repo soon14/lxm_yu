@@ -1,4 +1,0 @@
-#Wed Nov 22 19:06:53 CST 2017
-base.0=G\:\\lxm_online_to\\lxm_yu\\kuaisan\\JPushExample(774290)\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2
-renamed.0=classes.dex
-file.0=G\:\\lxm_online_to\\lxm_yu\\kuaisan\\JPushExample(774290)\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2\\classes.dex

@@ -4,6 +4,8 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by lxm on 2017/8/4.
@@ -18,6 +20,12 @@ public class StringUtils {
 //    public static final String PASSWD = "^[0-9a-zA-Z\\W]\\S{5,20}$";  // 6-20位字符，支持字母、数字或符号的组合
 //    public static final String DEVICE_NO = "^[0-9a-zA-Z]{1,6}$";  // 1-6位字符，支持字母、数字
 //    public static final String DITITAL = "^[0-9.]+$";  //
+
+    public static final String NUM = "^[0-9]*$";
+    public static final String EMAINL = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$" ;
+
+    public static final String PHONE = "^(\\+?\\d{2}-?)?(1[0-9])\\d{9}$" ;
+    public static final String PHONE_INDIA = "^\\d{10}$" ;
 
     public static boolean isNotBlank(String str) {
         return str != null && str.length() > 0 && (!str.trim().equalsIgnoreCase("null")) ;
@@ -154,6 +162,16 @@ public class StringUtils {
             return 0.00f;
         }
     }
+    public static long toLong(String value) {
+        try {
+            if (isNotBlank(value)) {
+                return Long.parseLong(value);
+            }
+            return 0;
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+    }
 
     public static double toDouble(String value) {
         try {
@@ -164,5 +182,39 @@ public class StringUtils {
         } catch (NumberFormatException e) {
             return 0.00f;
         }
+    }
+
+
+    public static boolean match(String matcher, String str) {
+        Pattern p = Pattern.compile(matcher);
+        Matcher m = p.matcher(str);
+        if (m.find()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean isNum(String str) {
+        if (isNotBlank(str) ){
+            return match(NUM,str);
+        }
+        return false ;
+    }
+    public static boolean isEMail(String str) {
+        if (isNotBlank(str) ){
+            return match(EMAINL,str);
+        }
+        return false ;
+    }
+
+    public static boolean isPhone(String countryCode ,String str) {
+
+        if (isNotBlank(countryCode) && countryCode.equals("in") && isNotBlank(str)){
+            return match(PHONE_INDIA,str);
+        }
+
+        return false ;
+
     }
 }

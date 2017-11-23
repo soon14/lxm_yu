@@ -175,6 +175,14 @@ public class CustomTitleLinearlayout extends LinearLayout {
 //            txtTitleLeft.setText(title);
 //        }
 //    }
+    public View settingRight() {
+        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.title_right_favorite, null);
+        lyRight.addView(view);
+        return view;
+    }
+
+
     public void setLeftTextVisible(boolean isVisible) {
         if (isVisible) {
             txtTitleLeft.setVisibility(View.VISIBLE);

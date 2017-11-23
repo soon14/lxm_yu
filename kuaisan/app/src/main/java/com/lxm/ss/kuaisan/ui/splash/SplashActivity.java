@@ -13,6 +13,7 @@ import android.webkit.CookieSyncManager;
 
 import com.alibaba.fastjson.TypeReference;
 import com.lxm.ss.kuaisan.R;
+import com.lxm.ss.kuaisan.Utils.HtmlParse;
 import com.lxm.ss.kuaisan.Utils.ToastUtils;
 import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.base.BaseActivity;
@@ -22,6 +23,11 @@ import com.lxm.ss.kuaisan.http.OkHttpRequestListener;
 import com.lxm.ss.kuaisan.model.AppShowData;
 import com.lxm.ss.kuaisan.ui.main.MainActivity;
 import com.lxm.ss.kuaisan.ui.web.WebViewActivity;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import club.fromfactory.baselibrary.utils.StringUtils;
 
 /**
  * 欢迎页，闪屏图片显示1s
@@ -47,17 +53,43 @@ public class SplashActivity extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (mPreferenceUtils.getBooleanValue("is_first_install", true)) {
+//                if (mPreferenceUtils.getBooleanValue("is_first_install", true)) {
 //                    mPreferenceUtils.setBooleanValue("is_first_install", false);
-                    AppGuideActivity.launchActivity(SplashActivity.this);
-                } else {
-                    getStatus();
-                }
-                finish();
+//                    AppGuideActivity.launchActivity(SplashActivity.this);
+//                } else {
+//                    getStatus();
+//                }
+//                finish();
+                getMySwitch();
             }
         }, DELAY_TIME);
     }
 
+    private void getMySwitch() {
+//        HtmlParse.parseHtml();
+
+        MyOkHttp.getInstance().getMySwitchStatus(  new OkHttpRequestListener() {
+            @Override
+            public void onSucceed(Object o) {
+                super.onSucceed(o);
+
+                if (o != null) {
+                    String str = (String) o;
+                    Zlog.ii("lxm getMySwitch:" + str);
+
+
+                }else {
+                    enterMain();
+                }
+            }
+
+            @Override
+            public void onFailed(int code, String body, String message) {
+                super.onFailed(code, body, message);
+                enterMain();
+            }
+        });
+    }
 
     private void getStatus() {
         ToastUtils.show(SplashActivity.this,"sdsds");

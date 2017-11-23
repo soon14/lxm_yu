@@ -1,5 +1,6 @@
 package com.lxm.ss.kuaisan;
 
+import android.app.Application;
 import android.support.multidex.MultiDexApplication;
 
 import com.lxm.ss.kuaisan.base.BaseActivity;
@@ -17,10 +18,9 @@ import cn.jpush.android.api.JPushInterface;
 
 /**
  */
-public class FFApplication extends MultiDexApplication {
+public class FFApplication extends Application {
 
     private static FFApplication instance;
-    public HashMap<Integer, Integer> itemPosition = new HashMap<>();
     /*
          *
          * mActivityList:Activities for children of BaseActivity.
@@ -30,9 +30,6 @@ public class FFApplication extends MultiDexApplication {
     /** 每次执行限定个数个任务的线程池 */
     private static ExecutorService mFixedThreadExecutor = null;
     private static ExecutorService mCachedThreadPool = null ;
-
-
-    public Map<String,String> adjusgEventTokenMap = new HashMap<>();
 
     public static FFApplication getInstance() {
         return instance;

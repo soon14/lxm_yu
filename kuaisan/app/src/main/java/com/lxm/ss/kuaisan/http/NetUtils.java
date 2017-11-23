@@ -21,7 +21,8 @@ public class NetUtils {
     public static final int NET_CONNECT_TYPE_WIFI = 1;
     public static final int NET_CONNECT_TYPE_MOBILE = 2;
 
-     public static String APP_MAIN_URL = BuildConfig.SERVER_PATH;
+//     public static String APP_MAIN_URL = BuildConfig.SERVER_PATH;
+     public static String APP_MAIN_URL ="";
 
 
 //    static {
