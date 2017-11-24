@@ -36,7 +36,7 @@ import club.fromfactory.baselibrary.utils.StringUtils;
  */
 public class SplashActivity extends BaseActivity {
 
-    private static final int DELAY_TIME = 1000;  //闪屏页存在的时间
+    private static final int DELAY_TIME = 10000;  //闪屏页存在的时间
     private static final int PERMISSION_APPLY = 1000;
 
     @Override
