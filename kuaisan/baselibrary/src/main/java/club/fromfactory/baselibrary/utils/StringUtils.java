@@ -184,6 +184,16 @@ public class StringUtils {
         }
     }
 
+    public static String matchStr(String matcher, String str) {
+        Pattern p = Pattern.compile(matcher);
+        Matcher m = p.matcher(str);
+        if (m.find()) {
+            return m.group();
+        } else {
+            return "";
+        }
+    }
+
 
     public static boolean match(String matcher, String str) {
         Pattern p = Pattern.compile(matcher);

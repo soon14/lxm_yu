@@ -30,6 +30,32 @@ public class UriUtils {
         return sUriUtils;
     }
 
+    public boolean isHtmlUrl(String url) {
+        boolean isHtml = false ;
+        try {
+            Uri uri = Uri.parse(url);
+            String scheme = uri.getScheme();
+            Zlog.ii("lxm UriUtils: isHtmlUrl" + scheme);
+            if ("http".equals(scheme) || "https".equals(scheme)){
+                isHtml = true ;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return isHtml;
+    }
+    public boolean isHtmlUrlApk(String url) {
+
+        if (StringUtils.isNull(url)){
+            return false;
+        }
+        return url.endsWith(".apk");
+    }
+
+
+
 
     public static String urlChangeAddParames(String mOldUrl , HashMap<String ,String> mParames) {
 

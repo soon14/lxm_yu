@@ -3,6 +3,7 @@ package com.lxm.ss.kuaisan.ui.main;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.LinearLayout;
 
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.Utils.ToastUtils;
+import com.lxm.ss.kuaisan.Utils.UriUtils;
 import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.constant.Constants;
@@ -115,7 +117,17 @@ public class DetailWebViewActivity extends BaseActivity {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             Zlog.ii("lxm ss webview shouldOverrideUrlLoading :" + url + "  ");
             mCurrentUrl  = url ;
-            return false;
+            if (UriUtils.getInstance().isHtmlUrl(url)){
+                return false ;
+            }else {
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    ToastUtils.show(DetailWebViewActivity.this,"请先安装应用");
+                }
+                return true;
+            }
         }
 
         @Override
@@ -189,6 +201,14 @@ public class DetailWebViewActivity extends BaseActivity {
         super.onPause();
         if (mWebView != null) {
             mWebView.onPause();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mWebView != null) {
+            mWebView.onResume();
         }
     }
 

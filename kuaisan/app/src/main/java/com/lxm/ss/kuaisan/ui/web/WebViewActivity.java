@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.Utils.ToastUtils;
+import com.lxm.ss.kuaisan.Utils.UriUtils;
 import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.constant.Constants;
 import com.lxm.ss.kuaisan.web.FFWebChromeClient;
@@ -107,7 +108,31 @@ public class WebViewActivity extends AppCompatActivity {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             Zlog.ii("lxm ss webview shouldOverrideUrlLoading :" + url + "  ");
             mCurrentUrl  = url ;
-            return false;
+
+            if (UriUtils.getInstance().isHtmlUrlApk(url)){
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse(url)));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return true;
+            }else if (UriUtils.getInstance().isHtmlUrl(url)){
+                return false ;
+            }else {
+                try {
+                    // 以下固定写法
+                    Intent intent = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse(url));
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                            | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    ToastUtils.show(WebViewActivity.this,"请先安装应用");
+                }
+                return true;
+            }
         }
 
         @Override
@@ -185,6 +210,14 @@ public class WebViewActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        if (mWebView != null) {
+            mWebView.onResume();
+        }
+    }
+
+    @Override
     public void onStart() {
         super.onStart();
         Zlog.ii("lxm ss detailpageactivity onStart");
@@ -213,6 +246,12 @@ public class WebViewActivity extends AppCompatActivity {
     @Override
     public void finish() {
         super.finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Zlog.ii("lxm ss detailpageactivity onDestroy");
 
         try {
             mLyWebview.removeAllViews();
@@ -223,12 +262,6 @@ public class WebViewActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Zlog.ii("lxm ss detailpageactivity onDestroy");
     }
 
 }

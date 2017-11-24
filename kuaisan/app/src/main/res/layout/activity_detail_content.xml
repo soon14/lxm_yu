@@ -37,6 +37,7 @@
                 android:id="@+id/detail_content_txt_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:textColor="@color/txt_black"
                 android:autoLink="all"
                 android:textSize="@dimen/txt_size"/>

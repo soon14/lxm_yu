@@ -33,6 +33,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 import club.fromfactory.baselibrary.utils.ScreenUtils;
+import club.fromfactory.baselibrary.utils.StringUtils;
 
 public class AppGuideActivity extends BaseActivity {
 
@@ -163,26 +164,45 @@ public class AppGuideActivity extends BaseActivity {
                     String str = (String) o;
                     Zlog.ii("lxm getMySwitch:" + str);
 
-                    if (str.contains("index=0")) {
-                        Zlog.ii("lxm getMySwitch:1");
-                        getMySwitch();
-                    }else if (str.contains("index=1")) {
-                        Zlog.ii("lxm getMySwitch:2");
-                        enterMain();
+                    str = StringUtils.matchStr("index=(\\d{1})",str);
+
+                    if (StringUtils.isNull(str)){
+                        getStatus();
                     }else {
-                        Zlog.ii("lxm getMySwitch:3");
-                        enterMain();
+                        try {
+                            String[] split = str.trim().split("=");
+                            Zlog.ii("lxm getMySwitch:2 " +str + " " );
+                            if (split.length == 2 && split[1].equals("1")) {
+                                enterMain();
+                            }else {
+                                getStatus();
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            getStatus();
+                        }
                     }
 
+//                    if (str.contains("index=0")) {
+//                        Zlog.ii("lxm getMySwitch:1");
+//                        getStatus();
+//                    }else if (str.contains("index=1")) {
+//                        Zlog.ii("lxm getMySwitch:2");
+//                        enterMain();
+//                    }else {
+//                        Zlog.ii("lxm getMySwitch:3");
+//                        getStatus();
+//                    }
+
                 }else {
-                    enterMain();
+                    getStatus();
                 }
             }
 
             @Override
             public void onFailed(int code, String body, String message) {
                 super.onFailed(code, body, message);
-                enterMain();
+                getStatus();
             }
         });
     }

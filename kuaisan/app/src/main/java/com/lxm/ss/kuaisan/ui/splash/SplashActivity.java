@@ -76,16 +76,41 @@ public class SplashActivity extends BaseActivity {
                     String str = (String) o;
                     Zlog.ii("lxm getMySwitch:" + str);
 
-                    if (str.contains("index=0")) {
-                        Zlog.ii("lxm getMySwitch:1");
+//                    Pattern p = Pattern.compile("");
+//                    Matcher m = p.matcher(str);
+//                    if (m.find()){
+//                        str = m.group();
+//                        Zlog.ii("lxm getMySwitch:00 " + m.group());
+//                    }
+                    str = StringUtils.matchStr("index=(\\d{1})",str);
+
+                    if (StringUtils.isNull(str)){
                         getStatus();
-                    }else if (str.contains("index=1")) {
-                        Zlog.ii("lxm getMySwitch:2");
-                        enterMain();
                     }else {
-                        Zlog.ii("lxm getMySwitch:3");
-                        getStatus();
+                        try {
+                            String[] split = str.trim().split("=");
+                            Zlog.ii("lxm getMySwitch:2 " +str + " " );
+                            if (split.length == 2 && split[1].equals("1")) {
+                                enterMain();
+                            }else {
+                                getStatus();
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            getStatus();
+                        }
                     }
+
+//                    if (str.equals("index=0")) {
+//                        Zlog.ii("lxm getMySwitch:1");
+//                        getStatus();
+//                    }else if (str.equals("index=1")) {
+//                        Zlog.ii("lxm getMySwitch:2");
+//                        enterMain();
+//                    }else {
+//                        Zlog.ii("lxm getMySwitch:3");
+//                        getStatus();
+//                    }
 
                 }else {
                     getStatus();
@@ -101,7 +126,7 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void getStatus() {
-        ToastUtils.show(SplashActivity.this,"sdsds");
+//        ToastUtils.show(SplashActivity.this,"sdsds");
 
         TypeReference typeReference = new TypeReference<AppShowData>(){};
         MyOkHttp.getInstance().getAppShowStatus(Constants.APPSHOW_ADID, typeReference, new OkHttpRequestListener() {
