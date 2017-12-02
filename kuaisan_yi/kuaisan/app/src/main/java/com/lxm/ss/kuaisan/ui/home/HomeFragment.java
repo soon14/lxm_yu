@@ -13,8 +13,7 @@ import com.lxm.ss.kuaisan.Utils.ToastUtils;
 import com.lxm.ss.kuaisan.base.BaseFragment;
 import com.lxm.ss.kuaisan.ui.main.DetailContentActivity;
 import com.lxm.ss.kuaisan.ui.main.DetailWebViewActivity;
-import com.lxm.ss.kuaisan.ui.main.SettingActivity;
-import com.lxm.ss.kuaisan.ui.trailer_infor.TrailerListActivity;
+import com.lxm.ss.kuaisan.ui.trailer_infor.pre.TrailerListActivity;
 import com.lxm.ss.kuaisan.widget.AutoRoll;
 import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
 

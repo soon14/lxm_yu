@@ -1,4 +1,4 @@
-package com.lxm.ss.kuaisan.ui.trailer_infor;
+package com.lxm.ss.kuaisan.ui.trailer_infor.pre;
 
 /**
  * Created by lxm on 2017/12/1.

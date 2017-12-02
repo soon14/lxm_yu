@@ -1,7 +1,7 @@
 package com.lxm.ss.kuaisan.Utils;
 
 
-import com.lxm.ss.kuaisan.ui.trailer_infor.TrailerInfor;
+import com.lxm.ss.kuaisan.ui.trailer_infor.pre.TrailerInfor;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lxm.ss.kuaisan.ui.trailer_infor.TrailerListActivity">
+    tools:context="com.lxm.ss.kuaisan.ui.trailer_infor.pre.TrailerListActivity">
 
     <com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout
         android:id="@+id/ctl_title"
@@ -156,6 +156,40 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/trailer_list_txt_jjlanqiu_title"
+                    android:layout_marginTop="@dimen/layout_magin_top_min"
+                    android:layout_weight="1"
+                    android:text="每日投注分析"
+                    android:textColor="@color/gray_04"
+                    android:textSize="@dimen/txt_size_middle" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/click_more"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/trailer_list_ly_sfc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:orientation="horizontal"
+                android:padding="@dimen/layout_padding" >
+
+                <TextView
+                    android:id="@+id/trailer_list_txt_sfc_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="胜负彩"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/txt_size_max" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/trailer_list_txt_sfc_title"
                     android:layout_marginTop="@dimen/layout_magin_top_min"
                     android:layout_weight="1"
                     android:text="每日投注分析"

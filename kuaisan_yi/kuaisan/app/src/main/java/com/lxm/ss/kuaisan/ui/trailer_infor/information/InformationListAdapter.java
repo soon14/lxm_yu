@@ -1,4 +1,4 @@
-package com.lxm.ss.kuaisan.ui.trailer_infor;
+package com.lxm.ss.kuaisan.ui.trailer_infor.information;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,22 +10,22 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.lxm.ss.kuaisan.R;
-
-import org.w3c.dom.Text;
+import com.lxm.ss.kuaisan.ui.trailer_infor.pre.TrailerInfor;
+import com.lxm.ss.kuaisan.ui.trailer_infor.pre.TrailerInforListAdapter;
 
 import java.util.List;
 
 import club.fromfactory.baselibrary.utils.StringUtils;
 
 /**
- * Created by lxm on 2017/12/1.
+ * Created by lxm on 2017/12/2.
  */
 
-public class TrailerInforListAdapter extends ArrayAdapter<TrailerInfor> {
+public class InformationListAdapter extends ArrayAdapter<TrailerInfor> {
 
     private LayoutInflater layoutInflater ;
 
-    public TrailerInforListAdapter(@NonNull Context context, int resource, @NonNull List<TrailerInfor> objects) {
+    public InformationListAdapter(@NonNull Context context, int resource, @NonNull List<TrailerInfor> objects) {
         super(context, resource, objects);
         layoutInflater = LayoutInflater.from(context);
     }

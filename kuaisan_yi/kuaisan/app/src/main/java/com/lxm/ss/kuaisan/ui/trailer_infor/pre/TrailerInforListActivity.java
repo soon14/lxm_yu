@@ -1,8 +1,7 @@
-package com.lxm.ss.kuaisan.ui.trailer_infor;
+package com.lxm.ss.kuaisan.ui.trailer_infor.pre;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,8 +19,6 @@ import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import club.fromfactory.baselibrary.utils.StringUtils;
 
 public class TrailerInforListActivity extends BaseActivity {
 

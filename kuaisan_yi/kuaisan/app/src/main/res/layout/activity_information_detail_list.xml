@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lxm.ss.kuaisan.ui.trailer_infor.pre.TrailerInforListActivity">
+    tools:context=".ui.trailer_infor.information.InformationDetailListActivity">
+
 
     <com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout
         android:id="@+id/ctl_title"
@@ -22,10 +23,9 @@
 
 
     <ListView
-        android:id="@+id/trailer_infor_list_lv"
+        android:id="@+id/informaiton_infor_list_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/border"/>
-
 
 </RelativeLayout>

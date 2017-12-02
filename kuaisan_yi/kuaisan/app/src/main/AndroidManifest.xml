@@ -97,11 +97,12 @@
         <!-- android:name="JPUSH_APPKEY" -->
         <!-- android:value="e1711a0a561816785d298b2a" /> &lt;!&ndash; </>值来自开发者平台取得的AppKey &ndash;&gt; -->
         <activity
-            android:name=".ui.trailer_infor.TrailerListActivity"
+            android:name=".ui.trailer_infor.pre.TrailerListActivity"
             android:label="@string/title_activity_trailer_list"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.trailer_infor.TrailerInforListActivity" />
-        <activity android:name=".ui.information.InformationListActivity"></activity>
+        <activity android:name=".ui.trailer_infor.pre.TrailerInforListActivity" />
+        <activity android:name=".ui.trailer_infor.information.InformationListActivity" />
+        <activity android:name=".ui.trailer_infor.information.InformationDetailListActivity"></activity>
     </application>
 
 </manifest>
