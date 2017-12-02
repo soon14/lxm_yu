@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@color/white"
+    >
+
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/layout_magin_left"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@id/ctl_title"
+        android:background="#e2e2e2"></View>
+
+    <ImageView
+        android:id="@+id/trailer_infor_item_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/trailer_infor_item_txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/layout_magin_left"
+        android:layout_weight="1"
+        android:layout_marginRight="@dimen/layout_magin_right"
+        android:layout_marginTop="@dimen/layout_magin_top_min"
+        android:layout_toRightOf="@id/trailer_infor_item_img"
+        android:layout_alignTop="@id/trailer_infor_item_img"
+        android:text="双色球"
+        android:textColor="@color/txt_black"
+        android:textSize="@dimen/txt_size_max" />
+
+    <TextView
+        android:id="@+id/trailer_infor_item_txt_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trailer_infor_item_txt_title"
+        android:layout_marginLeft="@dimen/layout_magin_left"
+        android:layout_marginTop="@dimen/layout_magin_top_min"
+        android:layout_marginRight="@dimen/layout_magin_right"
+        android:layout_toRightOf="@id/trailer_infor_item_img"
+        android:layout_weight="1"
+        android:text="各家预测汇总"
+        android:textColor="@color/gray_04"
+        android:textSize="@dimen/txt_size_middle" />
+
+
+
+    <TextView
+        android:id="@+id/trailer_infor_item_txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11:11"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/layout_magin_right"
+        android:layout_marginBottom="@dimen/layout_magin_bottom"
+        android:textColor="@color/txt_black"
+        android:textSize="@dimen/txt_size_max" />
+
+
+</RelativeLayout>
