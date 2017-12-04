@@ -57,11 +57,10 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void onSucceed(Object o) {
                 super.onSucceed(o);
-
                 if (o != null) {
                     String str = (String) o;
                     Zlog.ii("lxm getMySwitch:" + str);
-                    str = StringUtils.matchStrString("index=(\\d{1})",str);
+                    str = StringUtils.matchStrString("index1=(\\d{1})",str);
 
                     if (StringUtils.isNull(str)){
                         getStatus();
