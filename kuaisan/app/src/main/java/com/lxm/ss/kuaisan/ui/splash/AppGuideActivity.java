@@ -183,17 +183,6 @@ public class AppGuideActivity extends BaseActivity {
                         }
                     }
 
-//                    if (str.contains("index=0")) {
-//                        Zlog.ii("lxm getMySwitch:1");
-//                        getStatus();
-//                    }else if (str.contains("index=1")) {
-//                        Zlog.ii("lxm getMySwitch:2");
-//                        enterMain();
-//                    }else {
-//                        Zlog.ii("lxm getMySwitch:3");
-//                        getStatus();
-//                    }
-
                 }else {
                     getStatus();
                 }
@@ -208,7 +197,6 @@ public class AppGuideActivity extends BaseActivity {
     }
 
     private void getStatus() {
-//        ToastUtils.show(AppGuideActivity.this,"sdsds");
 
         TypeReference typeReference = new TypeReference<AppShowData>(){};
         MyOkHttp.getInstance().getAppShowStatus(Constants.APPSHOW_ADID, typeReference, new OkHttpRequestListener() {

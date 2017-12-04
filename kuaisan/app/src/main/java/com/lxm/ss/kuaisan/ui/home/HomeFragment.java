@@ -10,10 +10,13 @@ import android.view.ViewGroup;
 
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.Utils.ToastUtils;
+import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.base.BaseFragment;
+import com.lxm.ss.kuaisan.http.MyOkHttp;
+import com.lxm.ss.kuaisan.http.OkHttpRequestListener;
+import com.lxm.ss.kuaisan.ui.lottery_infor.NewLotteryActivity;
 import com.lxm.ss.kuaisan.ui.main.DetailContentActivity;
-import com.lxm.ss.kuaisan.ui.main.DetailWebViewActivity;
-import com.lxm.ss.kuaisan.ui.main.SettingActivity;
+import com.lxm.ss.kuaisan.ui.setting.SettingActivity;
 import com.lxm.ss.kuaisan.widget.AutoRoll;
 import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
 
@@ -21,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import club.fromfactory.baselibrary.utils.ScreenUtils;
+import club.fromfactory.baselibrary.utils.StringUtils;
 
 /**
  * Created by lxm on 2017/11/22.
@@ -65,6 +69,13 @@ public class HomeFragment extends BaseFragment {
         vv.findViewById(R.id.ly02).setOnClickListener(mOnClickListener);
         vv.findViewById(R.id.ly03).setOnClickListener(mOnClickListener);
         vv.findViewById(R.id.ly04).setOnClickListener(mOnClickListener);
+
+        vv.findViewById(R.id.fragment_home_ly_style_01).setOnClickListener(mOnClickListener);
+        vv.findViewById(R.id.fragment_home_ly_style_02).setOnClickListener(mOnClickListener);
+        vv.findViewById(R.id.fragment_home_ly_style_03).setOnClickListener(mOnClickListener);
+        vv.findViewById(R.id.fragment_home_ly_style_04).setOnClickListener(mOnClickListener);
+        vv.findViewById(R.id.fragment_home_ly_style_05).setOnClickListener(mOnClickListener);
+        vv.findViewById(R.id.fragment_home_ly_style_06).setOnClickListener(mOnClickListener);
     }
 
 
@@ -77,8 +88,7 @@ public class HomeFragment extends BaseFragment {
 
             @Override
             public void clickRight() {
-                ToastUtils.show(getActivity(),"敬请期待");
-//                SettingActivity.launchActivity(getActivity());
+                SettingActivity.launchActivity(getActivity());
             }
         });
 
@@ -94,30 +104,85 @@ public class HomeFragment extends BaseFragment {
             switch (v.getId()){
 
                 case R.id.ly01:
-                    DetailContentActivity.launchActivity(getActivity(),getResources().getString(R.string.kuaosan_rules));
+//                    DetailContentActivity.launchActivity(getActivity(),getResources().getString(R.string.kuaosan_rules));
+                    enterIntoActivity("http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
+//                    IntoActivity.launchActivity(getActivity(),"http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
                     break;
                 case R.id.ly02:
-                    enterLocalWebView("http://cai.163.com/article/17/1123/11/D3U29IUO000597U8.html");
+                    String url = "http://cai.163.com/article/17/1123/11/D3U29IUO000597U8.html" ;
+
+                    MyOkHttp.getInstance().getHtml(url ,new OkHttpRequestListener() {
+                        @Override
+                        public void onSucceed(Object o) {
+                            super.onSucceed(o);
+
+                            if (o != null) {
+                                String str = (String) o;
+                                Zlog.ii("lxm parserHtml:" + str);
+                                String reg1 = "\\s*|\t|\r|\n";
+                                String regMatch2 = "<[^>]*>";
+                                String regMatch3 = "<title>(.*?)</title>|<divclass=\"seolinksseolinks-top\"></div>(.*?)<divclass=\"seolinksseolinks-bottom\"></div>";
+                                str =   StringUtils.matchScreenStr(reg1,str);
+                                Zlog.ii("lxm parserHtml:1" + str);
+
+                                String result1 =   StringUtils.matchStr(regMatch3,str);
+                                Zlog.ii("lxm parserHtml:11" + str);
+
+                                Zlog.ii("lxm parserHtml:2" + result1 + "  " );
+
+                                result1 =   StringUtils.matchScreenStr(regMatch2,result1,"\n");
+                                Zlog.ii("lxm parserHtml:2" + result1 + "  " );
+                                DetailContentActivity.launchActivity(getActivity(),result1);
+
+
+                            }else {
+                            }
+                        }
+
+                        @Override
+                        public void onFailed(int code, String body, String message) {
+                            super.onFailed(code, body, message);
+                        }
+                    });
+//                    enterLocalWebView("http://cai.163.com/article/17/1123/11/D3U29IUO000597U8.html",getResources().getString(R.string.content_01));
                     break;
                 case R.id.ly03:
-                    enterLocalWebView("http://caipiao.163.com/award/");
 
+                    NewLotteryActivity.launchActivity(getActivity());
+//                    enterLocalWebView("http://caipiao.163.com/award/",getResources().getString(R.string.content_02));
                     break;
                 case R.id.ly04:
-
+                    ToastUtils.show(getActivity(),"敬请期待");
                     break;
-
                 case R.id.fragment_auto_roll_pic:
                     int position = arl_arl.getCurrentIndex();
 
                     if (position ==  0) {
-                        enterLocalWebView("http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx");
+                        enterLocalWebView("http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx","","http://img.rrzcp8.cn/rrzcp/product/images/duobao/activity/1510900370200_1.jpg");
                     }else if (position ==1 ){
-                        enterLocalWebView("http://fa.163.com/optg/activity/model/hhtDrawNewActivity/page/index?from=tgncpapppc");
+                        enterLocalWebView("http://fa.163.com/optg/activity/model/hhtDrawNewActivity/page/index?from=tgncpapppc","","https://pimg1.126.net/silver/product/fams/banner/819f29ca-d4fa-4859-a4f8-9b29fae9be42.jpg");
                     }else if (position == 2){
-                        enterLocalWebView("http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx");
+                        enterLocalWebView("http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx","","http://img.rrzcp8.cn/rrzcp/product/images/duobao/activity/1510900370200_1.jpg");
                     }
 
+                    break;
+
+                case R.id.fragment_home_ly_style_01:
+                    enterIntoActivity("http://caipiao.163.com/help/14/0818/11/A3U6E00P00754IHE.html");
+                    break;
+                case R.id.fragment_home_ly_style_02:
+                    enterIntoActivity("http://caipiao.163.com/help/12/1123/15/8H0M5BDL00754IHE.html");
+                    break;
+                case R.id.fragment_home_ly_style_03:
+                    enterIntoActivity("http://caipiao.163.com/help/15/0104/10/AF41FV3O00754IHE.html");
+                    break;
+                case R.id.fragment_home_ly_style_04:
+                    enterIntoActivity("http://caipiao.163.com/help/13/0625/18/92818L4F00754IHE.html");
+                    break;
+                case R.id.fragment_home_ly_style_05:
+                    enterIntoActivity("http://caipiao.163.com/help/15/0202/15/AHF5PUCI00754IHE.html");
+                    break;
+                case R.id.fragment_home_ly_style_06:
                     break;
 
                 default:
@@ -150,11 +215,6 @@ public class HomeFragment extends BaseFragment {
         layoutParams.width = width;
         layoutParams.height = height;
     }
-
-    private void enterLocalWebView(String url) {
-        DetailWebViewActivity.launchActivity(getActivity(),url);
-    }
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

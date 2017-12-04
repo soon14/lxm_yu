@@ -27,7 +27,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> -->
     <!-- &lt;!&ndash; Optional for location &ndash;&gt; -->
     <!-- <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> &lt;!&ndash; 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 &ndash;&gt; -->
     <!-- <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> -->
@@ -69,8 +71,8 @@
         <activity
             android:name=".ui.splash.AppGuideActivity"
             android:label="@string/title_activity_app_guide"
-            android:screenOrientation="portrait"
             android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.web.WebViewActivity"
@@ -80,12 +82,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.main.DetailContentActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.main.DetailWebViewActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask" />
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
         <!-- &lt;!&ndash; Rich push 核心功能 since 2.0.6&ndash;&gt; -->
         <!-- <activity -->
@@ -204,7 +206,27 @@
         <!-- <meta-data android:name="JPUSH_PKGNAME" android:value="com.lxm.ss.kuaisan" /> -->
         <!-- <meta-data android:name="JPUSH_CHANNEL" android:value="${APP_CHANNEL}" tools:replace="android:value"/> -->
         <!-- <meta-data android:name="JPUSH_APPKEY" android:value="e1711a0a561816785d298b2a" tools:replace="android:value"/> &lt;!&ndash;  </>值来自开发者平台取得的AppKey&ndash;&gt; -->
-        <activity android:name=".ui.main.SettingActivity"></activity>
+        <activity android:name=".ui.setting.SettingActivity" />
+        <activity
+            android:name=".ui.main.ParseWebViewContentActivity"
+            android:label="@string/title_activity_parse_web_view_content"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.main.IntoActivity"
+            android:label="@string/title_activity_into"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.main.DetailParseWebContentActivity"
+            android:label="@string/title_activity_detail_parse_web_content"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.lottery_infor.NewLotteryActivity"
+            android:label="@string/title_activity_new_lottery"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.lottery_infor.LotteryInforDetailActivity"
+            android:label="@string/title_activity_lottery_infor_detail"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

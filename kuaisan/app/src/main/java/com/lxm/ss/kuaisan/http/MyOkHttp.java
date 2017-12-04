@@ -104,4 +104,50 @@ public class MyOkHttp {
             }
         });
     }
+    public void getHtml(final String url ,final OkHttpRequestListener okHttpRequestListener) {
+        Zlog.ii("lxm httpost:getHtml:" + url );
+        FFApplication.getFixThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                doPostHttpGet(RequestTypeConstant.REQUEST_MY_SWITCH, url ,
+                        RequestTypeConstant.RETURN_JSON_MESSAGE,null,null,null,okHttpRequestListener);
+            }
+        });
+    }
+
+    private final String GET_LOTTERY_DATA= "http://api.caipiao.163.com/award_home.html?mobileType=android&ver=4.30&channel=qq_tab1&apiVer=1.1&apiLevel=27";
+
+    public void getLotterData(final TypeReference mTypeReference,final OkHttpRequestListener okHttpRequestListener) {
+
+        Zlog.ii("lxm httpost:getLotterData:" + GET_LOTTERY_DATA);
+        FFApplication.getFixThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                doPostHttpGet(RequestTypeConstant.REQUEST_MY_SWITCH, GET_LOTTERY_DATA ,
+                        RequestTypeConstant.RETURN_INITJSON_DATA,null,null,null,okHttpRequestListener);
+            }
+        });
+    }
+
+    private final String GET_LOTTERY_DETAIL= "http://api.caipiao.163.com/queryAwardByCond.html?mobileType=android&ver=4.30&channel=qq_tab1&apiVer=1.1&apiLevel=27";
+    public void getLotteryDetail(final String gameEn ,final String period,final OkHttpRequestListener okHttpRequestListener) {
+
+        Zlog.ii("lxm httpost:getLotteryDetail:" + GET_LOTTERY_DETAIL);
+        http://api.caipiao.163.com/queryAwardByCond.html?mobileType=android&ver=4.30&channel=qq_tab1&apiVer=1.1&apiLevel=27&count=20&period=2017141&gameEn=ssq
+//        currentPeriod=2017140&gameEn=ssq
+        FFApplication.getFixThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+//                //设置参数，访问url获取json
+//                Map<String, Object> params = new HashMap<String, Object>();
+//                params.put("count", 20);
+//                params.put("period", Long.valueOf(period) +1);
+//                params.put("gameEn", gameEn);
+
+                doPostHttpGet(RequestTypeConstant.REQUEST_MY_SWITCH, GET_LOTTERY_DETAIL + "&count=20" + "&period=" + Long.valueOf(period) +1
+                        +"&gameEn=" +gameEn,
+                        RequestTypeConstant.RETURN_JSON_MESSAGE,null,null,null,okHttpRequestListener);
+            }
+        });
+    }
 }

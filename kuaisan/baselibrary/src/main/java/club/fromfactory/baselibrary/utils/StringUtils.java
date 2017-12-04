@@ -185,10 +185,36 @@ public class StringUtils {
     }
 
     public static String matchStr(String matcher, String str) {
+        StringBuilder stringBuilder = new StringBuilder();
+        Pattern p = Pattern.compile(matcher);
+        Matcher m = p.matcher(str);
+
+        while(m.find()) {
+            Log.i("lxm matchStr:" ,"lxm matchStr:"+m.group(0) +" "+ m.group(1));
+            stringBuilder.append(m.group(0));
+        }
+
+        return stringBuilder.toString();
+//        if (m.find()) {
+//            return m.group();
+//        } else {
+//            return "";
+//        }
+    }
+    public static String matchScreenStr(String matcher, String str) {
         Pattern p = Pattern.compile(matcher);
         Matcher m = p.matcher(str);
         if (m.find()) {
-            return m.group();
+            return m.replaceAll("");
+        } else {
+            return "";
+        }
+    }
+    public static String matchScreenStr(String matcher, String str,String replaceStr) {
+        Pattern p = Pattern.compile(matcher);
+        Matcher m = p.matcher(str);
+        if (m.find()) {
+            return m.replaceAll(replaceStr);
         } else {
             return "";
         }

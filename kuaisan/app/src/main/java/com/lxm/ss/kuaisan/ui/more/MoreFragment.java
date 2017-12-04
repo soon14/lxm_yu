@@ -95,22 +95,22 @@ public class MoreFragment extends BaseFragment {
             switch (v.getId()){
 
                 case R.id.fragment_more_img:
-                    enterLocalWebView("http://caipiao.163.com/help/");
+                    enterLocalWebView("http://caipiao.163.com/help/",getResources().getString(R.string.content_12));
                     break;
                 case R.id.fragment_more_link01:
-                    enterLocalWebView("http://caipiao.163.com/help/14/0627/10/9VO6LSTN00754KN4.html#from=relevant");
+                    enterLocalWebView("http://caipiao.163.com/help/14/0627/10/9VO6LSTN00754KN4.html#from=relevant",getResources().getString(R.string.content_13));
                     break;
                 case R.id.fragment_more_link02:
-                    enterLocalWebView("http://caipiao.163.com/help/14/0626/19/9VMJ9SNH00754KN4.html#from=relevant");
+                    enterLocalWebView("http://caipiao.163.com/help/14/0626/19/9VMJ9SNH00754KN4.html#from=relevant",getResources().getString(R.string.content_14));
                     break;
                 case R.id.fragment_more_link03:
-                    enterLocalWebView("http://caipiao.163.com/help/14/0627/15/9VOO6TKI00754KN4.html#from=relevant");
+                    enterLocalWebView("http://caipiao.163.com/help/14/0627/15/9VOO6TKI00754KN4.html#from=relevant",getResources().getString(R.string.content_15));
                     break;
                 case R.id.fragment_more_link04:
-                    enterLocalWebView("http://caipiao.163.com/help/14/0627/15/9VOORTAJ00754KN4.html#from=relevant");
+                    enterLocalWebView("http://caipiao.163.com/help/14/0627/15/9VOORTAJ00754KN4.html#from=relevant",getResources().getString(R.string.content_16));
                     break;
                 case R.id.fragment_more_link05:
-                    enterLocalWebView("http://caipiao.163.com/help/14/0627/15/9VOOEAG100754KN4.html#from=relevant");
+                    enterLocalWebView("http://caipiao.163.com/help/14/0627/15/9VOOEAG100754KN4.html#from=relevant",getResources().getString(R.string.content_17),R.mipmap.aa_05);
                     break;
 
 
@@ -120,13 +120,6 @@ public class MoreFragment extends BaseFragment {
             }
         }
     } ;
-
-
-    private void enterLocalWebView(String url) {
-
-        DetailWebViewActivity.launchActivity(getActivity(),url);
-    }
-
 
 
     @Override
