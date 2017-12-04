@@ -1,8 +1,9 @@
 package com.lxm.ss.kuaisan;
 
 import android.app.Application;
-import android.support.multidex.MultiDexApplication;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.ui.main.MainActivity;
 
@@ -12,9 +13,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSession;
+
+import club.fromfactory.okhttp.OkHttpUtil;
+import club.fromfactory.okhttp.cookie.CookieJarImpl;
+import club.fromfactory.okhttp.cookie.store.MemoryCookieStore;
+import club.fromfactory.okhttp.https.HttpsUtils;
+import club.fromfactory.okhttp.httputil.LoggerInterceptor;
 import club.fromfactory.okhttp.httputil.Zlog;
 import cn.jpush.android.api.JPushInterface;
+import okhttp3.OkHttpClient;
 
 /**
  */
@@ -35,6 +46,9 @@ public class FFApplication extends Application {
         return instance;
     }
 
+
+    public Map<String,String> mapLotterInfor = new HashMap<>();
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -45,7 +59,65 @@ public class FFApplication extends Application {
 
         JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
         JPushInterface.init(this);     		// 初始化 JPush
+        initOkHttp();
+        initFresco();
+        initData();
+    }
 
+    private void initData() {
+        mapLotterInfor.put("football_9","胜负彩/任选九");
+        mapLotterInfor.put("qxc","七星彩");
+        mapLotterInfor.put("hbkuai3","湖北快三");
+        mapLotterInfor.put("football_sfc","");
+        mapLotterInfor.put("ssq","双色球");
+        mapLotterInfor.put("gdd11","粤11选5");
+        mapLotterInfor.put("dlt","大乐透");
+        mapLotterInfor.put("nmgkuai3","易快三");
+        mapLotterInfor.put("zjd11","易乐11选5");
+        mapLotterInfor.put("x3d","3D");
+        mapLotterInfor.put("pl5","排列5");
+        mapLotterInfor.put("qlc","七星彩");
+        mapLotterInfor.put("kuai3","快三");
+        mapLotterInfor.put("pl3","排列3");
+        mapLotterInfor.put("oldkuai3","老快三");
+        mapLotterInfor.put("ssc","重庆时时彩");
+        mapLotterInfor.put("klpk","快乐扑克");
+    }
+
+
+    private void initOkHttp(){
+
+        //okhtp
+//        ClearableCookieJar cookieJar1 = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(getApplicationContext()));
+
+        HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null, null, null);
+
+        CookieJarImpl cookieJar1 = new CookieJarImpl(new MemoryCookieStore());
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
+                .readTimeout(10000L, TimeUnit.MILLISECONDS)
+                .addInterceptor(new LoggerInterceptor())
+                .cookieJar(cookieJar1)
+                .hostnameVerifier(new HostnameVerifier()
+                {
+                    @Override
+                    public boolean verify(String hostname, SSLSession session)
+                    {
+                        return true;
+                    }
+                })
+                .sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
+                .build();
+        OkHttpUtil.initClient();
+
+    }
+
+    private void initFresco() {
+
+        ImagePipelineConfig config = ImagePipelineConfig.newBuilder(this)
+                .setDownsampleEnabled(true)
+                .build();
+        Fresco.initialize(this, config);
     }
 
     public static ExecutorService getFixThreadExecutor() {

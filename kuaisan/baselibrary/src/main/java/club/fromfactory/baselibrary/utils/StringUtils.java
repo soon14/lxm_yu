@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -184,16 +185,6 @@ public class StringUtils {
         }
     }
 
-    public static String matchStr(String matcher, String str) {
-        Pattern p = Pattern.compile(matcher);
-        Matcher m = p.matcher(str);
-        if (m.find()) {
-            return m.group();
-        } else {
-            return "";
-        }
-    }
-
 
     public static boolean match(String matcher, String str) {
         Pattern p = Pattern.compile(matcher);
@@ -202,6 +193,50 @@ public class StringUtils {
             return true;
         } else {
             return false;
+        }
+    }
+
+
+    public static String matchStrString(String matcher, String str) {
+        StringBuilder stringBuilder = new StringBuilder();
+        Pattern p = Pattern.compile(matcher);
+        Matcher m = p.matcher(str);
+
+        while(m.find()) {
+            Log.i("lxm matchStr:" ,"lxm matchStr:"+m.group(0) +" "+ m.group(1));
+            stringBuilder.append(m.group(0));
+        }
+
+        return stringBuilder.toString();
+    }
+
+
+    public static List<String> matchStrList(String matcher, String str) {
+        List<String> stringList = new ArrayList<>();
+        Pattern p = Pattern.compile(matcher);
+        Matcher m = p.matcher(str);
+        while (m.find()){
+            Log.i("lxm matchStr:" ,"lxm matchStrList:"+m.group(0) +" "+ m.group(1));
+            stringList.add(m.group(0));
+        }
+        return  stringList ;
+    }
+    public static String matchReplace(String matcher, String str) {
+        Pattern p = Pattern.compile(matcher);
+        Matcher m = p.matcher(str);
+        if (m.find()) {
+            return m.replaceAll("");
+        } else {
+            return str;
+        }
+    }
+    public static String matchReplace(String matcher, String str,String replaceStr) {
+        Pattern p = Pattern.compile(matcher);
+        Matcher m = p.matcher(str);
+        if (m.find()) {
+            return m.replaceAll(replaceStr);
+        } else {
+            return str;
         }
     }
 

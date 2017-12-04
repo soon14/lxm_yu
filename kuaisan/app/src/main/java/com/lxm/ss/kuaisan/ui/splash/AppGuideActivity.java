@@ -3,22 +3,16 @@ package com.lxm.ss.kuaisan.ui.splash;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.TypeReference;
 import com.lxm.ss.kuaisan.R;
-import com.lxm.ss.kuaisan.Utils.ToastUtils;
 import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.constant.Constants;
@@ -28,11 +22,8 @@ import com.lxm.ss.kuaisan.model.AppShowData;
 import com.lxm.ss.kuaisan.ui.main.MainActivity;
 import com.lxm.ss.kuaisan.ui.web.WebViewActivity;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-import club.fromfactory.baselibrary.utils.ScreenUtils;
 import club.fromfactory.baselibrary.utils.StringUtils;
 
 public class AppGuideActivity extends BaseActivity {
@@ -164,7 +155,7 @@ public class AppGuideActivity extends BaseActivity {
                     String str = (String) o;
                     Zlog.ii("lxm getMySwitch:" + str);
 
-                    str = StringUtils.matchStr("index=(\\d{1})",str);
+                    str = StringUtils.matchStrString("index=(\\d{1})",str);
 
                     if (StringUtils.isNull(str)){
                         getStatus();
@@ -183,17 +174,6 @@ public class AppGuideActivity extends BaseActivity {
                         }
                     }
 
-//                    if (str.contains("index=0")) {
-//                        Zlog.ii("lxm getMySwitch:1");
-//                        getStatus();
-//                    }else if (str.contains("index=1")) {
-//                        Zlog.ii("lxm getMySwitch:2");
-//                        enterMain();
-//                    }else {
-//                        Zlog.ii("lxm getMySwitch:3");
-//                        getStatus();
-//                    }
-
                 }else {
                     getStatus();
                 }
@@ -208,7 +188,6 @@ public class AppGuideActivity extends BaseActivity {
     }
 
     private void getStatus() {
-//        ToastUtils.show(AppGuideActivity.this,"sdsds");
 
         TypeReference typeReference = new TypeReference<AppShowData>(){};
         MyOkHttp.getInstance().getAppShowStatus(Constants.APPSHOW_ADID, typeReference, new OkHttpRequestListener() {

@@ -1,7 +1,6 @@
 package com.lxm.ss.kuaisan.base;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -13,7 +12,6 @@ import com.lxm.ss.kuaisan.Utils.DialogUtils;
 import com.lxm.ss.kuaisan.Utils.PreferenceUtils;
 import com.lxm.ss.kuaisan.Utils.Utils;
 import com.lxm.ss.kuaisan.Utils.Zlog;
-import com.lxm.ss.kuaisan.ui.splash.AppGuideActivity;
 
 import club.fromfactory.baselibrary.utils.ScreenUtils;
 

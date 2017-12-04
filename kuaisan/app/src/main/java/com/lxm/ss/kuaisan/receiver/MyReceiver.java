@@ -6,11 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import com.lxm.ss.kuaisan.FFApplication;
 import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.constant.Constants;
 import com.lxm.ss.kuaisan.ui.main.DetailContentActivity;
-import com.lxm.ss.kuaisan.ui.main.MainActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;

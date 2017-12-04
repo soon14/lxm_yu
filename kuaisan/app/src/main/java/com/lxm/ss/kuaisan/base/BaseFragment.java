@@ -10,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lxm.ss.kuaisan.Utils.Zlog;
+import com.lxm.ss.kuaisan.ui.main.DetailWebViewActivity;
+import com.lxm.ss.kuaisan.ui.main.IntoActivity;
+import com.lxm.ss.kuaisan.ui.main.ParseWebViewContentActivity;
+
 /**
  * fragment基类
  */
@@ -42,6 +46,25 @@ public abstract class BaseFragment extends Fragment {
         }else {
 
         }
+    }
+
+
+    public void enterIntoActivity(String url ) {
+        IntoActivity.launchActivity(getActivity(),url);
+    }
+
+
+    public void enterLocalWebView(String url) {
+        DetailWebViewActivity.launchActivity(getActivity(),url);
+    }
+    public void enterLocalWebView(String url,String content) {
+        ParseWebViewContentActivity.launchActivity(getActivity(),url,content);
+    }
+    public void enterLocalWebView(String url,String content,String imgUrl) {
+        ParseWebViewContentActivity.launchActivity(getActivity(),url,content,imgUrl );
+    }
+    public void enterLocalWebView(String url,String content,int imgUrl) {
+        ParseWebViewContentActivity.launchActivity(getActivity(),url,content,imgUrl );
     }
 
     @Override

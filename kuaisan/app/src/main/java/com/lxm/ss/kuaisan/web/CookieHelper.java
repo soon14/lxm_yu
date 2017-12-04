@@ -6,7 +6,6 @@ import android.webkit.CookieManager;
 
 import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.http.NetUtils;
-import club.fromfactory.baselibrary.utils.StringUtils;
 
 /**
  * 管理cookie工具类

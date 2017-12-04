@@ -1,20 +1,12 @@
 package com.lxm.ss.kuaisan.ui.splash;
 
-import android.Manifest;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
 import android.view.Window;
 import android.view.WindowManager;
-import android.webkit.CookieSyncManager;
 
 import com.alibaba.fastjson.TypeReference;
 import com.lxm.ss.kuaisan.R;
-import com.lxm.ss.kuaisan.Utils.HtmlParse;
-import com.lxm.ss.kuaisan.Utils.ToastUtils;
 import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.constant.Constants;
@@ -23,9 +15,6 @@ import com.lxm.ss.kuaisan.http.OkHttpRequestListener;
 import com.lxm.ss.kuaisan.model.AppShowData;
 import com.lxm.ss.kuaisan.ui.main.MainActivity;
 import com.lxm.ss.kuaisan.ui.web.WebViewActivity;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import club.fromfactory.baselibrary.utils.StringUtils;
 
@@ -59,14 +48,11 @@ public class SplashActivity extends BaseActivity {
                 } else {
                     getMySwitch();
                 }
-                finish();
-
             }
         }, DELAY_TIME);
     }
 
     private void getMySwitch() {
-
         MyOkHttp.getInstance().getMySwitchStatus(  new OkHttpRequestListener() {
             @Override
             public void onSucceed(Object o) {
@@ -75,14 +61,7 @@ public class SplashActivity extends BaseActivity {
                 if (o != null) {
                     String str = (String) o;
                     Zlog.ii("lxm getMySwitch:" + str);
-
-//                    Pattern p = Pattern.compile("");
-//                    Matcher m = p.matcher(str);
-//                    if (m.find()){
-//                        str = m.group();
-//                        Zlog.ii("lxm getMySwitch:00 " + m.group());
-//                    }
-                    str = StringUtils.matchStr("index=(\\d{1})",str);
+                    str = StringUtils.matchStrString("index=(\\d{1})",str);
 
                     if (StringUtils.isNull(str)){
                         getStatus();
@@ -100,18 +79,6 @@ public class SplashActivity extends BaseActivity {
                             getStatus();
                         }
                     }
-
-//                    if (str.equals("index=0")) {
-//                        Zlog.ii("lxm getMySwitch:1");
-//                        getStatus();
-//                    }else if (str.equals("index=1")) {
-//                        Zlog.ii("lxm getMySwitch:2");
-//                        enterMain();
-//                    }else {
-//                        Zlog.ii("lxm getMySwitch:3");
-//                        getStatus();
-//                    }
-
                 }else {
                     getStatus();
                 }
@@ -126,8 +93,6 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void getStatus() {
-//        ToastUtils.show(SplashActivity.this,"sdsds");
-
         TypeReference typeReference = new TypeReference<AppShowData>(){};
         MyOkHttp.getInstance().getAppShowStatus(Constants.APPSHOW_ADID, typeReference, new OkHttpRequestListener() {
             @Override
@@ -162,5 +127,10 @@ public class SplashActivity extends BaseActivity {
     private void enterWebPage(String url) {
         WebViewActivity.launchActivity(SplashActivity.this,url);
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }
