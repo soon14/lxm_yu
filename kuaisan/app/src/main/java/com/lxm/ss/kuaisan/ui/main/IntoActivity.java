@@ -101,6 +101,8 @@ public class IntoActivity extends BaseActivity {
 
         String regMatch3 = "<[^>]*>";
 
+        String regMatch5 = "\n\n";
+
         List<ScreenReg> screenRegList = new ArrayList<>() ;
 
         ScreenReg screenReg  = new ScreenReg();
@@ -117,6 +119,12 @@ public class IntoActivity extends BaseActivity {
 
         screenReg  = new ScreenReg();
         screenReg.setRegStr(regMatch3);
+        screenReg.setReplace("\n");
+        screenReg.setScreen(true);
+        screenRegList.add(screenReg);
+
+        screenReg  = new ScreenReg();
+        screenReg.setRegStr(regMatch5);
         screenReg.setReplace("\n");
         screenReg.setScreen(true);
         screenRegList.add(screenReg);

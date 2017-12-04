@@ -69,6 +69,10 @@ public class CommenProblemsActivity extends BaseActivity {
                     String reg1 = "\\s*|\t|\r|\n";
                     String regMatch2 = "<title>(.*?)</title>|<divclass=\"help_t_int\">(.*?)</div></div><divclass=\"clear\"></div>";
 
+                    String regMatch3 = "<title>(.*?)</title>|<p>(.*?)</p>";
+                    String regMatch4 = "<[^>]*>";
+                    String regMatch5 = "\n\n";
+
                     List<ScreenReg> regList = new ArrayList<>() ;
                     ScreenReg screenReg  = new ScreenReg();
                     screenReg.setRegStr(reg1);
@@ -79,6 +83,21 @@ public class CommenProblemsActivity extends BaseActivity {
                     screenReg.setRegStr(regMatch2);
                     screenReg.setReplace("");
                     screenReg.setScreen(false);
+                    regList.add(screenReg);
+                    screenReg  = new ScreenReg();
+                    screenReg.setRegStr(regMatch3);
+                    screenReg.setReplace("");
+                    screenReg.setScreen(false);
+                    regList.add(screenReg);
+                    screenReg  = new ScreenReg();
+                    screenReg.setRegStr(regMatch4);
+                    screenReg.setReplace("\n");
+                    screenReg.setScreen(true);
+                    regList.add(screenReg);
+                    screenReg  = new ScreenReg();
+                    screenReg.setRegStr(regMatch5);
+                    screenReg.setReplace("\n");
+                    screenReg.setScreen(true);
                     regList.add(screenReg);
                     DetailParseWebContentActivity.launchActivity(CommenProblemsActivity.this,commenProblems.getUrl(),"",regList);
                 }
