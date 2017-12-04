@@ -38,7 +38,7 @@ android {
     productFlavors {
 
         //线上的包
-        online {
+        online_baidu {
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release", APP_VERSION: "1.0", APP_CHANNEL: "google play"]
 
             buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
