@@ -36,6 +36,21 @@
                 android:src="@mipmap/bottomimg"
                 />
 
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ctl_title"
+                android:background="#e2e2e2"></View>
+
+
+            <TextView
+                android:id="@+id/fragment_more_link00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_magin_top_max"
+                android:padding="@dimen/layout_padding"
+                android:text="常见问题介绍"
+                />
             <TextView
                 android:id="@+id/fragment_more_link01"
                 android:layout_width="match_parent"
@@ -72,8 +87,6 @@
                 android:padding="@dimen/layout_padding"
                 android:text="足球单场怎么玩_足球单场奖金计算_胜平负奖金"
                 />
-
-
 
         </LinearLayout>
 

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.lxm.ss.kuaisan.BuildConfig;
 import com.lxm.ss.kuaisan.FFApplication;
 
 /**

@@ -1,6 +1,5 @@
 package com.lxm.ss.kuaisan.ui.information;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.lxm.ss.kuaisan.R;

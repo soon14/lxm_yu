@@ -10,12 +10,8 @@ import android.view.ViewGroup;
 
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.Utils.ToastUtils;
-import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.base.BaseFragment;
-import com.lxm.ss.kuaisan.http.MyOkHttp;
-import com.lxm.ss.kuaisan.http.OkHttpRequestListener;
 import com.lxm.ss.kuaisan.ui.lottery_infor.NewLotteryActivity;
-import com.lxm.ss.kuaisan.ui.main.DetailContentActivity;
 import com.lxm.ss.kuaisan.ui.setting.SettingActivity;
 import com.lxm.ss.kuaisan.ui.trailer_infor.TrailerListActivity;
 import com.lxm.ss.kuaisan.widget.AutoRoll;
@@ -25,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import club.fromfactory.baselibrary.utils.ScreenUtils;
-import club.fromfactory.baselibrary.utils.StringUtils;
 
 /**
  * Created by lxm on 2017/11/22.

@@ -17,7 +17,6 @@ import android.webkit.WebViewClient;
 
 import com.lxm.ss.kuaisan.FFApplication;
 import com.lxm.ss.kuaisan.R;
-import com.lxm.ss.kuaisan.Utils.PreferenceUtils;
 import com.lxm.ss.kuaisan.Utils.StorageUtils;
 import com.lxm.ss.kuaisan.Utils.ToastUtils;
 import com.lxm.ss.kuaisan.Utils.Zlog;

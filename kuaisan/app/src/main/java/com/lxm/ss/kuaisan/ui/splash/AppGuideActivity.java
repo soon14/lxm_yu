@@ -3,22 +3,16 @@ package com.lxm.ss.kuaisan.ui.splash;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.TypeReference;
 import com.lxm.ss.kuaisan.R;
-import com.lxm.ss.kuaisan.Utils.ToastUtils;
 import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.constant.Constants;
@@ -28,11 +22,8 @@ import com.lxm.ss.kuaisan.model.AppShowData;
 import com.lxm.ss.kuaisan.ui.main.MainActivity;
 import com.lxm.ss.kuaisan.ui.web.WebViewActivity;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-import club.fromfactory.baselibrary.utils.ScreenUtils;
 import club.fromfactory.baselibrary.utils.StringUtils;
 
 public class AppGuideActivity extends BaseActivity {

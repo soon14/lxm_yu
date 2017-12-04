@@ -3,7 +3,6 @@ package com.lxm.ss.kuaisan.http;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
-import android.webkit.CookieManager;
 
 import com.alibaba.fastjson.TypeReference;
 import com.lxm.ss.kuaisan.FFApplication;

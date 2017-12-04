@@ -1,7 +1,6 @@
 package com.lxm.ss.kuaisan;
 
 import android.app.Application;
-import android.support.multidex.MultiDexApplication;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;

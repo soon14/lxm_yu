@@ -3,14 +3,9 @@ package com.lxm.ss.kuaisan.ui.main;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.lxm.ss.kuaisan.R;
-import com.lxm.ss.kuaisan.Utils.ToastUtils;
 import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.constant.Constants;

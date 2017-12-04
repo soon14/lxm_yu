@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import com.lxm.ss.kuaisan.R;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 import club.fromfactory.baselibrary.utils.StringUtils;

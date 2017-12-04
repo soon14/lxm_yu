@@ -4,22 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
 import com.lxm.ss.kuaisan.R;
-import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.base.BaseActivity;
-import com.lxm.ss.kuaisan.constant.Constants;
-import com.lxm.ss.kuaisan.http.MyOkHttp;
-import com.lxm.ss.kuaisan.ui.main.DetailContentActivity;
 import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
-
-import club.fromfactory.baselibrary.utils.StringUtils;
 
 public class TrailerListActivity extends BaseActivity {
 

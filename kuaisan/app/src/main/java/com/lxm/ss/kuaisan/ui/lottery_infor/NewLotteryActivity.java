@@ -21,12 +21,9 @@ import com.lxm.ss.kuaisan.http.OkHttpRequestListener;
 import com.lxm.ss.kuaisan.model.LotterInfor;
 import com.lxm.ss.kuaisan.model.RequestWYData;
 import com.lxm.ss.kuaisan.parse.model.ScreenReg;
-import com.lxm.ss.kuaisan.ui.main.DetailContentActivity;
 import com.lxm.ss.kuaisan.ui.main.DetailParseWebContentActivity;
-import com.lxm.ss.kuaisan.ui.main.IntoActivity;
 import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 

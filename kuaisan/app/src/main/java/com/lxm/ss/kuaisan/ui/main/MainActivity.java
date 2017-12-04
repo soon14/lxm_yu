@@ -3,7 +3,6 @@ package com.lxm.ss.kuaisan.ui.main;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.lxm.ss.kuaisan.R;

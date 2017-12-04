@@ -8,6 +8,34 @@
     <string name="title_activity_app_guide">AppGuideActivity</string>
     <string name="title_activity_web_view">WebViewActivity</string>
 
+
+    <string name="problems_00">新手指引</string>
+    <string name="problems_01">1.在哪里查看我购买的彩票是否中奖</string>
+    <string name="problems_02">2.我从来没买过彩票，这些彩种都怎么玩？</string>
+    <string name="problems_03">3.有一天开奖多期的彩种吗？</string>
+    <string name="problems_04">4.什么是彩票红包？</string>
+    <string name="problems_05">5.我不知道该投注什么号码，怎么办？</string>
+    <string name="problems_06">6.我喜欢一注/多注号码，希望每期都投注，能不能一次付钱，帮我每期都买呢？</string>
+    <string name="problems_07">7.我想做的投注方案金额较大，可是手里投注资金有限，怎么办？能不能找人一起买？</string>
+
+    <string name="problems_10">购彩流程问题</string>
+    <string name="problems_11">1.付款遇到问题怎么办？</string>
+    <string name="problems_12">2.购彩的流程是什么样的？</string>
+    <string name="problems_13">3.什么是排列3玩法“限号”？</string>
+    <string name="problems_14">4.撤销定制跟单了以后多久款项会退回呢？</string>
+    <string name="problems_15">5.购买了彩票如何付款？</string>
+
+    <string name="problems_20">关于合买</string>
+    <string name="problems_21">1.合买置顶规则</string>
+    <string name="problems_22">2.请问发起的合买如何撤销？谢谢！</string>
+    <string name="problems_23">3.我想问下，怎么计算我合买中了多少钱？</string>
+    <string name="problems_24">4.我怎么设置不了0佣金呢？发起的时候好像只能是从1-10选择，但是我发起的合买，想要零</string>
+    <string name="problems_25">5.合买大奖一般几天能分到钱啊，没实名认证的，提现也没问题吧？</string>
+
+    <string name="problems_30">中奖和兑奖</string>
+    <string name="problems_31">1.怎么保护中奖者的个人信息呢？</string>
+    <string name="problems_32">2.中小奖已发奖后是在哪里查？到处找都没有这个功能怎么回事？</string>
+
     <string name="content_00" formatted="false"> </string>
     <string name="content_17" formatted="false">足球单场玩法规则：
 \n一、玩法类型及承销
