@@ -164,7 +164,7 @@ public class AppGuideActivity extends BaseActivity {
                     String str = (String) o;
                     Zlog.ii("lxm getMySwitch:" + str);
 
-                    str = StringUtils.matchStr("index=(\\d{1})",str);
+                    str = StringUtils.matchStrString("index=(\\d{1})",str);
 
                     if (StringUtils.isNull(str)){
                         getStatus();

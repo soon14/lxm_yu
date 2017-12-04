@@ -89,95 +89,31 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <!-- &lt;!&ndash; Rich push 核心功能 since 2.0.6&ndash;&gt; -->
-        <!-- <activity -->
-        <!-- android:name="cn.jpush.android.ui.PopWinActivity" -->
-        <!-- android:theme="@style/MyDialogStyle" -->
-        <!-- android:exported="false"> -->
-        <!-- </activity> -->
+        <activity android:name=".ui.setting.SettingActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.main.ParseWebViewContentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.IntoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.main.DetailParseWebContentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.lottery_infor.NewLotteryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.lottery_infor.LotteryInforDetailActivity"
+            android:screenOrientation="portrait"/>
 
-
-        <!-- &lt;!&ndash; Required SDK核心功能&ndash;&gt; -->
-        <!-- <activity -->
-        <!-- android:name="cn.jpush.android.ui.PushActivity" -->
-        <!-- android:configChanges="orientation|keyboardHidden" -->
-        <!-- android:theme="@android:style/Theme.NoTitleBar" -->
-        <!-- android:exported="false"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="cn.jpush.android.ui.PushActivity" /> -->
-        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
-        <!-- <category android:name="com.lxm.ss.kuaisan" /> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
-
-
-        <!-- &lt;!&ndash; Required SDK 核心功能&ndash;&gt; -->
-        <!-- &lt;!&ndash; 可配置android:process参数将PushService放在其他进程中 &ndash;&gt; -->
-        <!-- <service -->
-        <!-- android:name="cn.jpush.android.service.PushService" -->
-        <!-- android:process=":mult" -->
-        <!-- android:exported="false"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="cn.jpush.android.intent.REGISTER" /> -->
-        <!-- <action android:name="cn.jpush.android.intent.REPORT" /> -->
-        <!-- <action android:name="cn.jpush.android.intent.PushService" /> -->
-        <!-- <action android:name="cn.jpush.android.intent.PUSH_TIME" /> -->
-        <!-- </intent-filter> -->
-        <!-- </service> -->
-        <!-- &lt;!&ndash; since 3.0.9 Required SDK 核心功能&ndash;&gt; -->
-        <!-- <provider -->
-        <!-- android:authorities="com.lxm.ss.kuaisan.DataProvider" -->
-        <!-- android:name="cn.jpush.android.service.DataProvider" -->
-        <!-- android:exported="false" -->
-        <!-- /> -->
-
-
-        <!-- &lt;!&ndash; since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 &ndash;&gt; -->
-        <!-- &lt;!&ndash; 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 &ndash;&gt; -->
-        <!-- <service -->
-        <!-- android:name="cn.jpush.android.service.DaemonService" -->
-        <!-- android:enabled="true" -->
-        <!-- android:exported="true"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="cn.jpush.android.intent.DaemonService" /> -->
-        <!-- <category android:name="com.lxm.ss.kuaisan" /> -->
-        <!-- </intent-filter> -->
-
-
-        <!-- </service> -->
-        <!-- &lt;!&ndash; since 3.1.0 Required SDK 核心功能&ndash;&gt; -->
-        <!-- <provider -->
-        <!-- android:authorities="com.lxm.ss.kuaisan.DownloadProvider" -->
-        <!-- android:name="cn.jpush.android.service.DownloadProvider" -->
-        <!-- android:exported="true" -->
-        <!-- /> -->
-        <!-- &lt;!&ndash; Required SDK核心功能&ndash;&gt; -->
-        <!-- <receiver -->
-        <!-- android:name="cn.jpush.android.service.PushReceiver" -->
-        <!-- android:enabled="true" -->
-        <!-- android:exported="false"> -->
-        <!-- <intent-filter android:priority="1000"> -->
-        <!-- <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />   &lt;!&ndash;Required  显示通知栏 &ndash;&gt; -->
-        <!-- <category android:name="com.lxm.ss.kuaisan" /> -->
-        <!-- </intent-filter> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.USER_PRESENT" /> -->
-        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
-        <!-- </intent-filter> -->
-        <!-- &lt;!&ndash; Optional &ndash;&gt; -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.PACKAGE_ADDED" /> -->
-        <!-- <action android:name="android.intent.action.PACKAGE_REMOVED" /> -->
-
-
-        <!-- <data android:scheme="package" /> -->
-        <!-- </intent-filter> -->
-        <!-- </receiver> -->
-
-
-        <!-- &lt;!&ndash; Required SDK核心功能&ndash;&gt; -->
-        <!-- <receiver android:name="cn.jpush.android.service.AlarmReceiver" android:exported="false"/> -->
-
+        <activity
+            android:name=".ui.trailer_infor.TrailerListActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.trailer_infor.TrailerInforListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.information.InformationListActivity"
+            android:screenOrientation="portrait"/>
 
         <!-- User defined.  For test only  用户自定义的广播接收器 -->
         <receiver
@@ -206,27 +142,7 @@
         <!-- <meta-data android:name="JPUSH_PKGNAME" android:value="com.lxm.ss.kuaisan" /> -->
         <!-- <meta-data android:name="JPUSH_CHANNEL" android:value="${APP_CHANNEL}" tools:replace="android:value"/> -->
         <!-- <meta-data android:name="JPUSH_APPKEY" android:value="e1711a0a561816785d298b2a" tools:replace="android:value"/> &lt;!&ndash;  </>值来自开发者平台取得的AppKey&ndash;&gt; -->
-        <activity android:name=".ui.setting.SettingActivity" />
-        <activity
-            android:name=".ui.main.ParseWebViewContentActivity"
-            android:label="@string/title_activity_parse_web_view_content"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.main.IntoActivity"
-            android:label="@string/title_activity_into"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.main.DetailParseWebContentActivity"
-            android:label="@string/title_activity_detail_parse_web_content"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.lottery_infor.NewLotteryActivity"
-            android:label="@string/title_activity_new_lottery"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.lottery_infor.LotteryInforDetailActivity"
-            android:label="@string/title_activity_lottery_infor_detail"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>

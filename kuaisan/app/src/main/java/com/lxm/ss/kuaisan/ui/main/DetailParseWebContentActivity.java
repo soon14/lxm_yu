@@ -137,9 +137,9 @@ public class DetailParseWebContentActivity extends BaseActivity {
                 String regStr = screenReg.getRegStr();
                 String replace = StringUtils.isNull(screenReg.getReplace()) == true ? "":screenReg.getReplace();
                 if (screen){
-                    htmlString = StringUtils.matchScreenStr(regStr,htmlString,replace);
+                    htmlString = StringUtils.matchReplace(regStr,htmlString,replace);
                 }else {
-                    htmlString = StringUtils.matchStr(regStr,htmlString);
+                    htmlString = StringUtils.matchStrString(regStr,htmlString);
                 }
             }
             return htmlString ;
@@ -150,11 +150,11 @@ public class DetailParseWebContentActivity extends BaseActivity {
 
             String regMatch3 = "<[^>]*>";
 
-            htmlString =   StringUtils.matchScreenStr(reg1,htmlString);
+            htmlString =   StringUtils.matchReplace(reg1,htmlString);
 
-            String result1 =   StringUtils.matchStr(regMatch2,htmlString);
+            String result1 =   StringUtils.matchStrString(regMatch2,htmlString);
 
-            result1 =   StringUtils.matchScreenStr(regMatch3,result1,"\n");
+            result1 =   StringUtils.matchReplace(regMatch3,result1,"\n");
             Zlog.ii("lxm parserHtml:1" + result1);
             return  result1 ;
         }
