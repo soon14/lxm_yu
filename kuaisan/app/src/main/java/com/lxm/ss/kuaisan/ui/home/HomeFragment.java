@@ -17,6 +17,7 @@ import com.lxm.ss.kuaisan.http.OkHttpRequestListener;
 import com.lxm.ss.kuaisan.ui.lottery_infor.NewLotteryActivity;
 import com.lxm.ss.kuaisan.ui.main.DetailContentActivity;
 import com.lxm.ss.kuaisan.ui.setting.SettingActivity;
+import com.lxm.ss.kuaisan.ui.trailer_infor.TrailerListActivity;
 import com.lxm.ss.kuaisan.widget.AutoRoll;
 import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
 
@@ -109,47 +110,11 @@ public class HomeFragment extends BaseFragment {
 //                    IntoActivity.launchActivity(getActivity(),"http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
                     break;
                 case R.id.ly02:
-                    String url = "http://cai.163.com/article/17/1123/11/D3U29IUO000597U8.html" ;
-
-                    MyOkHttp.getInstance().getHtml(url ,new OkHttpRequestListener() {
-                        @Override
-                        public void onSucceed(Object o) {
-                            super.onSucceed(o);
-
-                            if (o != null) {
-                                String str = (String) o;
-                                Zlog.ii("lxm parserHtml:" + str);
-                                String reg1 = "\\s*|\t|\r|\n";
-                                String regMatch2 = "<[^>]*>";
-                                String regMatch3 = "<title>(.*?)</title>|<divclass=\"seolinksseolinks-top\"></div>(.*?)<divclass=\"seolinksseolinks-bottom\"></div>";
-                                str =   StringUtils.matchScreenStr(reg1,str);
-                                Zlog.ii("lxm parserHtml:1" + str);
-
-                                String result1 =   StringUtils.matchStr(regMatch3,str);
-                                Zlog.ii("lxm parserHtml:11" + str);
-
-                                Zlog.ii("lxm parserHtml:2" + result1 + "  " );
-
-                                result1 =   StringUtils.matchScreenStr(regMatch2,result1,"\n");
-                                Zlog.ii("lxm parserHtml:2" + result1 + "  " );
-                                DetailContentActivity.launchActivity(getActivity(),result1);
-
-
-                            }else {
-                            }
-                        }
-
-                        @Override
-                        public void onFailed(int code, String body, String message) {
-                            super.onFailed(code, body, message);
-                        }
-                    });
-//                    enterLocalWebView("http://cai.163.com/article/17/1123/11/D3U29IUO000597U8.html",getResources().getString(R.string.content_01));
+                    TrailerListActivity.launchActivity(getActivity());
                     break;
                 case R.id.ly03:
 
                     NewLotteryActivity.launchActivity(getActivity());
-//                    enterLocalWebView("http://caipiao.163.com/award/",getResources().getString(R.string.content_02));
                     break;
                 case R.id.ly04:
                     ToastUtils.show(getActivity(),"敬请期待");
