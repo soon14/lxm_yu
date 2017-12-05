@@ -7,8 +7,8 @@ android {
         applicationId "com.lxm.ss.kuaisan"
         minSdkVersion 18
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 101
+        versionName "1.1"
 
         ndk {
             //选择要添加的对应cpu类型的.so库。
@@ -39,7 +39,7 @@ android {
 
         //线上的包
         online_baidu {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release", APP_VERSION: "1.0", APP_CHANNEL: "google play"]
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release", APP_VERSION: "1.1", APP_CHANNEL: "google play"]
 
             buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
 

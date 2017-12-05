@@ -1,7 +1,13 @@
 package com.lxm.ss.kuaisan.ui.splash;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -35,6 +41,14 @@ public class SplashActivity extends BaseActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);//remove notification bar  即全屏
         setContentView(R.layout.activity_splash);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (!Settings.canDrawOverlays(SplashActivity.this)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent,10);
+            }
+        }
         closeSelf();
     }
 
@@ -45,6 +59,7 @@ public class SplashActivity extends BaseActivity {
                 if (mPreferenceUtils.getBooleanValue("is_first_install", true)) {
                     mPreferenceUtils.setBooleanValue("is_first_install", false);
                     AppGuideActivity.launchActivity(SplashActivity.this);
+                    finish();
                 } else {
                     getMySwitch();
                 }
@@ -89,6 +104,18 @@ public class SplashActivity extends BaseActivity {
                 getStatus();
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 10) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (!Settings.canDrawOverlays(this)) {
+                    // SYSTEM_ALERT_WINDOW permission not granted...
+
+                }
+            }
+        }
     }
 
     private void getStatus() {

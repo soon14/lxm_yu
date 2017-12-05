@@ -45,6 +45,7 @@ public class SplashActivity extends BaseActivity {
                 if (mPreferenceUtils.getBooleanValue("is_first_install", true)) {
                     mPreferenceUtils.setBooleanValue("is_first_install", false);
                     AppGuideActivity.launchActivity(SplashActivity.this);
+                    finish();
                 } else {
                     getMySwitch();
                 }
@@ -67,9 +68,10 @@ public class SplashActivity extends BaseActivity {
                         getStatus();
                     }else {
                         try {
-                            String[] split = str.trim().split("=");
-                            Zlog.ii("lxm getMySwitch:2 " +str + " " );
-                            if (split.length == 2 && split[1].equals("1")) {
+//                            String[] split = str.trim().split("=");
+//                            Zlog.ii("lxm getMySwitch:2 " +str + " " );
+                            Zlog.ii("lxm getMySwitch:" + str);
+                            if ( str.equals("1")) {
                                 enterMain();
                             }else {
                                 getStatus();

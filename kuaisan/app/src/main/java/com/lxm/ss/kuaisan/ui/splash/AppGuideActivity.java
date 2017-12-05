@@ -31,7 +31,7 @@ public class AppGuideActivity extends BaseActivity {
     private ViewPager mViewPager ;
     private  TextView mTxtNext ;
 
-    private int maxlen = 2;
+    private int maxlen = 3;
     private ImageView[] ivs;
     /**
      * 引导页图片容器
@@ -72,10 +72,13 @@ public class AppGuideActivity extends BaseActivity {
             ivs[i].setLayoutParams(new LinearLayout.LayoutParams(mWidth, mHeight));
             switch (i) {
                 case 0:
-                    ivs[i].setImageResource(R.mipmap.page_01);
+                    ivs[i].setImageResource(R.mipmap.page01_new);
                     break;
                 case 1:
-                    ivs[i].setImageResource(R.mipmap.page02);
+                    ivs[i].setImageResource(R.mipmap.page02_new);
+                    break;
+                case 2:
+                    ivs[i].setImageResource(R.mipmap.page03_new);
                     break;
                 default:
                     break;
@@ -160,10 +163,11 @@ public class AppGuideActivity extends BaseActivity {
                     if (StringUtils.isNull(str)){
                         getStatus();
                     }else {
+                        Zlog.ii("lxm getMySwitch:" + str);
                         try {
-                            String[] split = str.trim().split("=");
-                            Zlog.ii("lxm getMySwitch:2 " +str + " " );
-                            if (split.length == 2 && split[1].equals("1")) {
+//                            String[] split = str.trim().split("=");
+//                            Zlog.ii("lxm getMySwitch:2 " +str + " " );
+                            if (str.equals("1")) {
                                 enterMain();
                             }else {
                                 getStatus();

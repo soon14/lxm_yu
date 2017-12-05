@@ -11,7 +11,7 @@
         android:id="@+id/ctl_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title1="预告信息"
+        app:title1="常见问题"
         app:titleleft1="@string/fa_icon_back" />
 
     <View

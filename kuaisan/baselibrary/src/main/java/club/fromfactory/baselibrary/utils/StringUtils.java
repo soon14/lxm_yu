@@ -221,6 +221,40 @@ public class StringUtils {
         }
         return  stringList ;
     }
+    public static String matchStrString(String matcher, String str,boolean isCompainReg) {
+        StringBuilder stringBuilder = new StringBuilder();
+        Pattern p = Pattern.compile(matcher);
+        Matcher m = p.matcher(str);
+
+        while(m.find()) {
+            Log.i("lxm matchStr:" ,"lxm matchStr:"+m.group(0) +" "+ m.group(1));
+            if (isCompainReg) {
+                stringBuilder.append(m.group(0));
+            }else {
+
+                stringBuilder.append(StringUtils.isNotBlank(m.group(1)) == true ? m.group(1) :m.group(0));
+            }
+
+        }
+
+        return stringBuilder.toString();
+    }
+
+
+    public static List<String> matchStrList(String matcher, String str,boolean isCompainReg) {
+        List<String> stringList = new ArrayList<>();
+        Pattern p = Pattern.compile(matcher);
+        Matcher m = p.matcher(str);
+        while (m.find()){
+            Log.i("lxm matchStr:" ,"lxm matchStrList:"+m.group(0) +" "+ m.group(1));
+            if (isCompainReg) {
+                stringList.add(m.group(0));
+            }else {
+                stringList.add(StringUtils.isNotBlank(m.group(1)) == true ? m.group(1) :m.group(0));
+            }
+        }
+        return  stringList ;
+    }
     public static String matchReplace(String matcher, String str) {
         Pattern p = Pattern.compile(matcher);
         Matcher m = p.matcher(str);

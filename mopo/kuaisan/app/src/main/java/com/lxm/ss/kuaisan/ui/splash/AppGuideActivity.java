@@ -31,7 +31,7 @@ public class AppGuideActivity extends BaseActivity {
     private ViewPager mViewPager ;
     private  TextView mTxtNext ;
 
-    private int maxlen = 2;
+    private int maxlen = 3;
     private ImageView[] ivs;
     /**
      * 引导页图片容器
@@ -72,10 +72,13 @@ public class AppGuideActivity extends BaseActivity {
             ivs[i].setLayoutParams(new LinearLayout.LayoutParams(mWidth, mHeight));
             switch (i) {
                 case 0:
-                    ivs[i].setImageResource(R.mipmap.page01);
+                    ivs[i].setImageResource(R.mipmap.page01_new);
                     break;
                 case 1:
-                    ivs[i].setImageResource(R.mipmap.page02);
+                    ivs[i].setImageResource(R.mipmap.page02_new);
+                    break;
+                case 2:
+                    ivs[i].setImageResource(R.mipmap.page03_new);
                     break;
                 default:
                     break;
