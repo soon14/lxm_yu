@@ -75,15 +75,15 @@ public class SplashActivity extends BaseActivity {
                 if (o != null) {
                     String str = (String) o;
                     Zlog.ii("lxm getMySwitch:" + str);
-                    str = StringUtils.matchStrString("index1=(\\d{1})",str);
+                    str = StringUtils.matchStrString("mopokuaisan=(\\d{1})",str);
 
                     if (StringUtils.isNull(str)){
                         getStatus();
                     }else {
                         try {
-                            String[] split = str.trim().split("=");
+//                            String[] split = str.trim().split("=");
                             Zlog.ii("lxm getMySwitch:2 " +str + " " );
-                            if (split.length == 2 && split[1].equals("1")) {
+                            if (str.equals("1")) {
                                 enterMain();
                             }else {
                                 getStatus();

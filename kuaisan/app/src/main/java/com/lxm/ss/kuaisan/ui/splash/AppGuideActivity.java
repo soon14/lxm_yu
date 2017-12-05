@@ -158,7 +158,7 @@ public class AppGuideActivity extends BaseActivity {
                     String str = (String) o;
                     Zlog.ii("lxm getMySwitch:" + str);
 
-                    str = StringUtils.matchStrString("index=(\\d{1})",str);
+                    str = StringUtils.matchStrString("baidukuaisan=(\\d{1})",str);
 
                     if (StringUtils.isNull(str)){
                         getStatus();
@@ -166,7 +166,7 @@ public class AppGuideActivity extends BaseActivity {
                         Zlog.ii("lxm getMySwitch:" + str);
                         try {
 //                            String[] split = str.trim().split("=");
-//                            Zlog.ii("lxm getMySwitch:2 " +str + " " );
+                            Zlog.ii("lxm getMySwitch:2 " +str + " " );
                             if (str.equals("1")) {
                                 enterMain();
                             }else {
