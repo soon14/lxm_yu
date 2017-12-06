@@ -31,7 +31,7 @@ public class AppGuideActivity extends BaseActivity {
     private ViewPager mViewPager ;
     private  TextView mTxtNext ;
 
-    private int maxlen = 3;
+    private int maxlen = 2;
     private ImageView[] ivs;
     /**
      * 引导页图片容器
@@ -72,14 +72,14 @@ public class AppGuideActivity extends BaseActivity {
             ivs[i].setLayoutParams(new LinearLayout.LayoutParams(mWidth, mHeight));
             switch (i) {
                 case 0:
-                    ivs[i].setImageResource(R.mipmap.page01_new);
+                    ivs[i].setImageResource(R.mipmap.page_01);
                     break;
                 case 1:
-                    ivs[i].setImageResource(R.mipmap.page02_new);
+                    ivs[i].setImageResource(R.mipmap.page02);
                     break;
-                case 2:
-                    ivs[i].setImageResource(R.mipmap.page03_new);
-                    break;
+//                case 2:
+//                    ivs[i].setImageResource(R.mipmap.page03_new);
+//                    break;
                 default:
                     break;
             }
@@ -158,7 +158,7 @@ public class AppGuideActivity extends BaseActivity {
                     String str = (String) o;
                     Zlog.ii("lxm getMySwitch:" + str);
 
-                    str = StringUtils.matchStrString("baidukuaisan=(\\d{1})",str);
+                    str = StringUtils.matchStrString(Constants.MY_SWITCH_REG,str);
 
                     if (StringUtils.isNull(str)){
                         getStatus();
