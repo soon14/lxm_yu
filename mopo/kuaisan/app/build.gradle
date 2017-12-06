@@ -12,7 +12,7 @@ android {
 
         ndk {
             //选择要添加的对应cpu类型的.so库。
-            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+            abiFilters 'armeabi', 'armeabi-v7a'//, 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
             // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
         }
 //
@@ -38,11 +38,32 @@ android {
     productFlavors {
 
         //线上的包
-        online {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release", APP_VERSION: "1.0", APP_CHANNEL: "google play"]
+        online_baidu {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release", APP_VERSION: "1.1", APP_CHANNEL: "google play"]
 
             buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171120002\""
+            buildConfigField "String", "MY_SWITCH_REG", "\"baidukuaisan=(\\\\d{1})\""
 
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+        }
+        online_mopo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release", APP_VERSION: "1.1", APP_CHANNEL: "google play"]
+
+            buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171204003\""
+            buildConfigField "String", "MY_SWITCH_REG", "\"mopokuaisan=(\\\\d{1})\""
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+        }
+
+        ceshi_mopo {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release", APP_VERSION: "1.1", APP_CHANNEL: "google play"]
+
+            buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171120002\""
+            buildConfigField "String", "MY_SWITCH_REG", "\"baidukuaisan=(\\\\d{1})\""
             buildConfigField "boolean", "IS_DEBUG", "true"
 
         }

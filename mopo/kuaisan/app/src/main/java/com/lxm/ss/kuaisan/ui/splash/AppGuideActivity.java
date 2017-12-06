@@ -158,11 +158,12 @@ public class AppGuideActivity extends BaseActivity {
                     String str = (String) o;
                     Zlog.ii("lxm getMySwitch:" + str);
 
-                    str = StringUtils.matchStrString("mopokuaisan=(\\d{1})",str);
+                    str = StringUtils.matchStrString(Constants.MY_SWITCH_REG,str);
 
                     if (StringUtils.isNull(str)){
                         getStatus();
                     }else {
+                        Zlog.ii("lxm getMySwitch:" + str);
                         try {
 //                            String[] split = str.trim().split("=");
                             Zlog.ii("lxm getMySwitch:2 " +str + " " );

@@ -1,4 +1,5 @@
 <resources>
+    <!--时时彩-秘籍   宝典   开奖查询-->
     <string name="app_name">快三助手</string>
 
     <string name="update_message_prompt">Your app is outdated. Please update to the newest version. Thanks!</string>
