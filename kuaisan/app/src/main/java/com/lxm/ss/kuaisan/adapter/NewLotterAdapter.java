@@ -54,7 +54,7 @@ public class NewLotterAdapter extends ArrayAdapter<LotterInfor> {
         String periodName = item.getPeriodName();
 
         viewHolder.txt_type.setText(gameEn);
-        viewHolder.txt_time.setText(periodName +"  " +awardTime);
+        viewHolder.txt_time.setText("第"+periodName +"期 " +awardTime);
         viewHolder.txt_content.setText(awardNo);
         return convertView;
     }

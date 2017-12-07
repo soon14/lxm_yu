@@ -7,8 +7,8 @@ android {
         applicationId "com.lxm.ss.shishicai"
         minSdkVersion 18
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 101
+        versionName "1.1"
 
         ndk {
             //选择要添加的对应cpu类型的.so库。
@@ -58,7 +58,7 @@ android {
 
         }
         online_mopo_shishicai {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release", APP_VERSION: "1.0", APP_CHANNEL: "google play"]
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release", APP_VERSION: "1.1", APP_CHANNEL: "google play"]
 
             buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
             buildConfigField "String", "APPSHOW_ADID", "\"yj20171206001\""

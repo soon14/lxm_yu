@@ -67,12 +67,14 @@ public class NewLotteryActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 LotterInfor lotterInfor = lotterInforList.get(position);
-                ToastUtils.show(NewLotteryActivity.this,""+position);
+//                ToastUtils.show(NewLotteryActivity.this,""+position);
 
                 String url = "http://api.caipiao.163.com/queryAwardByCond.html?mobileType=android&ver=4.30&channel=qq_tab1&apiVer=1.1&apiLevel=27";
 
                 String reg1 = "\\s*|\t|\r|\n";
                 String regMatch3 = "<[^>]*>";
+
+                String regMatch5 = "\n\n";
 
                 List<ScreenReg> screenRegList = new ArrayList<>() ;
 
@@ -83,6 +85,11 @@ public class NewLotteryActivity extends BaseActivity {
                 screenRegList.add(screenReg);
                 screenReg  = new ScreenReg();
                 screenReg.setRegStr(regMatch3);
+                screenReg.setReplace("\n");
+                screenReg.setScreen(true);
+                screenRegList.add(screenReg);
+                screenReg  = new ScreenReg();
+                screenReg.setRegStr(regMatch5);
                 screenReg.setReplace("\n");
                 screenReg.setScreen(true);
                 screenRegList.add(screenReg);
