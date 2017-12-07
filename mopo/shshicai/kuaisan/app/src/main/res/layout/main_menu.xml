@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="主页"
+            android:text="时时彩"
             android:textColor="@color/menu_txt_color"
             android:textSize="12sp" />
     </LinearLayout>
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="类别"
+            android:text="秘籍类别"
             android:textColor="@color/menu_txt_color"
             android:textSize="12sp" />
     </LinearLayout>
@@ -113,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="更多"
+            android:text="常见问题"
             android:textColor="@color/menu_txt_color"
             android:textSize="12sp" />
     </LinearLayout>

@@ -9,6 +9,7 @@ import com.lxm.ss.shishicai.R;
 import com.lxm.ss.shishicai.base.BaseActivity;
 import com.lxm.ss.shishicai.base.BaseFragment;
 import com.lxm.ss.shishicai.ui.home.HomeFragment;
+import com.lxm.ss.shishicai.ui.more.CommenProblemsActivity;
 import com.lxm.ss.shishicai.ui.more.MoreFragment;
 import com.lxm.ss.shishicai.ui.style.StyleFragment;
 import com.lxm.ss.shishicai.widget.ClubMenuLinearLayout;
@@ -56,7 +57,9 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void clickMenuThree() {
-                changeTab(ClubMenuLinearLayout.MENU_TYPE_THREE);
+//                changeTab(ClubMenuLinearLayout.MENU_TYPE_THREE);
+                CommenProblemsActivity.launchActivity(MainActivity.this);
+
             }
         });
         FragmentTransaction transaction = getFragmentManager().beginTransaction();

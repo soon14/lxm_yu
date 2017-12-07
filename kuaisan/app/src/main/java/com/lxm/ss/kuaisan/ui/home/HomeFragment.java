@@ -2,6 +2,7 @@ package com.lxm.ss.kuaisan.ui.home;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -120,12 +121,24 @@ public class HomeFragment extends BaseFragment {
                 case R.id.fragment_auto_roll_pic:
                     int position = arl_arl.getCurrentIndex();
 
+                    String url = "http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx";
                     if (position ==  0) {
-                        enterLocalWebView("http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx","","http://img.rrzcp8.cn/rrzcp/product/images/duobao/activity/1510900370200_1.jpg");
+                        url = "" ;
+//                        enterLocalWebView("http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx","","http://img.rrzcp8.cn/rrzcp/product/images/duobao/activity/1510900370200_1.jpg");
                     }else if (position ==1 ){
-                        enterLocalWebView("http://fa.163.com/optg/activity/model/hhtDrawNewActivity/page/index?from=tgncpapppc","","https://pimg1.126.net/silver/product/fams/banner/819f29ca-d4fa-4859-a4f8-9b29fae9be42.jpg");
+                        url = "http://m3.ttacp8.com/activity/group/viewPage.html?activityId=tgn13" ;
+//                        http://m3.ttacp8.com/activity/group/viewPage.html?activityId=tgn13
+//                        enterLocalWebView("http://fa.163.com/optg/activity/model/hhtDrawNewActivity/page/index?from=tgncpapppc","","https://pimg1.126.net/silver/product/fams/banner/819f29ca-d4fa-4859-a4f8-9b29fae9be42.jpg");
                     }else if (position == 2){
-                        enterLocalWebView("http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx","","http://img.rrzcp8.cn/rrzcp/product/images/duobao/activity/1510900370200_1.jpg");
+                        url = "http://www.qipaigame1.com/zjh_download.html?from=tgnzjhcp5" ;
+//                        http://www.qipaigame1.com/zjh_download.html?from=tgnzjhcp5
+//                        enterLocalWebView("http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx","","http://img.rrzcp8.cn/rrzcp/product/images/duobao/activity/1510900370200_1.jpg");
+                    }
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse(url)));
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
 
                     break;
@@ -161,8 +174,8 @@ public class HomeFragment extends BaseFragment {
         List<Drawable> imgUrls = new ArrayList<>();
 
         imgUrls.add(getResources().getDrawable(R.mipmap.ads_1));
-        imgUrls.add(getResources().getDrawable(R.mipmap.ads_2));
-        imgUrls.add(getResources().getDrawable(R.mipmap.ads_3));
+        imgUrls.add(getResources().getDrawable(R.mipmap.ads_4));
+        imgUrls.add(getResources().getDrawable(R.mipmap.ads_5));
         arl_arl.initData(imgUrls);
         arl_arl.setOnClickListener(mOnClickListener);
     }

@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <com.lxm.ss.shishicai.widget.CustomTitleLinearlayout
         android:id="@+id/ctl_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title1="快三助手"
+        app:title1="时时彩-秘籍"
         app:titleleft1="@string/fa_icon_back" />
 
     <View
@@ -63,13 +62,15 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:paddingBottom="@dimen/layout_magin_bottom"
-                    android:paddingTop="@dimen/layout_magin_top" >
+                    android:paddingTop="@dimen/layout_magin_top"
+                    android:visibility="gone">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="centerCrop"
-                        android:src="@mipmap/main_discover_busopport" />
+                        android:src="@mipmap/main_discover_busopport"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -79,7 +80,10 @@
                         android:textColor="@color/gray_03"
                         android:textSize="@dimen/txt_size_middle" />
                 </LinearLayout>
-
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#e2e2e2"></View>
                 <LinearLayout
                     android:id="@+id/ly04"
                     android:layout_width="match_parent"
@@ -96,7 +100,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="centerCrop"
-                        android:src="@mipmap/main_activity_apply" />
+                        android:src="@mipmap/main_activity_apply"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -106,7 +111,10 @@
                         android:textColor="@color/gray_03"
                         android:textSize="@dimen/txt_size_middle" />
                 </LinearLayout>
-
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#e2e2e2"></View>
                 <LinearLayout
                     android:id="@+id/ly02"
                     android:layout_width="match_parent"
@@ -122,7 +130,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="centerCrop"
-                        android:src="@mipmap/main_local_busarea" />
+                        android:src="@mipmap/main_local_busarea"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -133,6 +142,10 @@
                         android:textSize="@dimen/txt_size_middle" />
                 </LinearLayout>
 
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#e2e2e2"></View>
 
                 <LinearLayout
                     android:id="@+id/ly03"
@@ -149,7 +162,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="centerCrop"
-                        android:src="@mipmap/main_activity_preshow" />
+                        android:src="@mipmap/main_activity_preshow"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:layout_width="wrap_content"
