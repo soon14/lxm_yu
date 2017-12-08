@@ -33,6 +33,7 @@ public class BettingAnalysisListActivity extends BaseActivity {
 
     private String mUrl = "http://bbs.360.cn/forum.php?mod=forumdisplay&fid=246&filter=typeid&typeid=546" ;
 
+
     private ListView mListView ;
     private CustomTitleLinearlayout mCtlTitle ;
 
@@ -53,13 +54,15 @@ public class BettingAnalysisListActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_betting_analysis_list);
         initView();
+
+        initData();
     }
 
 
     private void initView() {
 
         mCtlTitle = (CustomTitleLinearlayout) findViewById(R.id.ctl_title);
-        mListView = (ListView) findViewById(R.id.new_lottery_lv);
+        mListView = (ListView) findViewById(R.id.betting_analysis_list_lv);
 
         bettingAnalysisInfors = new ArrayList<>();
         bettingAnalysisAdapter = new BettingAnalysisAdapter(BettingAnalysisListActivity.this, -1 ,bettingAnalysisInfors);

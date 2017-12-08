@@ -28,6 +28,8 @@ public class StringUtils {
     public static final String PHONE = "^(\\+?\\d{2}-?)?(1[0-9])\\d{9}$" ;
     public static final String PHONE_INDIA = "^\\d{10}$" ;
 
+    public static final String REMOVE_TAG = "<[^>]*>";
+
     public static boolean isNotBlank(String str) {
         return str != null && str.length() > 0 && (!str.trim().equalsIgnoreCase("null")) ;
     }

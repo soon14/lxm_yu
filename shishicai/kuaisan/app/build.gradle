@@ -19,7 +19,7 @@ android {
         manifestPlaceholders = [
                 JPUSH_PKGNAME: applicationId,
                 //百度 ：de1e9f48aa1f14adccf084e9  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
-                JPUSH_APPKEY : "15162c1eececd0697b1f2c96", //JPush上注册的包名对应的appkey.15162c1eececd0697b1f2c96  e1711a0a561816785d298b2a
+                JPUSH_APPKEY : "c5f5ea3d6be9d7144029c2e1", //JPush上注册的包名对应的appkey.15162c1eececd0697b1f2c96  e1711a0a561816785d298b2a
                 JPUSH_CHANNEL: "google", //暂时填写默认值即可.
         ]
     }

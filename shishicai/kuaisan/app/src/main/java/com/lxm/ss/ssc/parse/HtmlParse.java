@@ -131,7 +131,7 @@ public class HtmlParse {
         String str1 = StringUtils.matchReplace(reg, htmlUrl, "");
 
         Zlog.ii("lxm parseBettingInfor:2  " + str1);
-        String reg1 = "<thclass=\"new\">(.*?)<tdclass=\"icn\"></td><thclass=\"new\">" ;
+        String reg1 = "<thclass=\"new\">(.*?)<tdclass=\"icn\"></td>" ;
 
         List<String> stringList = StringUtils.matchStrList(reg1, str1);
 
@@ -140,21 +140,36 @@ public class HtmlParse {
             Zlog.ii("lxm parseBettingInfor:3 " + stringList.get(i));
             BettingAnalysisInfor bettingAnalysisInfor = new BettingAnalysisInfor();
 
-
             String str = stringList.get(i);
-            String regUrl = "href=\"(.*?)\"" ;
-            String strUrl  = StringUtils.matchStrString(regUrl,str);
-            String regImg = "src=\"(.*?)\"" ;
+
+            String regUrlAndTitle = "class=\"sxst\"(.*?)<divclass=\"info\">" ;
+            String urlAndTitle = StringUtils.matchStrString(regUrlAndTitle,str);
+
+            String regUrl = "<ahref=\"(.*?)\"target=\"_blank" ;
+            String strUrl  = StringUtils.matchStrString(regUrl,urlAndTitle);
+            String regTitle = "target=\"_blank\" class=\"s xst\">(.*?)</a>" ;
+            String strTitle = StringUtils.matchStrString(regTitle,urlAndTitle);
+
+
+            String regImg = "class=\"avatar\"><imgsrc=\"(.*?)\"/></a>" ;
             String strImg = StringUtils.matchStrString(regImg,str);
-            String regTitle = "<h2>(.*?)</h2>" ;
-            String strTitle = StringUtils.matchStrString(regTitle,str);
-            String regContent = "<p>(.*?)</p>" ;
+
+
+
+            String regContent = "<span>(.*?)</span>" ;
             String strContent = StringUtils.matchStrString(regContent,str);
-            String regTime = "<i class=\"mark2\">(.*?)</i>" ;
-            String strTime = StringUtils.matchStrString(regTime,str);
 
+            strContent = StringUtils.matchReplace(StringUtils.REMOVE_TAG,strContent,"");
+//            String regTime = "<i class=\"mark2\">(.*?)</i>" ;
+//            String strTime = StringUtils.matchStrString(regTime,str);
 
+            bettingAnalysisInfor.setImgUrl(strImg);
+            bettingAnalysisInfor.setTitle(strTitle);
+            bettingAnalysisInfor.setUrl(strUrl);
+            bettingAnalysisInfor.setContent(strContent);
             Zlog.ii("lxm parseBettingInfor:4  " +bettingAnalysisInfor);
+
+            bettingAnalysisInforList.add(bettingAnalysisInfor);
 
         }
         return bettingAnalysisInforList ;
