@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.lxm.ss.sscai.widget.CustomTitleLinearlayout
+        android:id="@+id/ctl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title1="更多介绍"
+        app:titleleft1="@string/fa_icon_back" />
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ctl_title"
+        android:background="#e2e2e2"></View>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/border">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/fragment_more_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/bottomimg"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ctl_title"
+                android:background="#e2e2e2"></View>
+
+
+            <TextView
+                android:id="@+id/fragment_more_link00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_magin_top_max"
+                android:padding="@dimen/layout_padding"
+                android:textColor="@color/btn_red"
+                android:textSize="@dimen/txt_size_max"
+                android:text="常见问题介绍"
+                />
+            <TextView
+                android:id="@+id/fragment_more_link01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_magin_top_max"
+                android:padding="@dimen/layout_padding"
+                android:text="七星彩玩法介绍_七星彩玩法规则_体育彩票7星彩玩法技巧"
+                />
+            <TextView
+                android:id="@+id/fragment_more_link02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/layout_padding"
+                android:text="大乐透玩法介绍【最新】_中国体育彩票超级大乐透玩法规则"
+                />
+            <TextView
+                android:id="@+id/fragment_more_link03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/layout_padding"
+                android:text="竞彩篮球怎么玩_篮彩玩法规则介绍【最新】"
+                />
+            <TextView
+                android:id="@+id/fragment_more_link04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/layout_padding"
+                android:text="胜负彩玩法_胜负彩怎么玩_胜负彩奖金预测"
+                />
+            <TextView
+                android:id="@+id/fragment_more_link05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/layout_padding"
+                android:text="足球单场怎么玩_足球单场奖金计算_胜平负奖金"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

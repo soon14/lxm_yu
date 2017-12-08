@@ -142,10 +142,12 @@ public class InformationDetailListActivity extends BaseActivity {
 
     private void getData() {
 
+        showBaseProgressDialog();
         MyOkHttp.getInstance().getHtml(mUrl, new OkHttpRequestListener() {
             @Override
             public void onSucceed(Object o) {
                 super.onSucceed(o);
+                hideBaseProgressDialog();
                 if (o != null) {
                     String str   = (String) o;
                     parseHtmlString(str);
@@ -159,6 +161,7 @@ public class InformationDetailListActivity extends BaseActivity {
             @Override
             public void onFailed(int code, String body, String message) {
                 super.onFailed(code, body, message);
+                hideBaseProgressDialog();
                 ToastUtils.show(InformationDetailListActivity.this,"数据获取失败，请重试");
             }
         });

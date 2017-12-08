@@ -84,11 +84,12 @@ public class HtmlParse {
 
         List<TrailerInfor> trailerInforList = new ArrayList<>();
         Zlog.ii("lxm parseTrailerInfor:1  " + htmlUrl);
-        String reg = "\\\\s*|\\t|\\r|\\n" ;
+//        String reg = "\\\\s*|\\t|\\r|\\n" ;
+        String reg = "\\s*|\t|\r|\n";
         String str1 = StringUtils.matchReplace(reg, htmlUrl, "");
 
         Zlog.ii("lxm parseTrailerInfor:2  " + str1);
-        String reg1 = "<li class=\"newsItem\">(.*?)</li><li class=\"newsItem\">" ;
+        String reg1 = "<liclass=\"newsItem\">(.*?)</li><liclass=\"newsItem\">" ;
 
         List<String> stringList = StringUtils.matchStrList(reg1, str1);
 
