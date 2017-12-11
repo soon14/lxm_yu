@@ -9,7 +9,9 @@ import com.lxm.ss.shishicai.R;
 import com.lxm.ss.shishicai.base.BaseActivity;
 import com.lxm.ss.shishicai.base.BaseFragment;
 import com.lxm.ss.shishicai.ui.home.HomeFragment;
+import com.lxm.ss.shishicai.ui.lottery_infor.LottertInforFragment;
 import com.lxm.ss.shishicai.ui.more.CommenProblemsActivity;
+import com.lxm.ss.shishicai.ui.more.CommentProblemsFragment;
 import com.lxm.ss.shishicai.ui.more.MoreFragment;
 import com.lxm.ss.shishicai.ui.style.StyleFragment;
 import com.lxm.ss.shishicai.widget.ClubMenuLinearLayout;
@@ -20,8 +22,11 @@ public class MainActivity extends BaseActivity {
     private ClubMenuLinearLayout mMenuLayout ;
 
     private HomeFragment mHomeFragment ;
-    private StyleFragment mStyleFragment ;
-    private MoreFragment mMoreFragment ;
+//    private StyleFragment mStyleFragment ;
+//    private MoreFragment mMoreFragment ;
+
+    private LottertInforFragment mLottertInforFragment ;
+    private CommentProblemsFragment mCommentProblemsFragment ;
 
     public static void launchActivity(Context context){
         Intent intent = new Intent(context,MainActivity.class);
@@ -61,17 +66,30 @@ public class MainActivity extends BaseActivity {
                 CommenProblemsActivity.launchActivity(MainActivity.this);
 
             }
+
+            @Override
+            public void clickMenuFour() {
+                changeTab(ClubMenuLinearLayout.MENU_TYPE_FOUR);
+            }
+
+            @Override
+            public void clickMenuFive() {
+                changeTab(ClubMenuLinearLayout.MENU_TYPE_FIVE);
+            }
         });
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         mHomeFragment = new HomeFragment();
 //        mCartFragment = new WebFragment();
-        mStyleFragment = new StyleFragment();
-        mMoreFragment = new MoreFragment();
+//        mStyleFragment = new StyleFragment();
+//        mMoreFragment = new MoreFragment();
 
-        transaction.add(R.id.main_container, mMoreFragment);
-        transaction.hide(mMoreFragment);
-        transaction.add(R.id.main_container, mStyleFragment);
-        transaction.hide(mStyleFragment);
+        mLottertInforFragment = new LottertInforFragment();
+        mCommentProblemsFragment = new CommentProblemsFragment();
+
+        transaction.add(R.id.main_container, mLottertInforFragment);
+        transaction.hide(mLottertInforFragment);
+        transaction.add(R.id.main_container, mCommentProblemsFragment);
+        transaction.hide(mCommentProblemsFragment);
         transaction.add(R.id.main_container, mHomeFragment);
         transaction.commitAllowingStateLoss();
 
@@ -90,25 +108,24 @@ public class MainActivity extends BaseActivity {
 
         switch (tab) {
             case ClubMenuLinearLayout.MENU_TYPE_ONE:
-                hideFragment(transaction,mMoreFragment);
-                hideFragment(transaction,mStyleFragment);
+                hideFragment(transaction,mCommentProblemsFragment);
+                hideFragment(transaction,mLottertInforFragment);
                 showFragment(transaction,mHomeFragment,null);
                 break;
-            case ClubMenuLinearLayout.MENU_TYPE_TWO:
+            case ClubMenuLinearLayout.MENU_TYPE_FOUR:
                 hideFragment(transaction,mHomeFragment);
-                hideFragment(transaction,mMoreFragment);
-                showFragment(transaction,mStyleFragment,null);
+                hideFragment(transaction,mCommentProblemsFragment);
+                showFragment(transaction,mLottertInforFragment,null);
 
                 break;
-            case ClubMenuLinearLayout.MENU_TYPE_THREE:
+            case ClubMenuLinearLayout.MENU_TYPE_FIVE:
 
                 hideFragment(transaction,mHomeFragment);
-                hideFragment(transaction,mStyleFragment);
-                showFragment(transaction,mMoreFragment,bundle);
+                hideFragment(transaction,mLottertInforFragment);
+                showFragment(transaction,mCommentProblemsFragment,bundle);
 
                 break;
         }
-
 
         transaction.commitAllowingStateLoss();
     }

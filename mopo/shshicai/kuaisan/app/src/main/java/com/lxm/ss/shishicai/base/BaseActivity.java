@@ -1,6 +1,7 @@
 package com.lxm.ss.shishicai.base;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -8,8 +9,10 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.lxm.ss.shishicai.FFApplication;
+import com.lxm.ss.shishicai.R;
 import com.lxm.ss.shishicai.Utils.DialogUtils;
 import com.lxm.ss.shishicai.Utils.PreferenceUtils;
+import com.lxm.ss.shishicai.Utils.ToastUtils;
 import com.lxm.ss.shishicai.Utils.Utils;
 import com.lxm.ss.shishicai.Utils.Zlog;
 
@@ -58,6 +61,18 @@ public abstract class BaseActivity extends FragmentActivity {
         Zlog.ii("lxm showSoftInputWindow:" +getWindow().getAttributes().softInputMode ); //无效的参数
         if (getWindow().getAttributes().softInputMode == WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN) {
             showOrHideSoftInputWindow();
+        }
+    }
+
+    public void score() {
+        try{
+            Uri uri = Uri.parse("market://details?id="+getPackageName());
+            Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }catch(Exception e){
+            ToastUtils.show(BaseActivity.this, "打开应用市场失败");
+            e.printStackTrace();
         }
     }
 

@@ -2,6 +2,7 @@ package com.lxm.ss.shishicai.ui.home;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.lxm.ss.shishicai.R;
 import com.lxm.ss.shishicai.base.BaseFragment;
+import com.lxm.ss.shishicai.ui.betting.BettingAnalysisListActivity;
 import com.lxm.ss.shishicai.ui.lottery_infor.NewLotteryActivity;
 import com.lxm.ss.shishicai.ui.setting.SettingActivity;
 import com.lxm.ss.shishicai.ui.trailer_infor.information.InformationListActivity;
@@ -65,6 +67,7 @@ public class HomeFragment extends BaseFragment {
         vv.findViewById(R.id.ly02).setOnClickListener(mOnClickListener);
         vv.findViewById(R.id.ly03).setOnClickListener(mOnClickListener);
         vv.findViewById(R.id.ly04).setOnClickListener(mOnClickListener);
+        vv.findViewById(R.id.ly05).setOnClickListener(mOnClickListener);
 
         vv.findViewById(R.id.fragment_home_ly_style_01).setOnClickListener(mOnClickListener);
         vv.findViewById(R.id.fragment_home_ly_style_02).setOnClickListener(mOnClickListener);
@@ -72,8 +75,10 @@ public class HomeFragment extends BaseFragment {
         vv.findViewById(R.id.fragment_home_ly_style_04).setOnClickListener(mOnClickListener);
         vv.findViewById(R.id.fragment_home_ly_style_05).setOnClickListener(mOnClickListener);
         vv.findViewById(R.id.fragment_home_ly_style_06).setOnClickListener(mOnClickListener);
-    }
 
+        vv.findViewById(R.id.fragment_home_ly_style_ssc01).setOnClickListener(mOnClickListener);
+        vv.findViewById(R.id.fragment_home_ly_style_ssc02).setOnClickListener(mOnClickListener);
+    }
 
     private void initData() {
 
@@ -98,10 +103,17 @@ public class HomeFragment extends BaseFragment {
         public void onClick(View v) {
 
             switch (v.getId()){
+                case R.id.fragment_home_ly_style_ssc01:
+                    enterIntoActivity("http://caipiao.163.com/help/10/0811/14/6DQGMQC400754IIO.html");
+                    break;
+                case R.id.fragment_home_ly_style_ssc02:
+                    enterIntoActivity("http://caipiao.163.com/help/11/0419/10/720DMA4H00754IHE.html");
+                    break;
 
                 case R.id.ly01:
 //                    DetailContentActivity.launchActivity(getActivity(),getResources().getString(R.string.kuaosan_rules));
-                    enterIntoActivity("http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
+//                    enterIntoActivity("http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
+                    enterIntoActivity("http://caipiao.163.com/help/10/0811/14/6DQGMQC400754IIO.html");
 //                    IntoActivity.launchActivity(getActivity(),"http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
                     break;
                 case R.id.ly02:
@@ -115,15 +127,30 @@ public class HomeFragment extends BaseFragment {
                     InformationListActivity.launchActivity(getActivity());
 //                    ToastUtils.show(getActivity(),"敬请期待");
                     break;
+                case R.id.ly05:
+                    BettingAnalysisListActivity.launchActivity(getActivity());
+                    break;
                 case R.id.fragment_auto_roll_pic:
                     int position = arl_arl.getCurrentIndex();
 
+                    String url = "http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx";
                     if (position ==  0) {
-                        enterLocalWebView("http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx","","http://img.rrzcp8.cn/rrzcp/product/images/duobao/activity/1510900370200_1.jpg");
+                        url = "" ;
+//                        enterLocalWebView("http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx","","http://img.rrzcp8.cn/rrzcp/product/images/duobao/activity/1510900370200_1.jpg");
                     }else if (position ==1 ){
-                        enterLocalWebView("http://fa.163.com/optg/activity/model/hhtDrawNewActivity/page/index?from=tgncpapppc","","https://pimg1.126.net/silver/product/fams/banner/819f29ca-d4fa-4859-a4f8-9b29fae9be42.jpg");
+                        url = "http://m3.ttacp8.com/activity/group/viewPage.html?activityId=tgn13" ;
+//                        http://m3.ttacp8.com/activity/group/viewPage.html?activityId=tgn13
+//                        enterLocalWebView("http://fa.163.com/optg/activity/model/hhtDrawNewActivity/page/index?from=tgncpapppc","","https://pimg1.126.net/silver/product/fams/banner/819f29ca-d4fa-4859-a4f8-9b29fae9be42.jpg");
                     }else if (position == 2){
-                        enterLocalWebView("http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx","","http://img.rrzcp8.cn/rrzcp/product/images/duobao/activity/1510900370200_1.jpg");
+                        url = "http://www.qipaigame1.com/zjh_download.html?from=tgnzjhcp5" ;
+//                        http://www.qipaigame1.com/zjh_download.html?from=tgnzjhcp5
+//                        enterLocalWebView("http://m3.rrzcp8.com/activity/group/viewPage.html?activityId=tgnbx","","http://img.rrzcp8.cn/rrzcp/product/images/duobao/activity/1510900370200_1.jpg");
+                    }
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse(url)));
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
 
                     break;
@@ -159,8 +186,8 @@ public class HomeFragment extends BaseFragment {
         List<Drawable> imgUrls = new ArrayList<>();
 
         imgUrls.add(getResources().getDrawable(R.mipmap.ads_1));
-        imgUrls.add(getResources().getDrawable(R.mipmap.ads_2));
-        imgUrls.add(getResources().getDrawable(R.mipmap.ads_3));
+        imgUrls.add(getResources().getDrawable(R.mipmap.ads_4));
+        imgUrls.add(getResources().getDrawable(R.mipmap.ads_5));
         arl_arl.initData(imgUrls);
         arl_arl.setOnClickListener(mOnClickListener);
     }

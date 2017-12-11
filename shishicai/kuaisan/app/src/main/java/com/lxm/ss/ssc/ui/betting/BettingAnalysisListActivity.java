@@ -75,9 +75,11 @@ public class BettingAnalysisListActivity extends BaseActivity {
                 String url = bettingAnalysisInfor.getUrl();
                 String title = bettingAnalysisInfor.getTitle();
 
-
                 String reg1 = "\\s*|\t|\r|\n";
+
+                String reg2 = "<divclass=\"t_fsz1\">(.*?)</div>" ;
                 String regMatch3 = "<[^>]*>";
+                String regMatch4 = "\n\n";
 
                 List<ScreenReg> screenRegList = new ArrayList<>() ;
 
@@ -86,8 +88,21 @@ public class BettingAnalysisListActivity extends BaseActivity {
                 screenReg.setReplace("");
                 screenReg.setScreen(true);
                 screenRegList.add(screenReg);
+
+                screenReg  = new ScreenReg();
+                screenReg.setRegStr(reg2);
+                screenReg.setReplace("");
+                screenReg.setScreen(false);
+                screenRegList.add(screenReg);
+
                 screenReg  = new ScreenReg();
                 screenReg.setRegStr(regMatch3);
+                screenReg.setReplace("\n");
+                screenReg.setScreen(true);
+                screenRegList.add(screenReg);
+
+                screenReg  = new ScreenReg();
+                screenReg.setRegStr(regMatch4);
                 screenReg.setReplace("\n");
                 screenReg.setScreen(true);
                 screenRegList.add(screenReg);

@@ -3,6 +3,7 @@ package com.lxm.ss.shishicai.parse;
 import com.lxm.ss.shishicai.Utils.Zlog;
 import com.lxm.ss.shishicai.http.MyOkHttp;
 import com.lxm.ss.shishicai.http.OkHttpRequestListener;
+import com.lxm.ss.shishicai.ui.betting.model.BettingAnalysisInfor;
 import com.lxm.ss.shishicai.ui.trailer_infor.pre.TrailerInfor;
 
 import org.jsoup.Jsoup;
@@ -121,6 +122,61 @@ public class HtmlParse {
         }
         return trailerInforList ;
 
+    }
+
+    public static List<BettingAnalysisInfor> parseBettingInfor(String htmlUrl) {
+
+        List<BettingAnalysisInfor> bettingAnalysisInforList = new ArrayList<>();
+        Zlog.ii("lxm parseBettingInfor:1  " + htmlUrl);
+        String reg = "\\s*|\t|\\r|\n" ;
+
+        String str1 = StringUtils.matchReplace(reg, htmlUrl, "");
+
+        Zlog.ii("lxm parseBettingInfor:2  " + str1);
+        String reg1 = "<thclass=\"new\">(.*?)<tdclass=\"icn\"></td>" ;
+
+        List<String> stringList = StringUtils.matchStrList(reg1, str1);
+
+        for (int i = 0; i < stringList.size(); i++) {
+
+            Zlog.ii("lxm parseBettingInfor:3 " + stringList.get(i));
+            BettingAnalysisInfor bettingAnalysisInfor = new BettingAnalysisInfor();
+
+            String str = stringList.get(i);
+
+            String regUrlAndTitle = "class=\"sxst\"(.*?)<divclass=\"info\">" ;
+            String urlAndTitle = StringUtils.matchStrString(regUrlAndTitle,str);
+            Zlog.ii("lxm parseBettingInfor :5 " + urlAndTitle);
+
+            String regUrl = "<ahref=\"(.*?)\"target=\"_blank" ;
+            String strUrl  = StringUtils.matchStrString(regUrl,urlAndTitle);
+            Zlog.ii("lxm parseBettingInfor :6 " + strUrl);
+            String regTitle = "target=\"_blank\"class=\"sxst\">(.*?)</a>" ;
+            String strTitle = StringUtils.matchStrString(regTitle,urlAndTitle);
+            Zlog.ii("lxm parseBettingInfor :7 " + strTitle);
+
+            String regImg = "class=\"avatar\"><imgsrc=\"(.*?)\"/></a>" ;
+            String strImg = StringUtils.matchStrString(regImg,str);
+
+
+
+            String regContent = "<span>(.*?)</span>" ;
+            String strContent = StringUtils.matchStrString(regContent,str);
+
+            strContent = StringUtils.matchReplace(StringUtils.REMOVE_TAG,strContent,"");
+//            String regTime = "<i class=\"mark2\">(.*?)</i>" ;
+//            String strTime = StringUtils.matchStrString(regTime,str);
+
+            bettingAnalysisInfor.setImgUrl(strImg);
+            bettingAnalysisInfor.setTitle(strTitle);
+            bettingAnalysisInfor.setUrl(strUrl);
+            bettingAnalysisInfor.setContent(strContent);
+            Zlog.ii("lxm parseBettingInfor:4  " +bettingAnalysisInfor);
+
+            bettingAnalysisInforList.add(bettingAnalysisInfor);
+
+        }
+        return bettingAnalysisInforList ;
     }
 
 

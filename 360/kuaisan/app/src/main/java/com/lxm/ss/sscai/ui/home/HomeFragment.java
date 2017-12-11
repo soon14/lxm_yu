@@ -73,6 +73,9 @@ public class HomeFragment extends BaseFragment {
         vv.findViewById(R.id.fragment_home_ly_style_04).setOnClickListener(mOnClickListener);
         vv.findViewById(R.id.fragment_home_ly_style_05).setOnClickListener(mOnClickListener);
         vv.findViewById(R.id.fragment_home_ly_style_06).setOnClickListener(mOnClickListener);
+
+        vv.findViewById(R.id.fragment_home_ly_style_ssc01).setOnClickListener(mOnClickListener);
+        vv.findViewById(R.id.fragment_home_ly_style_ssc02).setOnClickListener(mOnClickListener);
     }
 
 
@@ -99,10 +102,17 @@ public class HomeFragment extends BaseFragment {
         public void onClick(View v) {
 
             switch (v.getId()){
+                case R.id.fragment_home_ly_style_ssc01:
+                    enterIntoActivity("http://caipiao.163.com/help/10/0811/14/6DQGMQC400754IIO.html");
+                    break;
+                case R.id.fragment_home_ly_style_ssc02:
+                    enterIntoActivity("http://caipiao.163.com/help/11/0419/10/720DMA4H00754IHE.html");
+                    break;
 
                 case R.id.ly01:
 //                    DetailContentActivity.launchActivity(getActivity(),getResources().getString(R.string.kuaosan_rules));
-                    enterIntoActivity("http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
+//                    enterIntoActivity("http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
+                    enterIntoActivity("http://caipiao.163.com/help/10/0811/14/6DQGMQC400754IIO.html");
 //                    IntoActivity.launchActivity(getActivity(),"http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
                     break;
                 case R.id.ly02:

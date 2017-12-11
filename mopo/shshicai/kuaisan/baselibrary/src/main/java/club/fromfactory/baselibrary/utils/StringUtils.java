@@ -28,6 +28,8 @@ public class StringUtils {
     public static final String PHONE = "^(\\+?\\d{2}-?)?(1[0-9])\\d{9}$" ;
     public static final String PHONE_INDIA = "^\\d{10}$" ;
 
+    public static final String REMOVE_TAG = "<[^>]*>";
+
     public static boolean isNotBlank(String str) {
         return str != null && str.length() > 0 && (!str.trim().equalsIgnoreCase("null")) ;
     }
@@ -218,6 +220,40 @@ public class StringUtils {
         while (m.find()){
             Log.i("lxm matchStr:" ,"lxm matchStrList:"+m.group(0) +" "+ m.group(1));
             stringList.add(StringUtils.isNotBlank(m.group(1)) == true ? m.group(1) :m.group(0));
+        }
+        return  stringList ;
+    }
+    public static String matchStrString(String matcher, String str,boolean isCompainReg) {
+        StringBuilder stringBuilder = new StringBuilder();
+        Pattern p = Pattern.compile(matcher);
+        Matcher m = p.matcher(str);
+
+        while(m.find()) {
+            Log.i("lxm matchStr:" ,"lxm matchStr:"+m.group(0) +" "+ m.group(1));
+            if (isCompainReg) {
+                stringBuilder.append(m.group(0));
+            }else {
+
+                stringBuilder.append(StringUtils.isNotBlank(m.group(1)) == true ? m.group(1) :m.group(0));
+            }
+
+        }
+
+        return stringBuilder.toString();
+    }
+
+
+    public static List<String> matchStrList(String matcher, String str,boolean isCompainReg) {
+        List<String> stringList = new ArrayList<>();
+        Pattern p = Pattern.compile(matcher);
+        Matcher m = p.matcher(str);
+        while (m.find()){
+            Log.i("lxm matchStr:" ,"lxm matchStrList:"+m.group(0) +" "+ m.group(1));
+            if (isCompainReg) {
+                stringList.add(m.group(0));
+            }else {
+                stringList.add(StringUtils.isNotBlank(m.group(1)) == true ? m.group(1) :m.group(0));
+            }
         }
         return  stringList ;
     }

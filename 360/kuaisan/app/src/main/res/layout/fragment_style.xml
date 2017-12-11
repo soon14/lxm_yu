@@ -29,41 +29,41 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            ><!-- 轮播图 -->
+            android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/ly_01"
-                    android:layout_width="match_parent"
+
+            <LinearLayout
+                android:id="@+id/ly_ks01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/layout_magin_bottom"
+                android:paddingTop="@dimen/layout_magin_top">
+
+                <ImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/layout_background_click"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingBottom="@dimen/layout_magin_bottom"
-                    android:paddingTop="@dimen/layout_magin_top" >
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/main_discover_busopport" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/layout_magin_left"
-                        android:scaleType="centerCrop"
-                        android:src="@mipmap/main_discover_busopport" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:layout_weight="1"
+                    android:text="湖北快三"
+                    android:textColor="@color/gray_03"
+                    android:textSize="@dimen/txt_size" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/layout_magin_left"
-                        android:layout_weight="1"
-                        android:text="双色球"
-                        android:textColor="@color/gray_03"
-                        android:textSize="@dimen/txt_size" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginRight="10dp"
-                        android:src="@mipmap/click_more"/>
-                </LinearLayout>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/click_more" />
+            </LinearLayout>
 
 
             <View
@@ -72,6 +72,208 @@
                 android:layout_below="@id/ctl_title"
                 android:background="#e2e2e2"></View>
 
+
+            <LinearLayout
+                android:id="@+id/ly_ks02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/layout_magin_bottom"
+                android:paddingTop="@dimen/layout_magin_top">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/main_discover_busopport" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:layout_weight="1"
+                    android:text="江苏快三"
+                    android:textColor="@color/gray_03"
+                    android:textSize="@dimen/txt_size" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/click_more" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ctl_title"
+                android:background="#e2e2e2"></View>
+
+
+            <LinearLayout
+                android:id="@+id/ly_ks03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/layout_magin_bottom"
+                android:paddingTop="@dimen/layout_magin_top">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/main_discover_busopport" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:layout_weight="1"
+                    android:text="易快三"
+                    android:textColor="@color/gray_03"
+                    android:textSize="@dimen/txt_size" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/click_more" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ctl_title"
+                android:background="#e2e2e2"></View>
+
+
+            <LinearLayout
+                android:id="@+id/ly_ks04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/layout_magin_bottom"
+                android:paddingTop="@dimen/layout_magin_top">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/main_discover_busopport" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:layout_weight="1"
+                    android:text="新快三"
+                    android:textColor="@color/gray_03"
+                    android:textSize="@dimen/txt_size" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/click_more" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ctl_title"
+                android:background="#e2e2e2"></View>
+
+            <LinearLayout
+                android:id="@+id/ly_ks05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/layout_magin_bottom"
+                android:paddingTop="@dimen/layout_magin_top">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/main_discover_busopport" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:layout_weight="1"
+                    android:text="好运快三"
+                    android:textColor="@color/gray_03"
+                    android:textSize="@dimen/txt_size" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/click_more" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ctl_title"
+                android:background="#e2e2e2"></View>
+
+            <LinearLayout
+                android:id="@+id/ly_01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/layout_magin_bottom"
+                android:paddingTop="@dimen/layout_magin_top">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/main_discover_busopport" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:layout_weight="1"
+                    android:text="双色球"
+                    android:textColor="@color/gray_03"
+                    android:textSize="@dimen/txt_size" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/click_more" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ctl_title"
+                android:background="#e2e2e2"></View>
 
 
             <LinearLayout
@@ -82,7 +284,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -104,7 +306,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -123,7 +325,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -145,7 +347,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -164,7 +366,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -186,7 +388,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -205,7 +407,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -227,7 +429,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -238,7 +440,6 @@
                 android:background="#e2e2e2"></View>
 
 
-
             <LinearLayout
                 android:id="@+id/ly_06"
                 android:layout_width="match_parent"
@@ -247,7 +448,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -269,7 +470,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -288,7 +489,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -310,7 +511,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -329,7 +530,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -351,7 +552,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -370,7 +571,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -392,7 +593,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -411,7 +612,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -433,7 +634,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -452,7 +653,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -474,7 +675,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -485,7 +686,6 @@
                 android:background="#e2e2e2"></View>
 
 
-
             <LinearLayout
                 android:id="@+id/ly_12"
                 android:layout_width="match_parent"
@@ -494,7 +694,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -516,7 +716,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -535,7 +735,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -557,7 +757,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -576,7 +776,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -598,7 +798,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -617,7 +817,8 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -639,7 +840,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -658,7 +859,8 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -680,7 +882,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -689,6 +891,7 @@
                 android:layout_height="1dp"
                 android:layout_below="@id/ctl_title"
                 android:background="#e2e2e2"></View>
+
             <LinearLayout
                 android:id="@+id/ly_17"
                 android:layout_width="match_parent"
@@ -697,7 +900,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -719,7 +922,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -737,7 +940,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -759,7 +962,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -768,6 +971,7 @@
                 android:layout_height="1dp"
                 android:layout_below="@id/ctl_title"
                 android:background="#e2e2e2"></View>
+
             <LinearLayout
                 android:id="@+id/ly_19"
                 android:layout_width="match_parent"
@@ -776,7 +980,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -798,7 +1002,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -807,6 +1011,7 @@
                 android:layout_height="1dp"
                 android:layout_below="@id/ctl_title"
                 android:background="#e2e2e2"></View>
+
             <LinearLayout
                 android:id="@+id/ly_20"
                 android:layout_width="match_parent"
@@ -815,7 +1020,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingBottom="@dimen/layout_magin_bottom"
-                android:paddingTop="@dimen/layout_magin_top" >
+                android:paddingTop="@dimen/layout_magin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -837,7 +1042,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
-                    android:src="@mipmap/click_more"/>
+                    android:src="@mipmap/click_more" />
             </LinearLayout>
 
 
@@ -847,13 +1052,9 @@
                 android:layout_below="@id/ctl_title"
                 android:background="#e2e2e2"></View>
 
-            </LinearLayout>
+        </LinearLayout>
 
     </ScrollView>
-
-
-
-
 
 
 </RelativeLayout>

@@ -26,6 +26,8 @@ public class ClubMenuLinearLayout extends LinearLayout {
     public static final int MENU_TYPE_ONE = 1000;
     public static final int MENU_TYPE_TWO = 1001;
     public static final int MENU_TYPE_THREE = 1002;
+    public static final int MENU_TYPE_FOUR = 1003;
+    public static final int MENU_TYPE_FIVE = 1004;
 
     @BindView(R.id.menu_one_img)
     ImageView menuOneImg;
@@ -51,6 +53,22 @@ public class ClubMenuLinearLayout extends LinearLayout {
     TextView menuThreeTxt;
     @BindView(R.id.menu_three)
     LinearLayout menuThree;
+    @BindView(R.id.menu_four_img)
+    ImageView menuFourImg;
+    @BindView(R.id.menu_four_container)
+    LinearLayout menuFourContainer;
+    @BindView(R.id.menu_four_txt)
+    TextView menuFourTxt;
+    @BindView(R.id.menu_four)
+    LinearLayout menuFour;
+    @BindView(R.id.menu_five_img)
+    ImageView menuFiveImg;
+    @BindView(R.id.menu_five_container)
+    LinearLayout menuFiveContainer;
+    @BindView(R.id.menu_five_txt)
+    TextView menuFiveTxt;
+    @BindView(R.id.menu_five)
+    LinearLayout menuFive;
 
 
     private BadgeTextView cartBadge;
@@ -102,17 +120,23 @@ public class ClubMenuLinearLayout extends LinearLayout {
         this.mClubMenuListener = mClubMenuListener;
     }
 
-    @OnClick({R.id.menu_one, R.id.menu_two, R.id.menu_three})
+    @OnClick({R.id.menu_one, R.id.menu_two, R.id.menu_three,R.id.menu_four, R.id.menu_five})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.menu_one:
-                if (mClubMenuListener !=null) mClubMenuListener.clickMenu0ne();
+                if (mClubMenuListener != null) mClubMenuListener.clickMenu0ne();
                 break;
             case R.id.menu_two:
-                if (mClubMenuListener !=null) mClubMenuListener.clickMenuTwo();
+                if (mClubMenuListener != null) mClubMenuListener.clickMenuTwo();
                 break;
             case R.id.menu_three:
-                if (mClubMenuListener !=null) mClubMenuListener.clickMenuThree();
+                if (mClubMenuListener != null) mClubMenuListener.clickMenuThree();
+                break;
+            case R.id.menu_four:
+                if (mClubMenuListener != null) mClubMenuListener.clickMenuFour();
+                break;
+            case R.id.menu_five:
+                if (mClubMenuListener != null) mClubMenuListener.clickMenuFive();
                 break;
         }
     }
@@ -123,10 +147,14 @@ public class ClubMenuLinearLayout extends LinearLayout {
         menuOneTxt.setSelected(false);
         menuTwoTxt.setSelected(false);
         menuThreeTxt.setSelected(false);
+        menuFourTxt.setSelected(false);
+        menuFiveTxt.setSelected(false);
 
         menuOneImg.setSelected(false);
         menuTwoImg.setSelected(false);
         menuThreeImg.setSelected(false);
+        menuFourImg.setSelected(false);
+        menuFiveImg.setSelected(false);
 
         switch (type) {
             case MENU_TYPE_ONE: {
@@ -154,6 +182,21 @@ public class ClubMenuLinearLayout extends LinearLayout {
                 menuThreeImg.setSelected(true);
             }
             break;
+            case MENU_TYPE_FOUR:
+                if (menuFourTxt.isSelected()) {
+                    return;
+                }
+                menuFourTxt.setSelected(true);
+                menuFourImg.setSelected(true);
+                break;
+
+            case MENU_TYPE_FIVE:
+                if (menuFiveTxt.isSelected()) {
+                    return;
+                }
+                menuFiveTxt.setSelected(true);
+                menuFiveImg.setSelected(true);
+                break;
             default:
                 break;
         }
@@ -218,11 +261,16 @@ public class ClubMenuLinearLayout extends LinearLayout {
         }
     }
 
+
     public interface ClubMenuListener {
 
         void clickMenu0ne();
+
         void clickMenuTwo();
+
         void clickMenuThree();
+        void clickMenuFour();
+        void clickMenuFive();
 
     }
 

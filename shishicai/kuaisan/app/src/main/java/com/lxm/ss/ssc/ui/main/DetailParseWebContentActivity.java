@@ -54,6 +54,9 @@ public class DetailParseWebContentActivity extends BaseActivity {
         if (StringUtils.isNull(url)) {
             return;
         }
+        if (StringUtils.isNotBlank(title) && title.length() > 5) {
+            title = title.substring(0,5)+"..." ;
+        }
         Zlog.ii("lxm initView: launchActivity  " + url);
         Intent intent = new Intent(context, DetailParseWebContentActivity.class);
         intent.putExtra(Constants.INTENT_URL, url);
@@ -91,11 +94,13 @@ public class DetailParseWebContentActivity extends BaseActivity {
     }
 
     private void getHtmlString() {
+        showBaseProgressDialog();
         MyOkHttp.getInstance().getHtml(mUrl ,new OkHttpRequestListener() {
             @Override
             public void onSucceed(Object o) {
                 super.onSucceed(o);
 
+                hideBaseProgressDialog();
                 if (o != null) {
                     String str = (String) o;
                     Zlog.ii("lxm parserHtml:" + str);
@@ -115,6 +120,7 @@ public class DetailParseWebContentActivity extends BaseActivity {
             @Override
             public void onFailed(int code, String body, String message) {
                 super.onFailed(code, body, message);
+                hideBaseProgressDialog();
             }
         });
 

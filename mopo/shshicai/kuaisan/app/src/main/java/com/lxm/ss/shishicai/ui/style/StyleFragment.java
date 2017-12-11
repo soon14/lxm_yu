@@ -62,6 +62,12 @@ public class StyleFragment extends BaseFragment {
         vv.findViewById(R.id.ly_19).setOnClickListener(mOnClickListener);
         vv.findViewById(R.id.ly_20).setOnClickListener(mOnClickListener);
 
+        vv.findViewById(R.id.ly_ks01).setOnClickListener(mOnClickListener);
+        vv.findViewById(R.id.ly_ks02).setOnClickListener(mOnClickListener);
+        vv.findViewById(R.id.ly_ks03).setOnClickListener(mOnClickListener);
+        vv.findViewById(R.id.ly_ks04).setOnClickListener(mOnClickListener);
+        vv.findViewById(R.id.ly_ks05).setOnClickListener(mOnClickListener);
+
     }
 
 
@@ -76,6 +82,23 @@ public class StyleFragment extends BaseFragment {
         public void onClick(View v) {
 
             switch (v.getId()){
+
+
+                case R.id.ly_ks01:
+                    enterIntoActivity("http://caipiao.163.com/help/14/0818/11/A3U6E00P00754IHE.html");
+                    break;
+                case R.id.ly_ks02:
+                    enterIntoActivity("http://caipiao.163.com/help/12/1123/15/8H0M5BDL00754IHE.html");
+                    break;
+                case R.id.ly_ks03:
+                    enterIntoActivity("http://caipiao.163.com/help/15/0104/10/AF41FV3O00754IHE.html");
+                    break;
+                case R.id.ly_ks04:
+                    enterIntoActivity("http://caipiao.163.com/help/13/0625/18/92818L4F00754IHE.html");
+                    break;
+                case R.id.ly_ks05:
+                    enterIntoActivity("http://caipiao.163.com/help/15/0202/15/AHF5PUCI00754IHE.html");
+                    break;
 
                 case R.id.ly_01:
 
@@ -100,7 +123,7 @@ public class StyleFragment extends BaseFragment {
                     break;
                 case R.id.ly_06:
                     enterIntoActivity("http://caipiao.163.com/help/10/0723/11/6C9BEBRJ00754IHK.html");
-                    enterLocalWebView("http://caipiao.163.com/order/qlc/#from=leftnav",getResources().getString(R.string.content_07),R.mipmap.aa_03);
+//                    enterLocalWebView("http://caipiao.163.com/order/qlc/#from=leftnav",getResources().getString(R.string.content_07),R.mipmap.aa_03);
                     break;
                 case R.id.ly_07:
                     enterIntoActivity("http://caipiao.163.com/help/10/0723/15/6C9NR01E00754IHL.html");

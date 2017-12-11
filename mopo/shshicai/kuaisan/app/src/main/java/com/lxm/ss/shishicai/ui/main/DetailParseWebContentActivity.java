@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.lxm.ss.shishicai.R;
+import com.lxm.ss.shishicai.Utils.ToastUtils;
 import com.lxm.ss.shishicai.Utils.Zlog;
 import com.lxm.ss.shishicai.base.BaseActivity;
 import com.lxm.ss.shishicai.constant.Constants;
@@ -91,11 +92,13 @@ public class DetailParseWebContentActivity extends BaseActivity {
     }
 
     private void getHtmlString() {
+        showBaseProgressDialog();
         MyOkHttp.getInstance().getHtml(mUrl ,new OkHttpRequestListener() {
             @Override
             public void onSucceed(Object o) {
                 super.onSucceed(o);
 
+                hideBaseProgressDialog();
                 if (o != null) {
                     String str = (String) o;
                     Zlog.ii("lxm parserHtml:" + str);
@@ -115,6 +118,8 @@ public class DetailParseWebContentActivity extends BaseActivity {
             @Override
             public void onFailed(int code, String body, String message) {
                 super.onFailed(code, body, message);
+                hideBaseProgressDialog();
+                ToastUtils.show(DetailParseWebContentActivity.this,"获取失败");
             }
         });
 

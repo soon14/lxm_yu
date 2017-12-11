@@ -144,12 +144,14 @@ public class HtmlParse {
 
             String regUrlAndTitle = "class=\"sxst\"(.*?)<divclass=\"info\">" ;
             String urlAndTitle = StringUtils.matchStrString(regUrlAndTitle,str);
+            Zlog.ii("lxm parseBettingInfor :5 " + urlAndTitle);
 
             String regUrl = "<ahref=\"(.*?)\"target=\"_blank" ;
             String strUrl  = StringUtils.matchStrString(regUrl,urlAndTitle);
-            String regTitle = "target=\"_blank\" class=\"s xst\">(.*?)</a>" ;
+            Zlog.ii("lxm parseBettingInfor :6 " + strUrl);
+            String regTitle = "target=\"_blank\"class=\"sxst\">(.*?)</a>" ;
             String strTitle = StringUtils.matchStrString(regTitle,urlAndTitle);
-
+            Zlog.ii("lxm parseBettingInfor :7 " + strTitle);
 
             String regImg = "class=\"avatar\"><imgsrc=\"(.*?)\"/></a>" ;
             String strImg = StringUtils.matchStrString(regImg,str);
@@ -174,6 +176,9 @@ public class HtmlParse {
         }
         return bettingAnalysisInforList ;
     }
+
+
+
 
 
 }

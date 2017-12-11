@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.lxm.ss.shishicai.Utils.DialogUtils;
 import com.lxm.ss.shishicai.Utils.Zlog;
 import com.lxm.ss.shishicai.ui.main.DetailWebViewActivity;
 import com.lxm.ss.shishicai.ui.main.IntoActivity;
@@ -19,11 +20,12 @@ import com.lxm.ss.shishicai.ui.main.ParseWebViewContentActivity;
  */
 
 public abstract class BaseFragment extends Fragment {
-
+    private CustomDialog mCustomDialog ;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Zlog.ii("lxm BaseFragment:onCreate");
+        mCustomDialog = DialogUtils.getInstance().getProgressDialog(getActivity());
     }
 
     @Nullable
@@ -45,6 +47,17 @@ public abstract class BaseFragment extends Fragment {
         if (!hidden) {
         }else {
 
+        }
+    }
+
+    public void showBaseProgressDialog() {
+        if (isAlive() && mCustomDialog != null) {
+            mCustomDialog.show();
+        }
+    }
+    public void hideBaseProgressDialog() {
+        if (mCustomDialog != null && mCustomDialog.isShowing()) {
+            mCustomDialog.dismiss();
         }
     }
 

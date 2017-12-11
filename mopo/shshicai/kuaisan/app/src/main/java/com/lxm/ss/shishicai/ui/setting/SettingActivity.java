@@ -44,6 +44,7 @@ public class SettingActivity extends BaseActivity {
         sw_04.setOnCheckedChangeListener(onCheckedChangeListener);
         findViewById(R.id.setting_01).setOnClickListener(mOnClickListener);
         findViewById(R.id.setting_02).setOnClickListener(mOnClickListener);
+        findViewById(R.id.setting_05).setOnClickListener(mOnClickListener);
 
     }
 
@@ -92,6 +93,9 @@ public class SettingActivity extends BaseActivity {
                 case R.id.setting_01:
                     StorageUtils.clearAllCache(SettingActivity.this);
                     ToastUtils.show(SettingActivity.this,"清理成功");
+                    break;
+                case R.id.setting_05:
+                    score();
                     break;
                 default:
                     break;
