@@ -117,6 +117,33 @@
                     android:src="@mipmap/click_more"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/setting_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/layout_magin_bottom"
+                android:paddingTop="@dimen/layout_magin_top"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:layout_weight="1"
+                    android:text="评分"
+                    android:textColor="@color/gray_03"
+                    android:textSize="@dimen/txt_size" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/click_more"/>
+            </LinearLayout>
+            <LinearLayout
                 android:id="@+id/setting_02"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

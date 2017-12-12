@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lxm.ss.shishicai.ui.main.MainActivity">
+    tools:context="com.lxm.ss.kuaisan.ui.main.MainActivity">
 
     <FrameLayout
         android:id="@+id/main_tab_bar"
@@ -14,7 +14,7 @@
         android:layout_gravity="bottom"
         android:background="@drawable/borders_top">
 
-        <com.lxm.ss.shishicai.widget.ClubMenuLinearLayout
+        <com.lxm.ss.kuaisan.widget.ClubMenuLinearLayout
             android:id="@+id/main_tab_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

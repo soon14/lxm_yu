@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.lxm.ss.shishicai.ui.main.ParseWebViewContentActivity"
+    tools:context="com.lxm.ss.kuaisan.ui.main.ParseWebViewContentActivity"
     tools:showIn="@layout/activity_parse_web_view_content">
 
 
-    <com.lxm.ss.shishicai.widget.CustomTitleLinearlayout
+    <com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout
         android:id="@+id/ctl_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

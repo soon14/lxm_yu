@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
 
-    <com.lxm.ss.sscai.widget.CustomTitleLinearlayout
+    <com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout
         android:id="@+id/ctl_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,11 +41,11 @@
                 android:orientation="vertical"
                 android:visibility="visible" >
 
-                <com.lxm.ss.sscai.widget.AutoRoll
+                <com.lxm.ss.kuaisan.widget.AutoRoll
                     android:id="@+id/fragment_auto_roll_pic"
                     android:layout_width="match_parent"
                     android:layout_height="100dp" >
-                </com.lxm.ss.sscai.widget.AutoRoll>
+                </com.lxm.ss.kuaisan.widget.AutoRoll>
             </FrameLayout>
 
             <LinearLayout
@@ -143,7 +143,8 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:paddingBottom="@dimen/layout_magin_bottom"
-                    android:paddingTop="@dimen/layout_magin_top"  >
+                    android:paddingTop="@dimen/layout_magin_top"
+                    android:visibility="visible">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -155,7 +156,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/layout_magin_top_min"
-                        android:text="开奖"
+                        android:text="投注技巧"
                         android:textColor="@color/gray_03"
                         android:textSize="@dimen/txt_size_middle" />
                 </LinearLayout>

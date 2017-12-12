@@ -4,11 +4,8 @@ android {
     compileSdkVersion 25
     buildToolsVersion '25.0.3'
     defaultConfig {
-        applicationId "com.lxm.ss.sscai"
         minSdkVersion 18
         targetSdkVersion 25
-        versionCode 100
-        versionName "1.0"
 
         ndk {
             //选择要添加的对应cpu类型的.so库。
@@ -35,15 +32,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    可能加快 Android Studio 编译的办法 2. 在 app 级别下 build.gradle 里 加上
+    dexOptions {
+        incremental true
+    }
+
 
     productFlavors {
 
         //线上的包
         online_baidu {
+            applicationId "com.lxm.ss.kuaisan"
+            versionCode 100
+            versionName "1.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                                    APP_VERSION: "1.0",
-                                    APP_CHANNEL: "baidu",
-                                    JPUSH_PKGNAME: "com.lxm.ss.kuaisan",
+
+                                    JPUSH_PKGNAME: applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
                                     JPUSH_APPKEY : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
                                     JPUSH_CHANNEL: "baidu", //暂时填写默认值即可.
@@ -57,29 +61,13 @@ android {
             buildConfigField "boolean", "IS_DEBUG", "true"
 
         }
-        online_360 {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                                    APP_VERSION: "1.0",
-                                    APP_CHANNEL: "360",
-                                    JPUSH_PKGNAME: "com.lxm.ss.sscai",
-                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
-                                    JPUSH_APPKEY : "de1e9f48aa1f14adccf084e9", //JPush上注册的包名对应的appkey.
-                                    JPUSH_CHANNEL: "baidu", //暂时填写默认值即可.
-            ]
-
-            buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
-            buildConfigField "String", "APPSHOW_ADID", "\"yj20171208008\""
-
-            buildConfigField "String", "MY_SWITCH_REG", "\"360shishicai=(\\\\d{1})\""
-
-            buildConfigField "boolean", "IS_DEBUG", "true"
-
-        }
         online_mopo {
+            applicationId "com.lxm.ss.kuaisan"
+            versionCode 101
+            versionName "1.1"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                                    APP_VERSION: "1.0",
-                                    APP_CHANNEL: "baidu",
-                                    JPUSH_PKGNAME: "com.lxm.ss.kuaisan",
+
+                                    JPUSH_PKGNAME: applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
                                     JPUSH_APPKEY : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
                                     JPUSH_CHANNEL: "mopo", //暂时填写默认值即可.
@@ -92,25 +80,45 @@ android {
             buildConfigField "boolean", "IS_DEBUG", "true"
 
         }
-
-        ceshi_mopo {
+        online_mopo_shishicai {
+            applicationId "com.lxm.ss.shishicai"
+            versionCode 101
+            versionName "1.1"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                                    APP_VERSION: "1.0",
-                                    APP_CHANNEL: "baidu",
-                                    JPUSH_PKGNAME: "com.lxm.ss.kuaisan",
+
+                                    JPUSH_PKGNAME: applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
-                                    JPUSH_APPKEY : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
-                                    JPUSH_CHANNEL: "google", //暂时填写默认值即可.
-                    ]
+                                    JPUSH_APPKEY : "15162c1eececd0697b1f2c96", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL: "mopo", //暂时填写默认值即可.
+            ]
 
             buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
-            buildConfigField "String", "APPSHOW_ADID", "\"yj20171120002\""
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171206001\""
 
-            buildConfigField "String", "MY_SWITCH_REG", "\"baidukuaisan=(\\\\d{1})\""
+            buildConfigField "String", "MY_SWITCH_REG", "\"moposhishicai=(\\\\d{1})\""
             buildConfigField "boolean", "IS_DEBUG", "true"
 
         }
 
+        online_360 {
+            applicationId "com.lxm.ss.sscai"
+            versionCode 100
+            versionName "1.0"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+                                    JPUSH_PKGNAME: applicationId,
+                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+                                    JPUSH_APPKEY : "de1e9f48aa1f14adccf084e9", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL: "360", //暂时填写默认值即可.
+            ]
+
+            buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171208008\""
+
+            buildConfigField "String", "MY_SWITCH_REG", "\"360shishicai=(\\\\d{1})\""
+
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+        }
     }
 }
 
