@@ -100,15 +100,17 @@ public class DetailParseWebContentActivity extends BaseActivity {
 
                 hideBaseProgressDialog();
                 if (o != null) {
-                    String str = (String) o;
+                    final  String str = (String) o;
                     Zlog.ii("lxm parserHtml:" + str);
-
-
-                    final String content = parseUrl(str);
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                             String content = parseUrl(str);
+                            Zlog.ii("lxm parserHtml:1 " + content);
+                            if (StringUtils.isNull(content.trim())){
+                                content = "暂无数据";
+                            }
                             mTxtCont.setText(content);
                         }
                     });

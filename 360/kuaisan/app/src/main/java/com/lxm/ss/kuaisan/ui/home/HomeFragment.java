@@ -187,7 +187,7 @@ public class HomeFragment extends BaseFragment {
         List<Drawable> imgUrls = new ArrayList<>();
 
         imgUrls.add(getResources().getDrawable(R.mipmap.ads_1));
-        imgUrls.add(getResources().getDrawable(R.mipmap.ads_4));
+//        imgUrls.add(getResources().getDrawable(R.mipmap.ads_4));
         imgUrls.add(getResources().getDrawable(R.mipmap.ads_5));
         arl_arl.initData(imgUrls);
         arl_arl.setOnClickListener(mOnClickListener);

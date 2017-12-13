@@ -11,9 +11,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.lxm.ss.kuaisan.FFApplication;
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.Utils.FastjsonUtil;
-import com.lxm.ss.kuaisan.Utils.ToastUtils;
 import com.lxm.ss.kuaisan.Utils.Zlog;
-import com.lxm.ss.kuaisan.adapter.NewLotterAdapter;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.constant.Constants;
 import com.lxm.ss.kuaisan.http.MyOkHttp;
@@ -21,7 +19,6 @@ import com.lxm.ss.kuaisan.http.OkHttpRequestListener;
 import com.lxm.ss.kuaisan.model.LotterInfor;
 import com.lxm.ss.kuaisan.model.RequestWYData;
 import com.lxm.ss.kuaisan.parse.model.ScreenReg;
-import com.lxm.ss.kuaisan.ui.main.DetailParseWebContentActivity;
 import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
 
 import java.util.ArrayList;
@@ -61,18 +58,20 @@ public class NewLotteryActivity extends BaseActivity {
         mListView = (ListView) findViewById(R.id.new_lottery_lv);
 
         lotterInforList = new ArrayList<>();
-        newLotterAdapter = new NewLotterAdapter(NewLotteryActivity.this, -1 ,lotterInforList);
+        newLotterAdapter = new NewLotterAdapter(NewLotteryActivity.this, R.layout.lotter_item ,lotterInforList);
         mListView.setAdapter(newLotterAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 LotterInfor lotterInfor = lotterInforList.get(position);
-                ToastUtils.show(NewLotteryActivity.this,""+position);
+//                ToastUtils.show(NewLotteryActivity.this,""+position);
 
                 String url = "http://api.caipiao.163.com/queryAwardByCond.html?mobileType=android&ver=4.30&channel=qq_tab1&apiVer=1.1&apiLevel=27";
 
                 String reg1 = "\\s*|\t|\r|\n";
                 String regMatch3 = "<[^>]*>";
+
+                String regMatch5 = "\n\n";
 
                 List<ScreenReg> screenRegList = new ArrayList<>() ;
 
@@ -86,13 +85,20 @@ public class NewLotteryActivity extends BaseActivity {
                 screenReg.setReplace("\n");
                 screenReg.setScreen(true);
                 screenRegList.add(screenReg);
+                screenReg  = new ScreenReg();
+                screenReg.setRegStr(regMatch5);
+                screenReg.setReplace("\n");
+                screenReg.setScreen(true);
+                screenRegList.add(screenReg);
 
                 String gameEn = lotterInfor.getGameEn();
 
                 gameEn = StringUtils.isNotBlank(FFApplication.getInstance().mapLotterInfor.get(gameEn)) == true ?FFApplication.getInstance().mapLotterInfor.get(gameEn) :gameEn;
                 url = url + "&count=20" + "&period=" + Long.valueOf(lotterInfor.getPeriodName()) +1
                         +"&gameEn=" +lotterInfor.getGameEn() ;
-                DetailParseWebContentActivity.launchActivity(NewLotteryActivity.this,url,gameEn,screenRegList);
+//                DetailParseWebContentActivity.launchActivity(NewLotteryActivity.this,url,gameEn,screenRegList);
+
+                LotteryInforDetailActivity.launchActivity(NewLotteryActivity.this,gameEn,url);
             }
         });
 

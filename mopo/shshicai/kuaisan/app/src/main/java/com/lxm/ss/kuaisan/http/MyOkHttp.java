@@ -123,8 +123,8 @@ public class MyOkHttp {
         FFApplication.getFixThreadExecutor().execute(new Runnable() {
             @Override
             public void run() {
-                doPostHttpGet(RequestTypeConstant.REQUEST_MY_SWITCH, GET_LOTTERY_DATA ,
-                        RequestTypeConstant.RETURN_INITJSON_DATA,null,null,null,okHttpRequestListener);
+                doPostHttpGet(RequestTypeConstant.REQUEST_GET_LOTTERY_DATA, GET_LOTTERY_DATA ,
+                        RequestTypeConstant.RETURN_INITJSON_DATA,null,null,mTypeReference,okHttpRequestListener);
             }
         });
     }

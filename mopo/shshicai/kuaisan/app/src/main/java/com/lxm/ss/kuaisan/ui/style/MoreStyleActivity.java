@@ -1,14 +1,24 @@
 package com.lxm.ss.kuaisan.ui.style;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.base.BaseActivity;
+import com.lxm.ss.kuaisan.constant.Constants;
+import com.lxm.ss.kuaisan.ui.lottery_infor.LotteryInforDetailActivity;
 import com.lxm.ss.kuaisan.ui.main.IntoActivity;
 import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
 
 public class MoreStyleActivity extends BaseActivity {
+
+
+    public static void launchActivity(Context context) {
+        Intent intent = new Intent(context, MoreStyleActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +30,12 @@ public class MoreStyleActivity extends BaseActivity {
 
     private void initView() {
         CustomTitleLinearlayout mCtlTitle = (CustomTitleLinearlayout) findViewById(R.id.ctl_title);
-        mCtlTitle.setRightVisible(false);
-        mCtlTitle.setLeftTextVisible(false);
+        mCtlTitle.setListener(new CustomTitleLinearlayout.CustomTitleListener() {
+            @Override
+            public void clickLeft() {
+                finish();
+            }
+        });
 
         findViewById(R.id.ly_01).setOnClickListener(mOnClickListener);
         findViewById(R.id.ly_02).setOnClickListener(mOnClickListener);

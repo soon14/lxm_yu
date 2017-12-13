@@ -119,6 +119,25 @@ android {
             buildConfigField "boolean", "IS_DEBUG", "true"
 
         }
+        online_360_2 {
+            applicationId "com.lxm.ssc"
+            versionCode 100
+            versionName "1.0"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+                                    JPUSH_PKGNAME: applicationId,
+                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+                                    JPUSH_APPKEY : "03aa45e697da7cff9b04cc60", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL: "360", //暂时填写默认值即可.
+            ]
+
+            buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171208008\""
+
+            buildConfigField "String", "MY_SWITCH_REG", "\"360shishicai2=(\\\\d{1})\""
+
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+        }
     }
 }
 

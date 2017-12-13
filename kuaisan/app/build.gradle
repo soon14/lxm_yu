@@ -43,8 +43,8 @@ android {
         //线上的包
         online_baidu {
             applicationId "com.lxm.ss.kuaisan"
-            versionCode 100
-            versionName "1.0"
+            versionCode 101
+            versionName "1.1"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
 
                                     JPUSH_PKGNAME: applicationId,
@@ -63,8 +63,8 @@ android {
         }
         online_mopo {
             applicationId "com.lxm.ss.kuaisan"
-            versionCode 101
-            versionName "1.1"
+            versionCode 100
+            versionName "1.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
 
                                     JPUSH_PKGNAME: applicationId,

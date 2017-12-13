@@ -23,6 +23,8 @@ import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import club.fromfactory.baselibrary.utils.StringUtils;
+
 public class InformationDetailListActivity extends BaseActivity {
 
 
@@ -134,6 +136,9 @@ public class InformationDetailListActivity extends BaseActivity {
             }
         });
 
+        if (StringUtils.isNotBlank(mTitle)) {
+            mCtlTitle.setTitleCenter(mTitle);
+        }
         getData();
     }
 
@@ -158,6 +163,7 @@ public class InformationDetailListActivity extends BaseActivity {
             @Override
             public void onFailed(int code, String body, String message) {
                 super.onFailed(code, body, message);
+                hideBaseProgressDialog();
                 ToastUtils.show(InformationDetailListActivity.this,"数据获取失败，请重试");
             }
         });

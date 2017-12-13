@@ -14,6 +14,7 @@ import com.lxm.ss.kuaisan.base.BaseFragment;
 import com.lxm.ss.kuaisan.ui.betting.BettingAnalysisListActivity;
 import com.lxm.ss.kuaisan.ui.lottery_infor.NewLotteryActivity;
 import com.lxm.ss.kuaisan.ui.setting.SettingActivity;
+import com.lxm.ss.kuaisan.ui.style.MoreStyleActivity;
 import com.lxm.ss.kuaisan.ui.trailer_infor.information.InformationListActivity;
 import com.lxm.ss.kuaisan.ui.trailer_infor.pre.TrailerListActivity;
 import com.lxm.ss.kuaisan.widget.AutoRoll;
@@ -113,15 +114,18 @@ public class HomeFragment extends BaseFragment {
                 case R.id.ly01:
 //                    DetailContentActivity.launchActivity(getActivity(),getResources().getString(R.string.kuaosan_rules));
 //                    enterIntoActivity("http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
-                    enterIntoActivity("http://caipiao.163.com/help/10/0811/14/6DQGMQC400754IIO.html");
+//                    enterIntoActivity("http://caipiao.163.com/help/10/0811/14/6DQGMQC400754IIO.html");
 //                    IntoActivity.launchActivity(getActivity(),"http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
+
+                    MoreStyleActivity.launchActivity(getActivity());
                     break;
                 case R.id.ly02:
                     TrailerListActivity.launchActivity(getActivity());
                     break;
                 case R.id.ly03:
 
-                    NewLotteryActivity.launchActivity(getActivity());
+                    BettingAnalysisListActivity.launchActivity(getActivity());
+//                    NewLotteryActivity.launchActivity(getActivity());
                     break;
                 case R.id.ly04:
                     InformationListActivity.launchActivity(getActivity());
@@ -186,7 +190,7 @@ public class HomeFragment extends BaseFragment {
         List<Drawable> imgUrls = new ArrayList<>();
 
         imgUrls.add(getResources().getDrawable(R.mipmap.ads_1));
-        imgUrls.add(getResources().getDrawable(R.mipmap.ads_4));
+//        imgUrls.add(getResources().getDrawable(R.mipmap.ads_3));
         imgUrls.add(getResources().getDrawable(R.mipmap.ads_5));
         arl_arl.initData(imgUrls);
         arl_arl.setOnClickListener(mOnClickListener);

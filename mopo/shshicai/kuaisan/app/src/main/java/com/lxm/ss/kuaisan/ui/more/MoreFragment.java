@@ -42,10 +42,6 @@ public class MoreFragment extends BaseFragment {
     }
 
     private void initView(View vv) {
-
-
-
-
         mCtlTitle = (CustomTitleLinearlayout) vv.findViewById(R.id.ctl_title);
         mCtlTitle.setRightVisible(false);
         mCtlTitle.setLeftTextVisible(false);

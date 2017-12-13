@@ -12,6 +12,7 @@ import com.lxm.ss.kuaisan.Utils.PreferenceUtils;
 import com.lxm.ss.kuaisan.Utils.StorageUtils;
 import com.lxm.ss.kuaisan.Utils.ToastUtils;
 import com.lxm.ss.kuaisan.base.BaseActivity;
+import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
 
 public class SettingActivity extends BaseActivity {
 
@@ -36,7 +37,13 @@ public class SettingActivity extends BaseActivity {
     }
 
     private void initView() {
-
+        CustomTitleLinearlayout mCtlTitle = (CustomTitleLinearlayout) findViewById(R.id.ctl_title);
+        mCtlTitle.setListener(new CustomTitleLinearlayout.CustomTitleListener() {
+            @Override
+            public void clickLeft() {
+                finish();
+            }
+        });
         sw_03 = (Switch) findViewById(R.id.setting_03_sw);
         sw_04 = (Switch) findViewById(R.id.setting_04_sw);
 

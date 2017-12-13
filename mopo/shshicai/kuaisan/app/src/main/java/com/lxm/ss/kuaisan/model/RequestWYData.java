@@ -8,17 +8,17 @@ import java.util.List;
 
 public class RequestWYData {
 
-    private String result ;
+    private int result ;
 
     private String totalBonus ;
 
     private List<LotterInfor> data ;
 
-    public String getResult() {
+    public int getResult() {
         return result;
     }
 
-    public void setResult(String result) {
+    public void setResult(int result) {
         this.result = result;
     }
 

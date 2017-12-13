@@ -3,6 +3,7 @@ package com.lxm.ss.kuaisan.parse;
 import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.http.MyOkHttp;
 import com.lxm.ss.kuaisan.http.OkHttpRequestListener;
+import com.lxm.ss.kuaisan.model.LotterInfor;
 import com.lxm.ss.kuaisan.ui.betting.model.BettingAnalysisInfor;
 import com.lxm.ss.kuaisan.ui.trailer_infor.pre.TrailerInfor;
 
@@ -121,6 +122,53 @@ public class HtmlParse {
 
         }
         return trailerInforList ;
+
+    }
+
+    public static List<LotterInfor> parseLotterInfor(String htmlUrl) {
+
+        List<LotterInfor> lotterInforsList = new ArrayList<>();
+
+//        String reg = "\\s*|\t|\r|\n";
+//        String str1 = StringUtils.matchReplace(reg, htmlUrl, "");
+
+        Zlog.ii("lxm parseLotterInfor:1  " + htmlUrl);
+        String reg1 = "<period>(.*?)</period>" ;
+
+        List<String> stringList = StringUtils.matchStrList(reg1, htmlUrl);
+
+        for (int i = 0; i < stringList.size(); i++) {
+
+            LotterInfor lotterInfor = new LotterInfor();
+
+            String str = stringList.get(i);
+            Zlog.ii("lxm parseLotterInfor:2 " + str);
+
+            String regperiodName = "<periodName>(.*?)</periodName>" ;
+
+            String periodName = StringUtils.matchStrString(regperiodName, str);
+            lotterInfor.setPeriodName(periodName);
+
+            String regawardNo = "<awardNo>(.*?)</awardNo>" ;
+            String awardNo = StringUtils.matchStrString(regawardNo, str);
+            lotterInfor.setAwardNo(awardNo);
+
+            String regawardTime = "<awardTime>(.*?)</awardTime>" ;
+            String awardTime = StringUtils.matchStrString(regawardTime, str);
+            lotterInfor.setAwardTime(awardTime);
+
+            String regtotalsale = "<totalsale>(.*?)</totalsale>" ;
+            String totalsale = StringUtils.matchStrString(regtotalsale, str);
+            lotterInfor.setTotalSale(totalsale);
+
+            String regtotalpool = "<totalpool>(.*?)</totalpool>" ;
+            String totalpool = StringUtils.matchStrString(regtotalpool, str);
+            lotterInfor.setTotalPool(totalpool);
+            Zlog.ii("lxm parseLotterInfor:3  " +lotterInforsList);
+            lotterInforsList.add(lotterInfor);
+
+        }
+        return lotterInforsList ;
 
     }
 

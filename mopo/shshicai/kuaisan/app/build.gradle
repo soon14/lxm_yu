@@ -32,14 +32,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    可能加快 Android Studio 编译的办法 2. 在 app 级别下 build.gradle 里 加上
+    dexOptions {
+        incremental true
+    }
+
 
     productFlavors {
 
         //线上的包
         online_baidu {
             applicationId "com.lxm.ss.kuaisan"
-            versionCode 100
-            versionName "1.0"
+            versionCode 101
+            versionName "1.1"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
 
                                     JPUSH_PKGNAME: applicationId,
@@ -58,8 +63,8 @@ android {
         }
         online_mopo {
             applicationId "com.lxm.ss.kuaisan"
-            versionCode 101
-            versionName "1.1"
+            versionCode 100
+            versionName "1.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
 
                                     JPUSH_PKGNAME: applicationId,
@@ -77,8 +82,8 @@ android {
         }
         online_mopo_shishicai {
             applicationId "com.lxm.ss.shishicai"
-            versionCode 101
-            versionName "1.1"
+            versionCode 102
+            versionName "1.2"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
 
                                     JPUSH_PKGNAME: applicationId,
