@@ -1,5 +1,6 @@
 package com.lxm.ss.kuaisan.parse;
 
+import com.lxm.ss.kuaisan.FFApplication;
 import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.http.MyOkHttp;
 import com.lxm.ss.kuaisan.http.OkHttpRequestListener;
@@ -11,7 +12,9 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import club.fromfactory.baselibrary.utils.StringUtils;
 
@@ -220,6 +223,68 @@ public class HtmlParse {
             bettingAnalysisInfor.setUrl(strUrl);
             bettingAnalysisInfor.setContent(strContent);
             Zlog.ii("lxm parseBettingInfor:4  " +bettingAnalysisInfor);
+
+            bettingAnalysisInforList.add(bettingAnalysisInfor);
+
+        }
+        return bettingAnalysisInforList ;
+    }
+    public static List<BettingAnalysisInfor> parseBettingTypeList(String htmlUrl) {
+
+        List<BettingAnalysisInfor> bettingAnalysisInforList = new ArrayList<>();
+        Zlog.ii("lxm parseBettingTypeList:1  " + htmlUrl);
+        String reg = "\\s*|\t|\\r|\n" ;
+
+        String str1 = StringUtils.matchReplace(reg, htmlUrl, "");
+
+        Zlog.ii("lxm parseBettingTypeList:2  " + str1);
+        String reg1 = "<divclass=\"fl_g_inner\">(.*?)<tdclass=\"fl_g\"width=\"24.9%\">" ;
+
+        List<String> stringList = StringUtils.matchStrList(reg1, str1);
+
+        String string = "" ;
+
+        for (int i = 0; i < stringList.size(); i++) {
+
+            Zlog.ii("lxm parseBettingTypeList:3 " +stringList.size() +"  "+ stringList.get(i));
+
+            BettingAnalysisInfor bettingAnalysisInfor = new BettingAnalysisInfor();
+
+            String str = stringList.get(i);
+
+            String regUrl = "<ahref=\"(.*?)\"\">" ;
+            String strUrl  = StringUtils.matchStrString(regUrl,str);
+
+            String regTitle = "<dt>(.*?)</dt>" ;
+            String strTitle = StringUtils.matchStrString(regTitle,str);
+            strTitle = StringUtils.matchReplace(StringUtils.REMOVE_TAG,strTitle,"");
+            Zlog.ii("lxm parseBettingTypeList :7 " + strTitle);
+            String judgeType = "" ;
+            if (strTitle.contains("(")) {
+               judgeType =  strTitle.substring(0,strTitle.indexOf("("));
+            }else {
+                judgeType = strTitle ;
+            }
+            Zlog.ii("lxm parseBettingTypeList :8 " + judgeType);
+            if (!FFApplication.getInstance().mapType.containsKey(judgeType)) {
+                continue;
+            }
+
+            string += strTitle +"  " ;
+            String regImg = "<imgsrc=\"(.*?)\"" ;
+            String strImg = StringUtils.matchStrString(regImg,str);
+
+
+            String regContent = "<em>(.*?)</em>" ;
+            String strContent = StringUtils.matchStrString(regContent,str);
+            strContent = StringUtils.matchReplace(StringUtils.REMOVE_TAG,strContent,"");
+
+            bettingAnalysisInfor.setImgUrl(strImg);
+            bettingAnalysisInfor.setTitle(strTitle);
+            bettingAnalysisInfor.setUrl(strUrl);
+            bettingAnalysisInfor.setContent(strContent);
+            Zlog.ii("lxm parseBettingTypeList:4  " +bettingAnalysisInfor);
+            Zlog.ii("lxm parseBettingTypeList:5  " +string);
 
             bettingAnalysisInforList.add(bettingAnalysisInfor);
 

@@ -47,10 +47,10 @@ android {
             versionName "1.1"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
 
-                                    JPUSH_PKGNAME: applicationId,
+                                    JPUSH_PKGNAME      : applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
-                                    JPUSH_APPKEY : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
-                                    JPUSH_CHANNEL: "baidu", //暂时填写默认值即可.
+                                    JPUSH_APPKEY       : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL      : "baidu", //暂时填写默认值即可.
             ]
 
             buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
@@ -67,10 +67,10 @@ android {
             versionName "1.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
 
-                                    JPUSH_PKGNAME: applicationId,
+                                    JPUSH_PKGNAME      : applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
-                                    JPUSH_APPKEY : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
-                                    JPUSH_CHANNEL: "mopo", //暂时填写默认值即可.
+                                    JPUSH_APPKEY       : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL      : "mopo", //暂时填写默认值即可.
             ]
 
             buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
@@ -86,10 +86,10 @@ android {
             versionName "1.1"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
 
-                                    JPUSH_PKGNAME: applicationId,
+                                    JPUSH_PKGNAME      : applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
-                                    JPUSH_APPKEY : "15162c1eececd0697b1f2c96", //JPush上注册的包名对应的appkey.
-                                    JPUSH_CHANNEL: "mopo", //暂时填写默认值即可.
+                                    JPUSH_APPKEY       : "15162c1eececd0697b1f2c96", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL      : "mopo", //暂时填写默认值即可.
             ]
 
             buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""
@@ -105,10 +105,10 @@ android {
             versionCode 100
             versionName "1.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                                    JPUSH_PKGNAME: applicationId,
+                                    JPUSH_PKGNAME      : applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
-                                    JPUSH_APPKEY : "de1e9f48aa1f14adccf084e9", //JPush上注册的包名对应的appkey.
-                                    JPUSH_CHANNEL: "360", //暂时填写默认值即可.
+                                    JPUSH_APPKEY       : "de1e9f48aa1f14adccf084e9", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL      : "360", //暂时填写默认值即可.
             ]
 
             buildConfigField "String", "SERVER_PATH", "\"http://app.fromfactory.club/\""

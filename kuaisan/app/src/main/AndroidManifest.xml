@@ -13,13 +13,12 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <uses-permission
         android:name="android.permission.SYSTEM_ALERT_WINDOW"
         tools:node="remove" />
 
     <application
-        android:name="com.lxm.ss.kuaisan.FFApplication"
+        android:name=".FFApplication"
         android:allowBackup="true"
         android:icon="@mipmap/icon_logo_new_new"
         android:label="@string/app_name"
@@ -34,7 +33,7 @@
             android:value="${UMENG_CHANNEL_VALUE}" />
 
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.splash.SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -44,76 +43,79 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.main.MainActivity"
+            android:name=".ui.main.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.splash.AppGuideActivity"
+            android:name=".ui.splash.AppGuideActivity"
             android:label="@string/title_activity_app_guide"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.web.WebViewActivity"
+            android:name=".ui.web.WebViewActivity"
             android:label="@string/title_activity_web_view"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.main.DetailContentActivity"
+            android:name=".ui.main.DetailContentActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.main.DetailWebViewActivity"
+            android:name=".ui.main.DetailWebViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.setting.SettingActivity"
+            android:name=".ui.setting.SettingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.main.ParseWebViewContentActivity"
+            android:name=".ui.main.ParseWebViewContentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.main.IntoActivity"
+            android:name=".ui.main.IntoActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.main.DetailParseWebContentActivity"
+            android:name=".ui.main.DetailParseWebContentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.lottery_infor.NewLotteryActivity"
+            android:name=".ui.lottery_infor.NewLotteryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.lottery_infor.LotteryInforDetailActivity"
+            android:name=".ui.lottery_infor.LotteryInforDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.trailer_infor.pre.TrailerListActivity"
+            android:name=".ui.trailer_infor.pre.TrailerListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.information.InformationListActivity"
+            android:name=".ui.information.InformationListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.more.CommenProblemsActivity"
+            android:name=".ui.more.CommenProblemsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.trailer_infor.pre.TrailerInforListActivity"
+            android:name=".ui.trailer_infor.pre.TrailerInforListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.trailer_infor.information.InformationListActivity"
+            android:name=".ui.trailer_infor.information.InformationListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.trailer_infor.information.InformationDetailListActivity"
+            android:name=".ui.trailer_infor.information.InformationDetailListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.lxm.ss.kuaisan.ui.betting.BettingAnalysisListActivity"
+            android:name=".ui.betting.BettingAnalysisListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.style.MoreStyleActivity"
             android:screenOrientation="portrait" />
 
-        <activity android:name="com.lxm.ss.kuaisan.ui.style.MoreStyleActivity"
+        <activity android:name=".ui.betting.BettingTypeListActivity"
             android:screenOrientation="portrait"/>
 
         <!-- User defined.  For test only  用户自定义的广播接收器 -->
         <receiver
-            android:name="com.lxm.ss.kuaisan.receiver.MyReceiver"
+            android:name=".receiver.MyReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
@@ -127,7 +129,7 @@
         </receiver>
 
         <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调 -->
-        <receiver android:name="com.lxm.ss.kuaisan.receiver.MyJPushMessageReceiver">
+        <receiver android:name=".receiver.MyJPushMessageReceiver">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
 
@@ -135,11 +137,12 @@
             </intent-filter>
         </receiver>
         <!-- &lt;!&ndash; Required  . Enable it you can get statistics data with channel &ndash;&gt; -->
-        <!--tools:replace="android:value"-->
-         <!--<meta-data android:name="JPUSH_PKGNAME" android:value="com.lxm.ss.kuaisan" />-->
+        <!-- tools:replace="android:value" -->
+        <!-- <meta-data android:name="JPUSH_PKGNAME" android:value="com.lxm.ss.kuaisan" /> -->
 
-         <!--<meta-data android:name="JPUSH_CHANNEL" android:value="${JPUSH_CHANNEL}" tools:replace="android:value"/>-->
-         <!--<meta-data android:name="JPUSH_APPKEY" android:value="${JPUSH_APPKEY}" tools:replace="android:value"/> &lt;!&ndash;  </>值来自开发者平台取得的AppKey&ndash;&gt;-->
+
+        <!-- <meta-data android:name="JPUSH_CHANNEL" android:value="${JPUSH_CHANNEL}" tools:replace="android:value"/> -->
+        <!-- <meta-data android:name="JPUSH_APPKEY" android:value="${JPUSH_APPKEY}" tools:replace="android:value"/> &lt;!&ndash;  </>值来自开发者平台取得的AppKey&ndash;&gt; -->
 
     </application>
 

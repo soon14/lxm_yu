@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    tools:context="com.lxm.ss.kuaisan.ui.betting.BettingTypeListActivity">
+
 
     <com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout
         android:id="@+id/ctl_title"
@@ -22,12 +23,10 @@
 
 
     <ListView
-        android:id="@+id/betting_analysis_list_lv"
+        android:id="@+id/betting_type_list_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/border"
         />
-
-
 
 </RelativeLayout>

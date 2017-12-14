@@ -2,17 +2,16 @@ package com.lxm.ss.kuaisan.ui.betting;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.lxm.ss.kuaisan.constant.Constants;
-import com.lxm.ss.kuaisan.ui.betting.BettingAnalysisAdapter;
-import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.Utils.ToastUtils;
 import com.lxm.ss.kuaisan.base.BaseActivity;
+import com.lxm.ss.kuaisan.constant.Constants;
 import com.lxm.ss.kuaisan.http.MyOkHttp;
 import com.lxm.ss.kuaisan.http.OkHttpRequestListener;
 import com.lxm.ss.kuaisan.parse.HtmlParse;
@@ -26,38 +25,24 @@ import java.util.List;
 
 import club.fromfactory.baselibrary.utils.StringUtils;
 
-public class BettingAnalysisListActivity extends BaseActivity {
+public class BettingTypeListActivity extends BaseActivity {
 
-//    private String mUrl = "http://bbs.360.cn/forum.php?mod=forumdisplay&fid=246&filter=typeid&typeid=546" ;
-    private static final String URL_DEFAULT = "http://bbs.360.cn/forum-246-1.html";
+    private static final String URL_DEFAULT = "https://bbs.360.cn/forum.php?gid=239";
 
     private ListView mListView ;
     private CustomTitleLinearlayout mCtlTitle ;
 
     private List<BettingAnalysisInfor> bettingAnalysisInfors ;
-    private BettingAnalysisAdapter bettingAnalysisAdapter ;
+    private BettingTypeAdapter bettingAnalysisAdapter ;
 
-    private String mUrl = "" ;
-    private String mTitle ;
-
+    private String mUrl = URL_DEFAULT ;
 
     /**
      * 启动详情页面
      *
      */
     public static void launchActivity(Context context) {
-        Intent intent = new Intent(context, BettingAnalysisListActivity.class);
-        context.startActivity(intent);
-
-    }
-    /**
-     * 启动详情页面
-     *
-     */
-    public static void launchActivity(Context context,String url,String tilte) {
-        Intent intent = new Intent(context, BettingAnalysisListActivity.class);
-        intent.putExtra(Constants.INTENT_URL,url);
-        intent.putExtra(Constants.INTENT_TITLE,tilte);
+        Intent intent = new Intent(context, BettingTypeListActivity.class);
         context.startActivity(intent);
 
     }
@@ -65,10 +50,8 @@ public class BettingAnalysisListActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_betting_analysis_list);
+        setContentView(R.layout.activity_betting_type_list);
         Intent intent = getIntent();
-        mUrl = intent.getStringExtra(Constants.INTENT_URL);
-        mTitle = intent.getStringExtra(Constants.INTENT_TITLE);
         if (StringUtils.isNull(mUrl)) {
             mUrl = URL_DEFAULT ;
         }
@@ -80,10 +63,10 @@ public class BettingAnalysisListActivity extends BaseActivity {
     private void initView() {
 
         mCtlTitle = (CustomTitleLinearlayout) findViewById(R.id.ctl_title);
-        mListView = (ListView) findViewById(R.id.betting_analysis_list_lv);
+        mListView = (ListView) findViewById(R.id.betting_type_list_lv);
 
         bettingAnalysisInfors = new ArrayList<>();
-        bettingAnalysisAdapter = new BettingAnalysisAdapter(BettingAnalysisListActivity.this, -1 ,bettingAnalysisInfors);
+        bettingAnalysisAdapter = new BettingTypeAdapter(BettingTypeListActivity.this, -1 ,bettingAnalysisInfors);
         mListView.setAdapter(bettingAnalysisAdapter);
 
     }
@@ -95,52 +78,14 @@ public class BettingAnalysisListActivity extends BaseActivity {
                 finish();
             }
         });
-        if (StringUtils.isNotBlank(mTitle)) {
-            mCtlTitle.setTitleCenter(mTitle);
-        }
-
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 BettingAnalysisInfor bettingAnalysisInfor = bettingAnalysisInfors.get(position);
                 String url = bettingAnalysisInfor.getUrl();
                 String title = bettingAnalysisInfor.getTitle();
+                BettingAnalysisListActivity.launchActivity(BettingTypeListActivity.this,url,title);
 
-                String reg1 = "\\s*|\t|\r|\n";
-
-                String reg2 = "<divclass=\"t_fsz1\">(.*?)</div>" ;
-                String regMatch3 = "<[^>]*>";
-                String regMatch4 = "\n\n";
-
-                List<ScreenReg> screenRegList = new ArrayList<>() ;
-
-                ScreenReg screenReg  = new ScreenReg();
-                screenReg.setRegStr(reg1);
-                screenReg.setReplace("");
-                screenReg.setScreen(true);
-                screenRegList.add(screenReg);
-
-                screenReg  = new ScreenReg();
-                screenReg.setRegStr(reg2);
-                screenReg.setReplace("");
-                screenReg.setScreen(false);
-                screenRegList.add(screenReg);
-
-                screenReg  = new ScreenReg();
-                screenReg.setRegStr(regMatch3);
-                screenReg.setReplace("\n");
-                screenReg.setScreen(true);
-                screenRegList.add(screenReg);
-
-                screenReg  = new ScreenReg();
-                screenReg.setRegStr(regMatch4);
-                screenReg.setReplace("\n");
-                screenReg.setScreen(true);
-                screenRegList.add(screenReg);
-
-
-                DetailParseWebContentActivity.launchActivity(BettingAnalysisListActivity.this,url,title,screenRegList);
             }
         });
         getData();
@@ -158,7 +103,7 @@ public class BettingAnalysisListActivity extends BaseActivity {
                     String str   = (String) o;
                     parseHtmlString(str);
                 }else {
-                    ToastUtils.show(BettingAnalysisListActivity.this,"数据获取失败，请重试");
+                    ToastUtils.show(BettingTypeListActivity.this,"数据获取失败，请重试");
                 }
             }
 
@@ -166,17 +111,19 @@ public class BettingAnalysisListActivity extends BaseActivity {
             public void onFailed(int code, String body, String message) {
                 super.onFailed(code, body, message);
                 hideBaseProgressDialog();
-                ToastUtils.show(BettingAnalysisListActivity.this,"数据获取失败，请重试");
+                ToastUtils.show(BettingTypeListActivity.this,"数据获取失败，请重试");
             }
         });
     }
 
     private void parseHtmlString(String str) {
 
-        List<BettingAnalysisInfor> bettingAnalysisInforList = HtmlParse.parseBettingInfor(str);
+        List<BettingAnalysisInfor> bettingAnalysisInforList = HtmlParse.parseBettingTypeList(str);
 
         this.bettingAnalysisInfors.addAll(bettingAnalysisInforList);
         bettingAnalysisAdapter.notifyDataSetChanged();
 
     }
+
+
 }

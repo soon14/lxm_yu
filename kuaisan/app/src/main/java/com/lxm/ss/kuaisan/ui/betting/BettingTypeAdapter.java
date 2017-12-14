@@ -20,14 +20,16 @@ import java.util.List;
 import club.fromfactory.fresco.view.FrescoImageView;
 
 /**
- * Created by lxm on 2017/11/28.
+ * Created by lxm on 2017/12/14.
  */
 
-public class BettingAnalysisAdapter extends ArrayAdapter<BettingAnalysisInfor> {
+public class BettingTypeAdapter extends ArrayAdapter<BettingAnalysisInfor> {
+
+
 
     private LayoutInflater layoutInflater ;
 
-    public BettingAnalysisAdapter(@NonNull Context context, int resource, @NonNull List<BettingAnalysisInfor> objects) {
+    public BettingTypeAdapter(@NonNull Context context, int resource, @NonNull List<BettingAnalysisInfor> objects) {
         super(context, resource, objects);
         layoutInflater = LayoutInflater.from(context);
     }
@@ -54,9 +56,6 @@ public class BettingAnalysisAdapter extends ArrayAdapter<BettingAnalysisInfor> {
         viewHolder.txt_content.setText(item.getContent());
         String imgUrl = item.getImgUrl().replace("&size=small","");
         Zlog.ii("lxm BettingAnalysisAdapter:" + item.getImgUrl() +"  " +imgUrl);
-        if (Constants.IMG_URL_360.equals(imgUrl)) {
-            imgUrl = "" ;
-        }
         ImageUtils.loadImage(viewHolder.frescoImageView,"",false,R.mipmap.icon_logo);
 
         return convertView;
@@ -70,4 +69,5 @@ public class BettingAnalysisAdapter extends ArrayAdapter<BettingAnalysisInfor> {
         TextView txt_content ;
 
     }
+
 }

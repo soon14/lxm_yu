@@ -49,6 +49,8 @@ public class FFApplication extends Application {
 
     public Map<String,String> mapLotterInfor = new HashMap<>();
 
+    public Map<String,String> mapType = new HashMap<>();
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -65,6 +67,20 @@ public class FFApplication extends Application {
     }
 
     private void initData() {
+
+        mapType.put("双色球","双色球");
+        mapType.put("大乐透","大乐透");
+        mapType.put("福彩3D","福彩3D");
+        mapType.put("排三排五","排三排五");
+        mapType.put("七星七乐彩","七星七乐彩");
+        mapType.put("11选5","11选5");
+        mapType.put("时时彩","时时彩");
+        mapType.put("快乐8/快3","快乐8/快3");
+        mapType.put("胜负彩","胜负彩");
+        mapType.put("北京单场","北京单场");
+        mapType.put("竞彩足球","竞彩足球");
+        mapType.put("竞彩篮球","竞彩篮球");
+
         mapLotterInfor.put("football_9","胜负彩/任选九");
         mapLotterInfor.put("qxc","七星彩");
         mapLotterInfor.put("hbkuai3","湖北快三");
