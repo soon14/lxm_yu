@@ -55,7 +55,7 @@ public class BettingTypeAdapter extends ArrayAdapter<BettingAnalysisInfor> {
         viewHolder.txt_title.setText(item.getTitle());
         viewHolder.txt_content.setText(item.getContent());
         String imgUrl = item.getImgUrl().replace("&size=small","");
-        
+
         Zlog.ii("lxm BettingAnalysisAdapter:" + item.getImgUrl() +"  " +imgUrl);
         ImageUtils.loadImage(viewHolder.frescoImageView,imgUrl,false,R.mipmap.icon_logo);
 
