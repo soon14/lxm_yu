@@ -1,1 +1,1 @@
-include ':app', ':okhttp', ':fresco', ':baselibrary', ':JPushExample(774290)', ':jpush'
+include ':app', ':okhttp', ':fresco', ':baselibrary', ':JPushExample(774290)', ':jpush', ':webviewpagelottery'

@@ -147,19 +147,22 @@ dependencies {
     //    compile 'com.jakewharton:butterknife:8.4.0'
     compile 'com.jakewharton:butterknife:8.7.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:design:25.4.0'
+    compile 'com.android.support:design:25.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
+
+    compile 'com.android.support:multidex:1.+'
     compile project(':baselibrary')
     compile project(':fresco')
     compile project(':okhttp')
     //    compile project(':jpush')
     //    compile files('libs/jcore-android-1.1.8.jar')
     //    compile files('libs/jpush-android-3.1.0.jar')
-//        compile 'cn.jiguang.sdk:jpush:3.1.0'  // 此处以JPush 3.0.9 版本为例。
-//        compile 'cn.jiguang.sdk:jcore:1.1.8'  // 此处以JCore 1.1.7 版本为例。
-
+    //        compile 'cn.jiguang.sdk:jpush:3.1.0'  // 此处以JPush 3.0.9 版本为例。
+    //        compile 'cn.jiguang.sdk:jcore:1.1.8'  // 此处以JCore 1.1.7 版本为例。
     compile 'org.jsoup:jsoup:1.11.2'
-
-    compile 'cn.jiguang.sdk:jpush:3.0.9'  // 此处以JPush 3.0.9 版本为例。
-    compile 'cn.jiguang.sdk:jcore:1.1.7'  // 此处以JCore 1.1.7 版本为例。
+    compile 'cn.jiguang.sdk:jpush:3.0.9'
+    // 此处以JPush 3.0.9 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.7'
+    // 此处以JCore 1.1.7 版本为例。
+    compile project(':webviewpagelottery')
 }

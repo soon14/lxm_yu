@@ -22,6 +22,7 @@ public class RequestTypeConstant {
 	public static final int REQUEST_MY_SWITCH = 10002;//
 	public static final int REQUEST_GET_HTML_STRING= 10003;//进一
 	public static final int REQUEST_GET_LOTTERY_DATA= 10004;//进一
+	public static final int REQUEST_POST_HTML= 10005;//进一
 
 
 

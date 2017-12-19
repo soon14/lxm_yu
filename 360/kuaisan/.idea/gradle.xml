@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/fresco" />
             <option value="$PROJECT_DIR$/jpush" />
             <option value="$PROJECT_DIR$/okhttp" />
+            <option value="$PROJECT_DIR$/webviewpagelottery" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

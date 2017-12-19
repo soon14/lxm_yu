@@ -53,7 +53,7 @@ public class OkHttpListenerInterface<T> {
             FFApplication.getCacheThreadExecutor().execute(new Runnable() {
                 @Override
                 public void run() {
-                    Zlog.ii("lxm okhttp onErrorResponse:"+ mRequestType+  e.getMessage());
+                    Zlog.ii("lxm okhttp onErrorResponse:"+ mRequestType+  e.getMessage() +" " );
                     //处理保存数据
                     saveLocalData(false,null);
                     onFailed(call.hashCode(),"",e.getMessage());

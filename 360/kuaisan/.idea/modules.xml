@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/jpush/jpush.iml" filepath="$PROJECT_DIR$/jpush/jpush.iml" />
       <module fileurl="file://$PROJECT_DIR$/kuaisan.iml" filepath="$PROJECT_DIR$/kuaisan.iml" />
       <module fileurl="file://$PROJECT_DIR$/okhttp/okhttp.iml" filepath="$PROJECT_DIR$/okhttp/okhttp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webviewpagelottery/webviewpagelottery.iml" filepath="$PROJECT_DIR$/webviewpagelottery/webviewpagelottery.iml" />
     </modules>
   </component>
 </project>
