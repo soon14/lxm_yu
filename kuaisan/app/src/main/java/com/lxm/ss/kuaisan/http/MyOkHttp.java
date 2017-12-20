@@ -49,6 +49,9 @@ public class MyOkHttp {
     public synchronized <T> void doPostHttpPost(int mRequestType, String url,int returnType, Map<String, String> header,
                                                  Map<String, Object> params,
                                                   TypeReference<T> mTypeReference,OkHttpRequestListener okHttpRequestListener) {// TODO
+        if (header == null) {
+            header = new HashMap<>();
+        }
         if (params == null) {
             params = new HashMap<>();
         }
@@ -110,6 +113,16 @@ public class MyOkHttp {
             @Override
             public void run() {
                 doPostHttpGet(RequestTypeConstant.REQUEST_MY_SWITCH, url ,
+                        RequestTypeConstant.RETURN_JSON_MESSAGE,null,null,null,okHttpRequestListener);
+            }
+        });
+    }
+    public void postHtml(final String url ,final OkHttpRequestListener okHttpRequestListener) {
+        Zlog.ii("lxm httpost:postHtml:" + url );
+        FFApplication.getFixThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                doPostHttpPost(RequestTypeConstant.REQUEST_POST_HTML, url ,
                         RequestTypeConstant.RETURN_JSON_MESSAGE,null,null,null,okHttpRequestListener);
             }
         });

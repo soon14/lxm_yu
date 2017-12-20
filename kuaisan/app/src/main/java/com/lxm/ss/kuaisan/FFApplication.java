@@ -1,6 +1,7 @@
 package com.lxm.ss.kuaisan;
 
 import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
@@ -29,7 +30,7 @@ import okhttp3.OkHttpClient;
 
 /**
  */
-public class FFApplication extends Application {
+public class FFApplication extends MultiDexApplication {
 
     private static FFApplication instance;
     /*

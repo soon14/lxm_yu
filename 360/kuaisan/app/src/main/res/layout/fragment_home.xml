@@ -156,7 +156,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/layout_magin_top_min"
-                        android:text="投注技巧"
+                        android:text="话题讨论"
                         android:textColor="@color/gray_03"
                         android:textSize="@dimen/txt_size_middle" />
                 </LinearLayout>

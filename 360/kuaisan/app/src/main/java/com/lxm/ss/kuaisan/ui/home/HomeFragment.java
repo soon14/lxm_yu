@@ -9,9 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.lxm.ss.kuaisan.BuildConfig;
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.base.BaseFragment;
 import com.lxm.ss.kuaisan.ui.betting.BettingAnalysisListActivity;
+import com.lxm.ss.kuaisan.ui.betting.BettingTypeListActivity;
 import com.lxm.ss.kuaisan.ui.lottery_infor.NewLotteryActivity;
 import com.lxm.ss.kuaisan.ui.setting.SettingActivity;
 import com.lxm.ss.kuaisan.ui.style.MoreStyleActivity;
@@ -82,7 +84,7 @@ public class HomeFragment extends BaseFragment {
 
 
     private void initData() {
-
+        mCtlTitle.setTitleCenter(BuildConfig.MAIN_TITLE);
         mCtlTitle.settingRight();
         mCtlTitle.setRightVisible(true);
         mCtlTitle.setLeftTextVisible(false);
@@ -124,7 +126,8 @@ public class HomeFragment extends BaseFragment {
                     break;
                 case R.id.ly03:
 
-                    BettingAnalysisListActivity.launchActivity(getActivity());
+                    BettingTypeListActivity.launchActivity(getActivity());
+//                    BettingAnalysisListActivity.launchActivity(getActivity());
 //                    NewLotteryActivity.launchActivity(getActivity());
                     break;
                 case R.id.ly04:

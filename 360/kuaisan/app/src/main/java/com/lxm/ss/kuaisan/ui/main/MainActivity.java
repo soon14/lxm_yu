@@ -5,10 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.lottery.ui.activity.KnowledgeActivity;
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.base.BaseFragment;
 import com.lxm.ss.kuaisan.ui.home.HomeFragment;
+import com.lxm.ss.kuaisan.ui.home.HomeFragmentTwo;
 import com.lxm.ss.kuaisan.ui.lottery_infor.LottertInforFragment;
 import com.lxm.ss.kuaisan.ui.more.CommenProblemsActivity;
 import com.lxm.ss.kuaisan.ui.more.CommentProblemsFragment;
@@ -19,7 +21,8 @@ public class MainActivity extends BaseActivity {
 
     private ClubMenuLinearLayout mMenuLayout ;
 
-    private HomeFragment mHomeFragment ;
+//    private HomeFragment mHomeFragment ;
+    private HomeFragmentTwo mHomeFragmentTwo ;
 //    private StyleFragment mStyleFragment ;
 //    private MoreFragment mMoreFragment ;
 
@@ -61,7 +64,11 @@ public class MainActivity extends BaseActivity {
             @Override
             public void clickMenuThree() {
 //                changeTab(ClubMenuLinearLayout.MENU_TYPE_THREE);
-                CommenProblemsActivity.launchActivity(MainActivity.this);
+//                CommenProblemsActivity.launchActivity(MainActivity.this);
+
+                Intent intent = new Intent(MainActivity.this, KnowledgeActivity.class);
+                startActivity(intent);
+
 
             }
 
@@ -76,10 +83,12 @@ public class MainActivity extends BaseActivity {
             }
         });
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        mHomeFragment = new HomeFragment();
+//        mHomeFragment = new HomeFragment();
 //        mCartFragment = new WebFragment();
 //        mStyleFragment = new StyleFragment();
 //        mMoreFragment = new MoreFragment();
+
+        mHomeFragmentTwo = new HomeFragmentTwo();
 
         mLottertInforFragment = new LottertInforFragment();
         mCommentProblemsFragment = new CommentProblemsFragment();
@@ -88,7 +97,7 @@ public class MainActivity extends BaseActivity {
         transaction.hide(mLottertInforFragment);
         transaction.add(R.id.main_container, mCommentProblemsFragment);
         transaction.hide(mCommentProblemsFragment);
-        transaction.add(R.id.main_container, mHomeFragment);
+        transaction.add(R.id.main_container, mHomeFragmentTwo);
         transaction.commitAllowingStateLoss();
 
 
@@ -108,17 +117,17 @@ public class MainActivity extends BaseActivity {
             case ClubMenuLinearLayout.MENU_TYPE_ONE:
                 hideFragment(transaction,mCommentProblemsFragment);
                 hideFragment(transaction,mLottertInforFragment);
-                showFragment(transaction,mHomeFragment,null);
+                showFragment(transaction,mHomeFragmentTwo,null);
                 break;
             case ClubMenuLinearLayout.MENU_TYPE_FOUR:
-                hideFragment(transaction,mHomeFragment);
+                hideFragment(transaction,mHomeFragmentTwo);
                 hideFragment(transaction,mCommentProblemsFragment);
                 showFragment(transaction,mLottertInforFragment,null);
 
                 break;
             case ClubMenuLinearLayout.MENU_TYPE_FIVE:
 
-                hideFragment(transaction,mHomeFragment);
+                hideFragment(transaction,mHomeFragmentTwo);
                 hideFragment(transaction,mLottertInforFragment);
                 showFragment(transaction,mCommentProblemsFragment,bundle);
 

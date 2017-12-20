@@ -122,7 +122,7 @@ public class StyleFragment extends BaseFragment {
                     break;
                 case R.id.ly_06:
                     enterIntoActivity("http://caipiao.163.com/help/10/0723/11/6C9BEBRJ00754IHK.html");
-                    enterLocalWebView("http://caipiao.163.com/order/qlc/#from=leftnav",getResources().getString(R.string.content_07),R.mipmap.aa_03);
+//                    enterLocalWebView("http://caipiao.163.com/order/qlc/#from=leftnav",getResources().getString(R.string.content_07),R.mipmap.aa_03);
                     break;
                 case R.id.ly_07:
                     enterIntoActivity("http://caipiao.163.com/help/10/0723/15/6C9NR01E00754IHL.html");

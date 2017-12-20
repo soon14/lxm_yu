@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.lxm.ss.kuaisan.BuildConfig;
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.base.BaseFragment;
 import com.lxm.ss.kuaisan.ui.betting.BettingAnalysisListActivity;
@@ -83,7 +84,7 @@ public class HomeFragment extends BaseFragment {
 
 
     private void initData() {
-
+        mCtlTitle.setTitleCenter(BuildConfig.MAIN_TITLE);
         mCtlTitle.settingRight();
         mCtlTitle.setRightVisible(true);
         mCtlTitle.setLeftTextVisible(false);
@@ -189,7 +190,7 @@ public class HomeFragment extends BaseFragment {
         List<Drawable> imgUrls = new ArrayList<>();
 
         imgUrls.add(getResources().getDrawable(R.mipmap.ads_1));
-        imgUrls.add(getResources().getDrawable(R.mipmap.ads_4));
+//        imgUrls.add(getResources().getDrawable(R.mipmap.ads_4));
         imgUrls.add(getResources().getDrawable(R.mipmap.ads_5));
         arl_arl.initData(imgUrls);
         arl_arl.setOnClickListener(mOnClickListener);

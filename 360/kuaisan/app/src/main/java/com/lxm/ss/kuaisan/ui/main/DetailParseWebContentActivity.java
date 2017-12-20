@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.lxm.ss.kuaisan.R;
+import com.lxm.ss.kuaisan.Utils.ToastUtils;
 import com.lxm.ss.kuaisan.Utils.Zlog;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.constant.Constants;
@@ -119,6 +120,8 @@ public class DetailParseWebContentActivity extends BaseActivity {
             @Override
             public void onFailed(int code, String body, String message) {
                 super.onFailed(code, body, message);
+                hideBaseProgressDialog();
+                ToastUtils.show(DetailParseWebContentActivity.this,"获取失败");
             }
         });
 

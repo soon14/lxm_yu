@@ -16,8 +16,12 @@ buildscript {
 }
 
 allprojects {
+    //    可能加快 Android Studio 编译的办法
+    // 1. 在根目录的 build.gradle
     tasks.withType(JavaCompile) {
+        //使在一个单独的守护进程编译
         options.fork = true
+        //增量编译
         options.incremental = true
     }
 

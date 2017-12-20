@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.Utils.ImageUtils;
+import com.lxm.ss.kuaisan.Utils.Zlog;
+import com.lxm.ss.kuaisan.constant.Constants;
 import com.lxm.ss.kuaisan.ui.betting.model.BettingAnalysisInfor;
 
 import java.util.List;
@@ -50,7 +52,12 @@ public class BettingAnalysisAdapter extends ArrayAdapter<BettingAnalysisInfor> {
 
         viewHolder.txt_title.setText(item.getTitle());
         viewHolder.txt_content.setText(item.getContent());
-        ImageUtils.loadImage(viewHolder.frescoImageView,item.getImgUrl(),false,R.mipmap.icon_logo);
+        String imgUrl = item.getImgUrl().replace("&size=small","");
+        Zlog.ii("lxm BettingAnalysisAdapter:" + item.getImgUrl() +"  " +imgUrl);
+        if (Constants.IMG_URL_360.equals(imgUrl)) {
+            imgUrl = "" ;
+        }
+        ImageUtils.loadImage(viewHolder.frescoImageView,"",false,R.mipmap.icon_logo);
 
         return convertView;
     }

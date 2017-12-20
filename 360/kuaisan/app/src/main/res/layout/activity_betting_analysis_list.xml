@@ -10,7 +10,7 @@
         android:id="@+id/ctl_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title1="投注技巧分析"
+        app:title1="话题讨论"
         app:titleleft1="@string/fa_icon_back" />
 
     <View

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.lxm.ss.kuaisan.constant.Constants;
 import com.lxm.ss.kuaisan.ui.betting.BettingAnalysisAdapter;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.R;
@@ -23,16 +24,21 @@ import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import club.fromfactory.baselibrary.utils.StringUtils;
+
 public class BettingAnalysisListActivity extends BaseActivity {
 
-    private String mUrl = "http://bbs.360.cn/forum.php?mod=forumdisplay&fid=246&filter=typeid&typeid=546" ;
-
+//    private String mUrl = "http://bbs.360.cn/forum.php?mod=forumdisplay&fid=246&filter=typeid&typeid=546" ;
+    private static final String URL_DEFAULT = "http://bbs.360.cn/forum-246-1.html";
 
     private ListView mListView ;
     private CustomTitleLinearlayout mCtlTitle ;
 
     private List<BettingAnalysisInfor> bettingAnalysisInfors ;
     private BettingAnalysisAdapter bettingAnalysisAdapter ;
+
+    private String mUrl = "" ;
+    private String mTitle ;
 
 
     /**
@@ -42,13 +48,31 @@ public class BettingAnalysisListActivity extends BaseActivity {
     public static void launchActivity(Context context) {
         Intent intent = new Intent(context, BettingAnalysisListActivity.class);
         context.startActivity(intent);
+
     }
+    /**
+     * 启动详情页面
+     *
+     */
+    public static void launchActivity(Context context,String url,String tilte) {
+        Intent intent = new Intent(context, BettingAnalysisListActivity.class);
+        intent.putExtra(Constants.INTENT_URL,url);
+        intent.putExtra(Constants.INTENT_TITLE,tilte);
+        context.startActivity(intent);
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_betting_analysis_list);
+        Intent intent = getIntent();
+        mUrl = intent.getStringExtra(Constants.INTENT_URL);
+        mTitle = intent.getStringExtra(Constants.INTENT_TITLE);
+        if (StringUtils.isNull(mUrl)) {
+            mUrl = URL_DEFAULT ;
+        }
         initView();
-
         initData();
     }
 
@@ -61,6 +85,20 @@ public class BettingAnalysisListActivity extends BaseActivity {
         bettingAnalysisInfors = new ArrayList<>();
         bettingAnalysisAdapter = new BettingAnalysisAdapter(BettingAnalysisListActivity.this, -1 ,bettingAnalysisInfors);
         mListView.setAdapter(bettingAnalysisAdapter);
+
+    }
+
+    private void initData() {
+        mCtlTitle.setListener(new CustomTitleLinearlayout.CustomTitleListener() {
+            @Override
+            public void clickLeft() {
+                finish();
+            }
+        });
+        if (StringUtils.isNotBlank(mTitle)) {
+            mCtlTitle.setTitleCenter(mTitle);
+        }
+
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -102,22 +140,9 @@ public class BettingAnalysisListActivity extends BaseActivity {
                 screenRegList.add(screenReg);
 
 
-
                 DetailParseWebContentActivity.launchActivity(BettingAnalysisListActivity.this,url,title,screenRegList);
             }
         });
-
-
-    }
-
-    private void initData() {
-        mCtlTitle.setListener(new CustomTitleLinearlayout.CustomTitleListener() {
-            @Override
-            public void clickLeft() {
-                finish();
-            }
-        });
-
         getData();
     }
 

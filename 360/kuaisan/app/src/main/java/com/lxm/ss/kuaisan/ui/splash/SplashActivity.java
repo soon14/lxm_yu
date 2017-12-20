@@ -29,7 +29,12 @@ import org.json.JSONObject;
 
 import club.fromfactory.baselibrary.Test02Activity;
 import club.fromfactory.baselibrary.utils.StringUtils;
+import club.fromfactory.okhttp.build.PostFormBuilder;
+import club.fromfactory.okhttp.build.PostStringBuilder;
+import club.fromfactory.okhttp.callback.OkCallback;
 import okhttp3.Call;
+import okhttp3.MediaType;
+import okhttp3.Response;
 
 /**
  * 欢迎页，闪屏图片显示1s
@@ -136,9 +141,8 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void enterMain() {
-
-        getWebViewUrl();
-//        enterMainActivity();
+//        getWebViewUrl();
+        enterMainActivity();
     }
 
     private void enterMainActivity() {
@@ -153,7 +157,32 @@ public class SplashActivity extends BaseActivity {
 
     private void getWebViewUrl () {
 
-        OkHttpUtils.post().url(getPostJsonString()).build().execute(new StringCallback() {
+        String postJsonString = getPostJsonString();
+
+        new PostFormBuilder()
+                .url(postJsonString).tag(postJsonString)
+                .build()
+                .readTimeOut(5000)
+                .writeTimeOut(5000)
+                .connTimeOut(5000)
+                .execute(new OkCallback() {
+                    @Override
+                    public Object parseNetworkResponse(Response response) throws Exception {
+                        return null;
+                    }
+
+                    @Override
+                    public void onError(Call call, Exception e) {
+
+                    }
+
+                    @Override
+                    public void onResponse(Object response) {
+                        Zlog.ii("lxm getWebViewUrl:2 " + response);
+                    }
+                });
+
+        OkHttpUtils.post().url(postJsonString).build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
             }
