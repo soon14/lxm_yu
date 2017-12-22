@@ -30,6 +30,8 @@ import org.json.JSONObject;
 
 import club.fromfactory.baselibrary.Test02Activity;
 import club.fromfactory.baselibrary.utils.StringUtils;
+import club.fromfactory.okhttp.OkHttpUtil;
+import club.fromfactory.okhttp.build.GetBuilder;
 import club.fromfactory.okhttp.build.PostFormBuilder;
 import club.fromfactory.okhttp.build.PostStringBuilder;
 import club.fromfactory.okhttp.callback.OkCallback;
@@ -142,8 +144,8 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void enterMain() {
-//        getWebViewUrl();
-        enterMainActivity();
+        getWebViewUrl();
+//        enterMainActivity();
     }
 
     private void enterMainActivity() {
@@ -158,10 +160,35 @@ public class SplashActivity extends BaseActivity {
 
     private void getWebViewUrl () {
 
+
+
+        //
+        String url = "http://1114600.com:8080/appgl/appShow/getByAppId?appId=yj20171221002";
+
+        MyOkHttp.getInstance().getHtml(url, new OkHttpRequestListener() {
+            @Override
+            public void onSucceed(Object o) {
+                super.onSucceed(o);
+                Zlog.ii("lxm getWebViewUrl3:onSucceed " + o +"  ");
+            }
+
+            @Override
+            public void onFailed(int code, String body, String message) {
+                super.onFailed(code, body, message);
+                Zlog.ii("lxm getWebViewUrl3:onError " + message +"  ");
+            }
+        });
+
+//        if (!show) {
+//            return;
+//        }
+
         String postJsonString = getPostJsonString();
 
-        new PostFormBuilder()
-                .url(postJsonString).tag(postJsonString)
+        Zlog.ii("lxm getWebViewUrl: " + postJsonString +"  ");
+        new GetBuilder()
+                .url(url)
+                .tag(url)
                 .build()
                 .readTimeOut(5000)
                 .writeTimeOut(5000)
@@ -174,108 +201,110 @@ public class SplashActivity extends BaseActivity {
 
                     @Override
                     public void onError(Call call, Exception e) {
-
+                        Zlog.ii("lxm getWebViewUrl1:onError " + e.getMessage());
                     }
 
                     @Override
                     public void onResponse(Object response) {
-                        Zlog.ii("lxm getWebViewUrl:2 " + response);
+                        Zlog.ii("lxm getWebViewUrl1:onError " + response);
                     }
                 });
 
-        OkHttpUtils.post().url(postJsonString).build().execute(new StringCallback() {
+
+        OkHttpUtils.get().url(postJsonString).build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
+                Zlog.ii("lxm getWebViewUrl2:onError " + e.getMessage());
             }
 
             @Override
             public void onResponse(String response, int id) {
 
-                Zlog.ii("lxm getWebViewUrl:" + response);
+                Zlog.ii("lxm getWebViewUrl2:onResponse " + response);
             }
         });
 
-        MyOkHttp.getInstance().postHtml(getPostJsonString(),new OkHttpRequestListener() {
-            @Override
-            public void onSucceed(Object o) {
-                super.onSucceed(o);
-                String data = (String) o;
-                MyBean myBean = null;
-                Intent intent = new Intent();
-                switch (URL) {
-                    case "1":
-                        try {
-                            JSONObject jsonObject = new JSONObject(data);
-                            JSONObject data3 = jsonObject.optJSONObject("data");
-                            if (data3 != null) {
-                                if (data3.getString("show_url") != null) {
-                                    if (data3.getString("show_url").equals("1")) {
-                                        show = true;
-                                        showUrl = data3.getString("url");
-                                        intent.setClass(SplashActivity.this, OfficalNetActivity.class);
-                                    }
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        break;
-                    case "2":
-                        myBean = new Gson().fromJson(data, MyBean.class);
-                        if ("1".equals(myBean.getIsshowwap())) {
-                            show = true;
-                            showUrl = myBean.getWapurl();
-                            intent.setClass(SplashActivity.this, OfficalNetActivity.class);
-                        }
-                        break;
-                    case "3":
-                        JSONObject jsonObject = null;
-                        String code = null;
-                        String netdata = null;
-                        try {
-                            jsonObject = new JSONObject(data);
-                            code = jsonObject.getString("rt_code");
-                            netdata = jsonObject.getString("data");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        if ("200".equals(code)) {
-                            String B = new String(Base64.decode(netdata.getBytes(), Base64.DEFAULT));
-                            myBean = new Gson().fromJson(B, MyBean.class);
-                        }
-                        if (null != myBean && "1".equals(myBean.getShow_url())) {
-                            show = true;
-                            showUrl = myBean.getUrl();
-                            intent.setClass(SplashActivity.this, OfficalNetActivity.class);
-                        }
-                        break;
-                    case "4":
-                        myBean = new Gson().fromJson(data, MyBean.class);
-                        if ("1".equals(myBean.getStatus())) {
-                            show = true;
-                            showUrl = myBean.getUrl();
-                            intent.setClass(SplashActivity.this, OfficalMainActivity.class);
-                        }
-                        break;
-                }
-
-                if (show) {
-                    intent.putExtra("url", showUrl);
-                    startActivity(intent);
-                    finish();
-                } else {
-                    intent.setClass(SplashActivity.this, TabMainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-
-            }
-
-            @Override
-            public void onFailed(int code, String body, String message) {
-                super.onFailed(code, body, message);
-            }
-        });
+//        MyOkHttp.getInstance().postHtml(getPostJsonString(),new OkHttpRequestListener() {
+//            @Override
+//            public void onSucceed(Object o) {
+//                super.onSucceed(o);
+//                String data = (String) o;
+//                MyBean myBean = null;
+//                Intent intent = new Intent();
+//                switch (URL) {
+//                    case "1":
+//                        try {
+//                            JSONObject jsonObject = new JSONObject(data);
+//                            JSONObject data3 = jsonObject.optJSONObject("data");
+//                            if (data3 != null) {
+//                                if (data3.getString("show_url") != null) {
+//                                    if (data3.getString("show_url").equals("1")) {
+//                                        show = true;
+//                                        showUrl = data3.getString("url");
+//                                        intent.setClass(SplashActivity.this, OfficalNetActivity.class);
+//                                    }
+//                                }
+//                            }
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                        break;
+//                    case "2":
+//                        myBean = new Gson().fromJson(data, MyBean.class);
+//                        if ("1".equals(myBean.getIsshowwap())) {
+//                            show = true;
+//                            showUrl = myBean.getWapurl();
+//                            intent.setClass(SplashActivity.this, OfficalNetActivity.class);
+//                        }
+//                        break;
+//                    case "3":
+//                        JSONObject jsonObject = null;
+//                        String code = null;
+//                        String netdata = null;
+//                        try {
+//                            jsonObject = new JSONObject(data);
+//                            code = jsonObject.getString("rt_code");
+//                            netdata = jsonObject.getString("data");
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                        if ("200".equals(code)) {
+//                            String B = new String(Base64.decode(netdata.getBytes(), Base64.DEFAULT));
+//                            myBean = new Gson().fromJson(B, MyBean.class);
+//                        }
+//                        if (null != myBean && "1".equals(myBean.getShow_url())) {
+//                            show = true;
+//                            showUrl = myBean.getUrl();
+//                            intent.setClass(SplashActivity.this, OfficalNetActivity.class);
+//                        }
+//                        break;
+//                    case "4":
+//                        myBean = new Gson().fromJson(data, MyBean.class);
+//                        if ("1".equals(myBean.getStatus())) {
+//                            show = true;
+//                            showUrl = myBean.getUrl();
+//                            intent.setClass(SplashActivity.this, OfficalMainActivity.class);
+//                        }
+//                        break;
+//                }
+//
+//                if (show) {
+//                    intent.putExtra("url", showUrl);
+//                    startActivity(intent);
+//                    finish();
+//                } else {
+//                    intent.setClass(SplashActivity.this, TabMainActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailed(int code, String body, String message) {
+//                super.onFailed(code, body, message);
+//            }
+//        });
     }
 
     private String URL = "1";
