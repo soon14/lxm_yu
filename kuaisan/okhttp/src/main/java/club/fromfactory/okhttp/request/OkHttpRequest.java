@@ -48,11 +48,17 @@ public abstract class OkHttpRequest
 
     protected abstract RequestBody buildRequestBody();
 
+    protected RequestBody wrapRequestBody(RequestBody requestBody, final OkCallback callback)
+    {
+        return requestBody;
+    }
+
     protected abstract Request buildRequest(RequestBody requestBody);
 
     public Request generateRequest(OkCallback callback)
     {
         RequestBody requestBody = buildRequestBody();
+        RequestBody wrappedRequestBody = wrapRequestBody(requestBody, callback);
         Request request = buildRequest(requestBody);
         return request;
     }

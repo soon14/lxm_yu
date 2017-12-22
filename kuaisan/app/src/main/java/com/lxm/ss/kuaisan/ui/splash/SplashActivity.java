@@ -186,6 +186,7 @@ public class SplashActivity extends BaseActivity {
         String postJsonString = getPostJsonString();
 
         Zlog.ii("lxm getWebViewUrl: " + postJsonString +"  ");
+        Zlog.ii("lxm getWebViewUrl: " + url +"  ");
         new GetBuilder()
                 .url(url)
                 .tag(url)
