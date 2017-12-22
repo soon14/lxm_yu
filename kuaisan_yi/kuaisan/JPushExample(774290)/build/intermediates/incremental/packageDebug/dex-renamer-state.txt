@@ -1,4 +1,0 @@
-#Fri Dec 01 16:08:39 CST 2017
-base.0=E\:\\git\\lxm_yu\\kuaisan\\JPushExample(774290)\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
-renamed.0=classes.dex
-file.0=E\:\\git\\lxm_yu\\kuaisan\\JPushExample(774290)\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

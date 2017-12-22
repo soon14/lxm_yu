@@ -31,7 +31,7 @@ public class KnowledgeActivity extends BaseWebViewActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initToolbar(title, this, false);
+        initToolbar(title, this, true);
         initWebView(url, client);
     }
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/layout_padding">
+
+
+    <TextView
+        android:id="@+id/commen_problems_item_txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="@string/problems_00"
+        android:textSize="@dimen/txt_size_max"
+        android:textColor="@color/txt_black"
+        />
+
+    <TextView
+        android:id="@+id/commen_problems_item_txt_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/commen_problems_item_txt_title"
+        android:gravity="center_vertical"
+        android:text="@string/problems_00"
+        android:textSize="@dimen/txt_size"
+        android:textColor="@color/blue_01"
+        />
+
+
+
+
+</RelativeLayout>

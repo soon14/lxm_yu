@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 100
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+          applicationId "com.chongqing.cai"
+        manifestPlaceholders = [
+                      JPUSH_PKGNAME: applicationId,
+                      JPUSH_APPKEY : "a4261a3e8dd53f074111b2d2", //JPush上注册的包名对应的appkey.
+                      JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+                      icon : "@mipmap/shishicai",
+                      appname:"重庆时时彩"
+              ]
+
+     /*   applicationId "com.ticai.lottery"
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId, //北京赛车
+                JPUSH_APPKEY : "6cbfff97c97043a079aec561", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]*/
+        /*  applicationId "com.lottery.tianxia"
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId, //北京赛车
+                JPUSH_APPKEY : "9d32c1402e131b689d0d57ff", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]*/
+ /*       applicationId "com.lottery.xingyun"
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId, //北京赛车
+                JPUSH_APPKEY : "866466422f66798162720ae2", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]*/
+    /*    applicationId "com.saiche.zixun"
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId, //北京赛车
+                JPUSH_APPKEY : "70e2ae37d76583145d48f794", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+                icon : "@mipmap/jin",
+                appname:"北京赛车掌上助手"
+        ]*/
+
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'cn.jiguang.sdk:jpush:3.0.8'
+    implementation 'cn.jiguang.sdk:jcore:1.1.6'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+//    下拉刷新
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+    implementation 'com.android.support:design:26+'
+    implementation 'com.zhy:okhttputils:2.6.2'
+    implementation 'io.reactivex:rxandroid:1.1.0' // RxAndroid
+    implementation 'io.reactivex:rxjava:1.1.0' // 推荐同时加载RxJava
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    implementation 'com.google.code.gson:gson:2.8.1'
+    compile files('libs/tbs_sdk_thirdapp.jar')
+
+}

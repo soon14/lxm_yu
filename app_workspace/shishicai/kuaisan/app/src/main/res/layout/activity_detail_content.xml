@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lxm.ss.ssc.ui.main.DetailContentActivity">
+
+
+    <com.lxm.ss.ssc.widget.CustomTitleLinearlayout
+        android:id="@+id/ctl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title1="详情"
+        app:titleleft1="@string/fa_icon_back" />
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ctl_title"
+        android:background="#e2e2e2"></View>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/border">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/detail_content_txt_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/txt_black"
+                android:autoLink="all"
+                android:textSize="@dimen/txt_size"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="fa_icon_back">&#xf053;</string>
+    <string name="fa_icon_home">&#xf015;</string>
+    <string name="fa_icon_cart">&#xf218;</string>
+    <string name="fa_icon_user">&#xf007;</string>
+    <string name="fa_sort_down">Sort  &#xf0d7;</string>
+    <string name="fa_filter_down">Filter</string>
+
+    <string name="fa_icon_filerdown">&#xf107;</string>
+</resources>

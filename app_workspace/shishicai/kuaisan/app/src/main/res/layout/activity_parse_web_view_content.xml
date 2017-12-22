@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.lxm.ss.ssc.ui.main.ParseWebViewContentActivity"
+    tools:showIn="@layout/activity_parse_web_view_content">
+
+
+    <com.lxm.ss.ssc.widget.CustomTitleLinearlayout
+        android:id="@+id/ctl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title1="详情"
+        app:titleleft1="@string/fa_icon_back" />
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ctl_title"
+        android:background="#e2e2e2"></View>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/border">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txt_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/gray"
+                />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/img_local"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerInside"/>
+
+                <club.fromfactory.fresco.view.FrescoImageView
+                    android:id="@+id/img_web"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginLeft="@dimen/layout_magin_left"
+                    android:layout_marginRight="@dimen/layout_magin_right"
+                    app:actualImageScaleType="centerCrop"
+                    app:failureImage="@mipmap/icon_logo"
+                    app:placeholderImage="@color/white"
+                    app:placeholderImageScaleType="centerInside" />
+
+
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txt_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="更多详情"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/btn_red"
+                />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

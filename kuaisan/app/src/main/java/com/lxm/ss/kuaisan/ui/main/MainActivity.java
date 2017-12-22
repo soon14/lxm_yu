@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.lottery.ui.activity.KnowledgeActivity;
+import com.lottery.ui.activity.lottery.NationWideActivity;
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.base.BaseFragment;
@@ -74,7 +75,9 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void clickMenuFour() {
-                changeTab(ClubMenuLinearLayout.MENU_TYPE_FOUR);
+                Intent intent = new Intent(MainActivity.this, NationWideActivity.class);
+                startActivity(intent);
+//                changeTab(ClubMenuLinearLayout.MENU_TYPE_FOUR);
             }
 
             @Override

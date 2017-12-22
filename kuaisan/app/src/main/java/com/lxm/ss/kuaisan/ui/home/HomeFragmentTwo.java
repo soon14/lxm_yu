@@ -59,7 +59,7 @@ public class HomeFragmentTwo extends BaseFragment {
     private LinearLayout mLyWebView ;
     private FFWebview mWebView ;
 
-    private String mCurrentUrl = "http://112.74.102.204:86/m/zst.html";
+    private String mCurrentUrl = "http://112.74.102.204:86/m/yu.html";
     String javascript = "javascript:function hideOther() {"
             + "if(null!= document.getElementsByClassName('nav')) {document.getElementsByClassName('nav')[0].style.display = 'none';}" +
             "}";
@@ -157,11 +157,11 @@ public class HomeFragmentTwo extends BaseFragment {
             switch (v.getId()){
                 case R.id.ly01:
 //                    DetailContentActivity.launchActivity(getActivity(),getResources().getString(R.string.kuaosan_rules));
-//                    enterIntoActivity("http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
+                    enterIntoActivity("http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
 //                    enterIntoActivity("http://caipiao.163.com/help/10/0811/14/6DQGMQC400754IIO.html");
 //                    IntoActivity.launchActivity(getActivity(),"http://caipiao.163.com/help/12/1108/15/8FQ3IUNH00754IHE.html");
 
-                    MoreStyleActivity.launchActivity(getActivity());
+//                    MoreStyleActivity.launchActivity(getActivity());
                     break;
                 case R.id.ly02:
                     TrailerListActivity.launchActivity(getActivity());
@@ -284,6 +284,7 @@ public class HomeFragmentTwo extends BaseFragment {
             view.loadUrl(javascript);
             view.loadUrl("javascript:hideOther();");
             mLyWebView.setVisibility(View.VISIBLE);
+
             hideBaseProgressDialog();
         }
     };
