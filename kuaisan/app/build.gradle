@@ -41,30 +41,30 @@ android {
     productFlavors {
 
         //线上的包
-        online_baidu {
-            applicationId "com.lxm.ss.kuaisan"
-            versionCode 200
-            versionName "2.0"
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                    APP_NAME :  "快三助手",
-                    APP_ICON :  "@mipmap/icon_logo_new_new",
-                                    JPUSH_PKGNAME      : applicationId,
-                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
-                                    JPUSH_APPKEY       : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
-                                    JPUSH_CHANNEL      : "baidu", //暂时填写默认值即可.
-            ]
-
-            buildConfigField "String", "APPSHOW_ADID", "\"yj20171221002\""
-
-            buildConfigField "String", "MY_SWITCH_REG", "\"baidukuaisan=(\\\\d{1})\""
-            buildConfigField "String", "MAIN_TITLE", "\"快三助手\""
-            buildConfigField "boolean", "IS_DEBUG", "true"
-
-        }
+//        online_baidu {
+//            applicationId "com.lxm.ss.kuaisan"
+//            versionCode 200
+//            versionName "2.0"
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+//                                    APP_NAME           : "快三助手",
+//                                    APP_ICON           : "@mipmap/icon_logo_new_new",
+//                                    JPUSH_PKGNAME      : applicationId,
+//                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+//                                    JPUSH_APPKEY       : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL      : "baidu", //暂时填写默认值即可.
+//            ]
+//
+//            buildConfigField "String", "APPSHOW_ADID", "\"yj20171221002\""
+//
+//            buildConfigField "String", "MY_SWITCH_REG", "\"baidukuaisan=(\\\\d{1})\""
+//            buildConfigField "String", "MAIN_TITLE", "\"快三助手\""
+//            buildConfigField "boolean", "IS_DEBUG", "true"
+//
+//        }
         online_baidu_new {
             applicationId "com.lxm.ks"
-            versionCode 100
-            versionName "1.0"
+            versionCode 101
+            versionName "1.1"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
                     APP_NAME :  "快三助手",
                     APP_ICON :  "@mipmap/icon_logo_new_new",
@@ -78,6 +78,26 @@ android {
 
             buildConfigField "String", "MY_SWITCH_REG", "\"baidukuaisannew=(\\\\d{1})\""
             buildConfigField "String", "MAIN_TITLE", "\"快三助手\""
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+        }
+        online_baidu_bjsc {
+            applicationId "com.bjsc.zs"
+            versionCode 100
+            versionName "1.0"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+                                    APP_NAME           : "北京赛车",
+                                    APP_ICON           : "@mipmap/icon_logo_bjsc",
+                                    JPUSH_PKGNAME      : applicationId,
+                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+                                    JPUSH_APPKEY       : "3fe73bd938a929b672a07e4a", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL      : "baidu", //暂时填写默认值即可.
+            ]
+
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171221003\""
+
+            buildConfigField "String", "MY_SWITCH_REG", "\"baidukuaisannew=(\\\\d{1})\""
+            buildConfigField "String", "MAIN_TITLE", "\"北京赛车\""
             buildConfigField "boolean", "IS_DEBUG", "true"
 
         }
@@ -102,25 +122,25 @@ android {
             buildConfigField "boolean", "IS_DEBUG", "true"
 
         }
-        online_mopo {
-            applicationId "com.lxm.ss.kuaisan"
-            versionCode 101
-            versionName "1.1"
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                                    APP_NAME :  "快三助手",
-                                    APP_ICON :  "@mipmap/icon_logo_new_new",
-                                    JPUSH_PKGNAME      : applicationId,
-                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
-                                    JPUSH_APPKEY       : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
-                                    JPUSH_CHANNEL      : "mopo", //暂时填写默认值即可.
-            ]
-
-            buildConfigField "String", "APPSHOW_ADID", "\"yj20171204003\""
-            buildConfigField "String", "MAIN_TITLE", "\"快三助手\""
-            buildConfigField "String", "MY_SWITCH_REG", "\"mopokuaisan=(\\\\d{1})\""
-            buildConfigField "boolean", "IS_DEBUG", "true"
-
-        }
+//        online_mopo {
+//            applicationId "com.lxm.ss.kuaisan"
+//            versionCode 101
+//            versionName "1.1"
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+//                                    APP_NAME           : "快三助手",
+//                                    APP_ICON           : "@mipmap/icon_logo_new_new",
+//                                    JPUSH_PKGNAME      : applicationId,
+//                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+//                                    JPUSH_APPKEY       : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL      : "mopo", //暂时填写默认值即可.
+//            ]
+//
+//            buildConfigField "String", "APPSHOW_ADID", "\"yj20171204003\""
+//            buildConfigField "String", "MAIN_TITLE", "\"快三助手\""
+//            buildConfigField "String", "MY_SWITCH_REG", "\"mopokuaisan=(\\\\d{1})\""
+//            buildConfigField "boolean", "IS_DEBUG", "true"
+//
+//        }
         online_mopo_shishicai {
             applicationId "com.lxm.ss.shishicai"
             versionCode 101

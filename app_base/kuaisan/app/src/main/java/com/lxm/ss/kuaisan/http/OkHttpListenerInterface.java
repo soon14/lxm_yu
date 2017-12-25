@@ -141,6 +141,7 @@ public class OkHttpListenerInterface<T> {
                     TypeReference mTypeReference = new TypeReference<HttpResult>(){};
                     HttpResult mHttpResult = (HttpResult) FastjsonUtil.getInstance().parseJson(response,mTypeReference);
                     if (mHttpResult != null) {
+
                         if (RequestTypeConstant.SERVER_RETURN_OK == mHttpResult.getCode()) {
                             obj = parseJsonMessage(mHttpResult.getBody());
                             Zlog.ii("lxm httppost  initJson 9:" + mHttpResult.getBody());
@@ -174,6 +175,7 @@ public class OkHttpListenerInterface<T> {
      * @return
      */
     private synchronized T parseJsonMessage(String message) {
+        Zlog.ii("lxm okhttp parseJsonMessage 1:"+ message);
         if (message == null) {
             return null;
         }
@@ -191,7 +193,7 @@ public class OkHttpListenerInterface<T> {
 
         } catch (Exception e) {
             e.printStackTrace();
-            Zlog.i("lxm httppost parseJsonReq Exception:" + mRequestType + e.getMessage());
+            Zlog.i("lxm okhttp parseJsonMessage Exception:" + mRequestType + e.getMessage());
         }
         return o;
     }

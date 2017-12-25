@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.trailer_infor.information.InformationListActivity">
+
+
+    <com.lxm.ss.shishicai.widget.CustomTitleLinearlayout
+        android:id="@+id/ctl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title1="资讯"
+        app:titleleft1="@string/fa_icon_back" />
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ctl_title"
+        android:background="#e2e2e2"></View>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/border">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/inform_list_ly_01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:orientation="horizontal"
+                android:padding="@dimen/layout_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="头条信息"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/txt_size_max" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/click_more" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/inform_list_ly_02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:orientation="horizontal"
+                android:padding="@dimen/layout_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="彩市新闻"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/txt_size_max" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/click_more" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/inform_list_ly_03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:orientation="horizontal"
+                android:padding="@dimen/layout_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="近期动态"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/txt_size_max" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/click_more" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/inform_list_ly_04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:orientation="horizontal"
+                android:padding="@dimen/layout_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="行业信息"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/txt_size_max" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/click_more" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/inform_list_ly_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:orientation="horizontal"
+                android:padding="@dimen/layout_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="易眼金晴"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/txt_size_max" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/click_more" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/inform_list_ly_06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:orientation="horizontal"
+                android:padding="@dimen/layout_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="体彩其他"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/txt_size_max" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/click_more" />
+            </RelativeLayout>
+
+            <RelativeLayout
+            android:id="@+id/inform_list_ly_07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_background_click"
+            android:orientation="horizontal"
+            android:padding="@dimen/layout_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="福彩其他"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/txt_size_max" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/click_more" />
+        </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/inform_list_ly_08"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:orientation="horizontal"
+                android:padding="@dimen/layout_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="国际足球"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/txt_size_max" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/click_more" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/inform_list_ly_09"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_click"
+                android:orientation="horizontal"
+                android:padding="@dimen/layout_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="中国足球"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/txt_size_max" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/click_more" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/infor_list_txt_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/layout_padding"
+                android:text="更多敬请期待"
+                android:textColor="@color/btn_red"
+                android:textSize="@dimen/txt_size_max" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

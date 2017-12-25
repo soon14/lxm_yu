@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "E:\\git\\lxm_yu\\mopo\\kuaisan\\app\\build\\intermediates\\incremental\\mergeOnlineReleaseResources\\merged.dir\\values-port\\values-port.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "C:\\Users\\lxm\\.android\\build-cache\\cb3c5b1024157e81016f6a26681c680d5b58fcfd\\output\\res\\values-port\\values-port.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 55,
+                        "endOffset": 106
+                    }
+                }
+            }
+        ]
+    }
+]

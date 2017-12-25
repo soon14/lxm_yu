@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout
+        android:id="@+id/ctl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title1="快三助手"
+        app:titleleft1="@string/fa_icon_back" />
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ctl_title"
+        android:background="#e2e2e2"></View>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/border">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            ><!-- 轮播图 -->
+
+            <FrameLayout
+                android:id="@+id/fl_wjsqpropaganda_link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:visibility="visible" >
+
+                <com.lxm.ss.kuaisan.widget.AutoRoll
+                    android:id="@+id/fragment_auto_roll_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp" >
+                </com.lxm.ss.kuaisan.widget.AutoRoll>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_magin_top_max"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/ly01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_background_click"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/layout_magin_bottom"
+                    android:paddingTop="@dimen/layout_magin_top" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/main_discover_busopport" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="介绍"
+                        android:textColor="@color/gray_03"
+                        android:textSize="@dimen/txt_size_middle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly04"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_background_click"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/layout_magin_top"
+                    android:paddingTop="@dimen/layout_magin_top"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/main_activity_apply" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="资讯"
+                        android:textColor="@color/gray_03"
+                        android:textSize="@dimen/txt_size_middle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly02"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_background_click"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/layout_magin_bottom"
+                    android:paddingTop="@dimen/layout_magin_top"  >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/main_local_busarea" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="预告"
+                        android:textColor="@color/gray_03"
+                        android:textSize="@dimen/txt_size_middle" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ly03"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_background_click"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/layout_magin_bottom"
+                    android:paddingTop="@dimen/layout_magin_top"  >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/main_activity_preshow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="开奖"
+                        android:textColor="@color/gray_03"
+                        android:textSize="@dimen/txt_size_middle" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ctl_title"
+                android:background="#e2e2e2"></View>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="30dp"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/layout_magin_top_min"
+                    android:text="-- 快三系列 -- "
+                    android:textColor="@color/gray_03"
+                    android:textSize="@dimen/txt_size_middle" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ctl_title"
+                android:background="#e2e2e2"></View>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+                    android:id="@+id/fragment_home_ly_style_01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="湖北快三"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/txt_size_max" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="湖北快三"
+                        android:textColor="@color/gray_04"
+                        android:textSize="@dimen/txt_size_middle" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/fragment_home_ly_style_02"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="江苏快三"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/txt_size_max" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="江苏快三"
+                        android:textColor="@color/gray_04"
+                        android:textSize="@dimen/txt_size_middle" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ctl_title"
+                android:background="#e2e2e2"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+                    android:id="@+id/fragment_home_ly_style_03"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="易快三"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/txt_size_max" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="易快三"
+                        android:textColor="@color/gray_04"
+                        android:textSize="@dimen/txt_size_middle" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/fragment_home_ly_style_04"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="新快三"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/txt_size_max" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="江苏快三"
+                        android:textColor="@color/gray_04"
+                        android:textSize="@dimen/txt_size_middle" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ctl_title"
+                android:background="#e2e2e2"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <LinearLayout
+                    android:id="@+id/fragment_home_ly_style_05"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="好运快三"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/txt_size_max" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/layout_magin_top_min"
+                        android:text="湖北快三"
+                        android:textColor="@color/gray_04"
+                        android:textSize="@dimen/txt_size_middle" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/fragment_home_ly_style_06"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ctl_title"
+                android:background="#e2e2e2"></View>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="30dp"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/layout_magin_top_min"
+                android:text="更多精彩敬请期待"
+                android:textColor="@color/gray_03"
+                android:textSize="@dimen/txt_size_middle" />
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+</RelativeLayout>
