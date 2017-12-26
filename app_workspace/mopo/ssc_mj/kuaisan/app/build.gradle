@@ -167,7 +167,7 @@ android {
             versionName "1.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
                                     APP_NAME           : "时时彩秘籍",
-                                    APP_ICON           : "@mipmap/icon_logo_new_new",
+                                    APP_ICON           : "@mipmap/icon_logo_sscmj",
                                     JPUSH_PKGNAME      : applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
                                     JPUSH_APPKEY       : "5d8a379d6fce73b83a5b9a00", //JPush上注册的包名对应的appkey.
