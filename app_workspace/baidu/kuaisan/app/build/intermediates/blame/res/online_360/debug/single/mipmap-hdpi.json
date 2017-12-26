@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\build\\intermediates\\res\\merged\\online_360\\debug\\mipmap-hdpi\\top_bg.9.png",
+        "source": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\src\\main\\res\\mipmap-hdpi\\top_bg.9.png"
+    },
+    {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\build\\intermediates\\res\\merged\\online_360\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\build\\intermediates\\res\\merged\\online_360\\debug\\mipmap-hdpi\\ic_launcher_round.png",
+        "source": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\build\\intermediates\\res\\merged\\online_360\\debug\\mipmap-hdpi\\stripes.png",
+        "source": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\src\\main\\res\\mipmap-hdpi\\stripes.png"
+    },
+    {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\build\\intermediates\\res\\merged\\online_360\\debug\\mipmap-hdpi\\jpush_ic_richpush_actionbar_divider.png",
+        "source": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\src\\main\\res\\mipmap-hdpi\\jpush_ic_richpush_actionbar_divider.png"
+    },
+    {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\build\\intermediates\\res\\merged\\online_360\\debug\\mipmap-hdpi\\jpush_ic_richpush_actionbar_back.png",
+        "source": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\src\\main\\res\\mipmap-hdpi\\jpush_ic_richpush_actionbar_back.png"
+    },
+    {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\build\\intermediates\\res\\merged\\online_360\\debug\\mipmap-hdpi\\bottom_bg.9.png",
+        "source": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\src\\main\\res\\mipmap-hdpi\\bottom_bg.9.png"
+    },
+    {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\build\\intermediates\\res\\merged\\online_360\\debug\\mipmap-hdpi\\border_bg.9.png",
+        "source": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\src\\main\\res\\mipmap-hdpi\\border_bg.9.png"
+    },
+    {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\build\\intermediates\\res\\merged\\online_360\\debug\\mipmap-hdpi\\jpush_notification_icon.png",
+        "source": "G:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\src\\main\\res\\mipmap-hdpi\\jpush_notification_icon.png"
+    }
+]

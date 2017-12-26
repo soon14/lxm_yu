@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="G:\lxm_online_to\lxm_yu\baidu\kuaisan\baselibrary\src\main\assets"/><source path="G:\lxm_online_to\lxm_yu\baidu\kuaisan\baselibrary\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="G:\lxm_online_to\lxm_yu\baidu\kuaisan\baselibrary\src\debug\assets"/></dataSet></merger>

@@ -1,0 +1,4 @@
+#Tue Dec 12 14:02:45 CST 2017
+base.0=G\:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\build\\intermediates\\transforms\\dex\\online_360\\debug\\folders\\1000\\5\\slice_5
+renamed.0=classes.dex
+file.0=G\:\\lxm_online_to\\lxm_yu\\kuaisan\\app\\build\\intermediates\\transforms\\dex\\online_360\\debug\\folders\\1000\\5\\slice_5\\classes.dex

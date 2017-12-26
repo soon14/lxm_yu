@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="G:\lxm_online_to\lxm_yu\kuaisan\app\src\main\jniLibs"/></dataSet><dataSet config="online_360"><source path="G:\lxm_online_to\lxm_yu\kuaisan\app\src\online_360\jniLibs"/></dataSet><dataSet config="debug"><source path="G:\lxm_online_to\lxm_yu\kuaisan\app\src\debug\jniLibs"/></dataSet><dataSet config="online_360Debug"><source path="G:\lxm_online_to\lxm_yu\kuaisan\app\src\online_360Debug\jniLibs"/></dataSet></merger>
