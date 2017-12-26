@@ -42,7 +42,6 @@ import okhttp3.Response;
 /**
  * 欢迎页，闪屏图片显示1s
  *
- * @author zhoulei on 2017/5/26.
  */
 public class SplashActivity extends BaseActivity {
 
