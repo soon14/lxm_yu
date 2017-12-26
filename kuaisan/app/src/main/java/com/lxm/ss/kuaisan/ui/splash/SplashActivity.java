@@ -144,8 +144,8 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void enterMain() {
-        getWebViewUrl();
-//        enterMainActivity();
+//        getWebViewUrl();
+        enterMainActivity();
     }
 
     private void enterMainActivity() {

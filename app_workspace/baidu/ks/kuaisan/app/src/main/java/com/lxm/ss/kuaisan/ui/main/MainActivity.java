@@ -75,9 +75,9 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void clickMenuFour() {
-                Intent intent = new Intent(MainActivity.this, NationWideActivity.class);
-                startActivity(intent);
-//                changeTab(ClubMenuLinearLayout.MENU_TYPE_FOUR);
+//                Intent intent = new Intent(MainActivity.this, NationWideActivity.class);
+//                startActivity(intent);
+                changeTab(ClubMenuLinearLayout.MENU_TYPE_FOUR);
             }
 
             @Override

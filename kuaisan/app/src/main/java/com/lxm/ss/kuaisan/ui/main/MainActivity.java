@@ -11,6 +11,7 @@ import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.base.BaseFragment;
 import com.lxm.ss.kuaisan.ui.home.HomeFragment;
+import com.lxm.ss.kuaisan.ui.home.HomeFragmentThree;
 import com.lxm.ss.kuaisan.ui.home.HomeFragmentTwo;
 import com.lxm.ss.kuaisan.ui.lottery_infor.LottertInforFragment;
 import com.lxm.ss.kuaisan.ui.more.CommenProblemsActivity;
@@ -23,7 +24,8 @@ public class MainActivity extends BaseActivity {
     private ClubMenuLinearLayout mMenuLayout ;
 
 //    private HomeFragment mHomeFragment ;
-    private HomeFragmentTwo mHomeFragmentTwo ;
+//    private HomeFragmentTwo mHomeFragmentTwo ;
+    private HomeFragmentThree mHomeFragmentThree ;
 //    private StyleFragment mStyleFragment ;
 //    private MoreFragment mMoreFragment ;
 
@@ -91,7 +93,8 @@ public class MainActivity extends BaseActivity {
 //        mStyleFragment = new StyleFragment();
 //        mMoreFragment = new MoreFragment();
 
-        mHomeFragmentTwo = new HomeFragmentTwo();
+//        mHomeFragmentTwo = new HomeFragmentTwo();
+        mHomeFragmentThree = new HomeFragmentThree();
 
         mLottertInforFragment = new LottertInforFragment();
         mCommentProblemsFragment = new CommentProblemsFragment();
@@ -100,7 +103,7 @@ public class MainActivity extends BaseActivity {
         transaction.hide(mLottertInforFragment);
         transaction.add(R.id.main_container, mCommentProblemsFragment);
         transaction.hide(mCommentProblemsFragment);
-        transaction.add(R.id.main_container, mHomeFragmentTwo);
+        transaction.add(R.id.main_container, mHomeFragmentThree);
         transaction.commitAllowingStateLoss();
 
 
@@ -120,17 +123,17 @@ public class MainActivity extends BaseActivity {
             case ClubMenuLinearLayout.MENU_TYPE_ONE:
                 hideFragment(transaction,mCommentProblemsFragment);
                 hideFragment(transaction,mLottertInforFragment);
-                showFragment(transaction,mHomeFragmentTwo,null);
+                showFragment(transaction,mHomeFragmentThree,null);
                 break;
             case ClubMenuLinearLayout.MENU_TYPE_FOUR:
-                hideFragment(transaction,mHomeFragmentTwo);
+                hideFragment(transaction,mHomeFragmentThree);
                 hideFragment(transaction,mCommentProblemsFragment);
                 showFragment(transaction,mLottertInforFragment,null);
 
                 break;
             case ClubMenuLinearLayout.MENU_TYPE_FIVE:
 
-                hideFragment(transaction,mHomeFragmentTwo);
+                hideFragment(transaction,mHomeFragmentThree);
                 hideFragment(transaction,mLottertInforFragment);
                 showFragment(transaction,mCommentProblemsFragment,bundle);
 

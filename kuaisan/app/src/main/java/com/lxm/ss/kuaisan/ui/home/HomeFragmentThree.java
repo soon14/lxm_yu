@@ -51,10 +51,20 @@ public class HomeFragmentThree extends BaseFragment {
 
     private LinearLayout mLyWebView ;
     private FFWebview mWebView ;
-
-    private String mCurrentUrl = "http://112.74.102.204:86/m/zst.html";
+//
+//    private String mCurrentUrl = "http://112.74.102.204:86/m/zst.html";
+//    String javascript = "javascript:function hideOther() {"
+//            + "if(null!= document.getElementsByClassName('nav')) {document.getElementsByClassName('nav')[0].style.display = 'none';}" +
+//            "}";
+    private String mCurrentUrl = "http://5.9188.com/yuce/";
     String javascript = "javascript:function hideOther() {"
-            + "if(null!= document.getElementsByClassName('nav')) {document.getElementsByClassName('nav')[0].style.display = 'none';}" +
+            + "if(null!= document.getElementsByClassName('tzHeader')) {document.getElementsByClassName('tzHeader')[0].style.display = 'none';}" +
+            "}";
+    String javascript1 = "javascript:function hideOther() {"
+            + "if(null!= document.getElementsByClassName('fixed kjFloat')) {document.getElementsByClassName('fixed kjFloat')[0].style.display = 'none';}" +
+            "}";
+    String javascript2 = "javascript:function hideOther() {"
+            + "if(null!= document.getElementsByClassName('ops-btn')) {document.getElementsByClassName('ops-btn')[0].style.display = 'none';}" +
             "}";
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -284,6 +294,11 @@ public class HomeFragmentThree extends BaseFragment {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
             view.loadUrl(javascript);
+            view.loadUrl("javascript:hideOther();");
+
+            view.loadUrl(javascript1);
+            view.loadUrl("javascript:hideOther();");
+            view.loadUrl(javascript2);
             view.loadUrl("javascript:hideOther();");
             mLyWebView.setVisibility(View.VISIBLE);
 

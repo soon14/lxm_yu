@@ -190,7 +190,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="@dimen/layout_padding"
-            android:text="选号助手"
+            android:text="号码助手"
             android:textColor="@color/gray_03"
             android:textSize="@dimen/txt_size" />
 

@@ -43,8 +43,8 @@ android {
         //线上的包
         online_baidu {
             applicationId "com.lxm.ss.kuaisan"
-            versionCode 201
-            versionName "2.1"
+            versionCode 202
+            versionName "2.2"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
                                     APP_NAME           : "快三助手",
                                     APP_ICON           : "@mipmap/icon_logo_new_new",
@@ -161,47 +161,47 @@ android {
 
         }
 
-        online_360 {
-            applicationId "com.lxm.ss.sscai"
-            versionCode 100
-            versionName "1.0"
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                                    APP_NAME :  "快三助手",
-                                    APP_ICON :  "@mipmap/icon_logo_new_new",
-                                    JPUSH_PKGNAME      : applicationId,
-                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
-                                    JPUSH_APPKEY       : "de1e9f48aa1f14adccf084e9", //JPush上注册的包名对应的appkey.
-                                    JPUSH_CHANNEL      : "360", //暂时填写默认值即可.
-            ]
-
-            buildConfigField "String", "APPSHOW_ADID", "\"yj20171208008\""
-            buildConfigField "String", "MAIN_TITLE", "\"快三助手\""
-            buildConfigField "String", "MY_SWITCH_REG", "\"360shishicai=(\\\\d{1})\""
-
-            buildConfigField "boolean", "IS_DEBUG", "true"
-
-        }
+//        online_360 {
+//            applicationId "com.lxm.ss.sscai"
+//            versionCode 100
+//            versionName "1.0"
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+//                                    APP_NAME :  "快三助手",
+//                                    APP_ICON :  "@mipmap/icon_logo_new_new",
+//                                    JPUSH_PKGNAME      : applicationId,
+//                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+//                                    JPUSH_APPKEY       : "de1e9f48aa1f14adccf084e9", //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL      : "360", //暂时填写默认值即可.
+//            ]
+//
+//            buildConfigField "String", "APPSHOW_ADID", "\"yj20171208008\""
+//            buildConfigField "String", "MAIN_TITLE", "\"快三助手\""
+//            buildConfigField "String", "MY_SWITCH_REG", "\"360shishicai=(\\\\d{1})\""
+//
+//            buildConfigField "boolean", "IS_DEBUG", "true"
+//
+//        }
 	//com.lxm.ssc
-        online_360_2 {
-            applicationId "com.ssc.zs"
-            versionCode 100
-            versionName "1.0"
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                                    APP_NAME :  "时时彩",
-                                    APP_ICON :  "@mipmap/icon_logo",
-                                    JPUSH_PKGNAME: applicationId,
-                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
-                                    JPUSH_APPKEY : "5d8a379d6fce73b83a5b9a00", //JPush上注册的包名对应的appkey.
-                                    JPUSH_CHANNEL: "360", //暂时填写默认值即可.
-            ]
-
-            buildConfigField "String", "APPSHOW_ADID", "\"yj20171208008\""
-
-            buildConfigField "String", "MY_SWITCH_REG", "\"360shishicai2=(\\\\d{1})\""
-            buildConfigField "String", "MAIN_TITLE", "\"时时彩\""
-            buildConfigField "boolean", "IS_DEBUG", "true"
-
-        }
+//        online_360_2 {
+//            applicationId "com.ssc.zs"
+//            versionCode 100
+//            versionName "1.0"
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+//                                    APP_NAME :  "时时彩",
+//                                    APP_ICON :  "@mipmap/icon_logo",
+//                                    JPUSH_PKGNAME: applicationId,
+//                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+//                                    JPUSH_APPKEY : "5d8a379d6fce73b83a5b9a00", //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL: "360", //暂时填写默认值即可.
+//            ]
+//
+//            buildConfigField "String", "APPSHOW_ADID", "\"yj20171208008\""
+//
+//            buildConfigField "String", "MY_SWITCH_REG", "\"360shishicai2=(\\\\d{1})\""
+//            buildConfigField "String", "MAIN_TITLE", "\"时时彩\""
+//            buildConfigField "boolean", "IS_DEBUG", "true"
+//
+//        }
     }
 }
 

@@ -215,7 +215,7 @@ public class HomeFragmentTwo extends BaseFragment {
 
         imgUrls.add(getResources().getDrawable(R.mipmap.ads_1));
 //        imgUrls.add(getResources().getDrawable(R.mipmap.ads_4));
-        imgUrls.add(getResources().getDrawable(R.mipmap.page_12));
+//        imgUrls.add(getResources().getDrawable(R.mipmap.page_12));
         arl_arl.initData(imgUrls);
         arl_arl.setOnClickListener(mOnClickListener);
     }

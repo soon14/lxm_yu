@@ -52,7 +52,8 @@ public class HomeFragmentThree extends BaseFragment {
     private LinearLayout mLyWebView ;
     private FFWebview mWebView ;
 
-    private String mCurrentUrl = "http://112.74.102.204:86/m/zst.html";
+    private String mCurrentUrl = "http://112.74.102.204:86/m/tool.html";
+
     String javascript = "javascript:function hideOther() {"
             + "if(null!= document.getElementsByClassName('nav')) {document.getElementsByClassName('nav')[0].style.display = 'none';}" +
             "}";
@@ -215,7 +216,7 @@ public class HomeFragmentThree extends BaseFragment {
 
         List<Drawable> imgUrls = new ArrayList<>();
 
-        imgUrls.add(getResources().getDrawable(R.mipmap.ads_3));
+//        imgUrls.add(getResources().getDrawable(R.mipmap.ads_3));
 //        imgUrls.add(getResources().getDrawable(R.mipmap.ads_4));
         imgUrls.add(getResources().getDrawable(R.mipmap.ads_1));
         arl_arl.initData(imgUrls);

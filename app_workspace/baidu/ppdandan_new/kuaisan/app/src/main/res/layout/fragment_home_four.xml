@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout
+        android:id="@+id/ctl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title1="@string/app_name"
+        app:titleleft1="@string/fa_icon_back" />
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ctl_title"
+        android:background="#e2e2e2"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/border"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/layout_padding"
+            android:text="人工计划"
+            android:textColor="@color/gray_03"
+            android:textSize="@dimen/txt_size" />
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/ctl_title"
+            android:background="#e2e2e2"></View>
+
+        <LinearLayout
+            android:id="@+id/fragment_home_two_ly_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
