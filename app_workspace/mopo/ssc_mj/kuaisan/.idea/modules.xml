@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JPushExample(774290)/JPushExample(774290).iml" filepath="$PROJECT_DIR$/JPushExample(774290)/JPushExample(774290).iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baselibrary/baselibrary.iml" filepath="$PROJECT_DIR$/baselibrary/baselibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fresco/fresco.iml" filepath="$PROJECT_DIR$/fresco/fresco.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../360/ssc_mj/kuaisan/jpush/jpush.iml" filepath="$PROJECT_DIR$/../../../360/ssc_mj/kuaisan/jpush/jpush.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kuaisan.iml" filepath="$PROJECT_DIR$/kuaisan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okhttp/okhttp.iml" filepath="$PROJECT_DIR$/okhttp/okhttp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../360/ssc_mj/kuaisan/webviewpagelottery/webviewpagelottery.iml" filepath="$PROJECT_DIR$/../../../360/ssc_mj/kuaisan/webviewpagelottery/webviewpagelottery.iml" />
+    </modules>
+  </component>
+</project>

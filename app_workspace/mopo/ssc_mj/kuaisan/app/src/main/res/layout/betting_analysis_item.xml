@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:padding="@dimen/layout_padding"
+    android:background="@color/white">
+
+
+    <club.fromfactory.fresco.view.FrescoImageView
+        android:id="@+id/trailer_infor_item_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        app:actualImageScaleType="centerCrop"
+        app:failureImage="@mipmap/icon_logo"
+        app:placeholderImage="@color/white"
+        app:placeholderImageScaleType="centerInside" />
+
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/trailer_infor_item_img"
+        android:layout_marginLeft="10dp"
+        android:text="介绍"
+        android:textStyle="bold"
+        android:textColor="@color/txt_black"
+        android:textSize="@dimen/txt_size_max" />
+
+    <TextView
+        android:id="@+id/txt_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/trailer_infor_item_img"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/txt_title"
+        android:text="介绍sdsadsadsa"
+        android:textColor="@color/gray_03"
+        android:textSize="@dimen/txt_size" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/click_more"/>
+
+</RelativeLayout>
