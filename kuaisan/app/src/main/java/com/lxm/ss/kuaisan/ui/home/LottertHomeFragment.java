@@ -171,8 +171,9 @@ public class LottertHomeFragment extends BaseFragment {
         public void onPageStarted(WebView view, final String url, Bitmap favicon) {
             Zlog.ii("lxm ss webview onPageStarted:" + url);
             super.onPageStarted(view, url, favicon);
-
+            mLyWebView.setVisibility(View.GONE);
             showBaseProgressDialog();
+
         }
 
         @Override
@@ -207,7 +208,6 @@ public class LottertHomeFragment extends BaseFragment {
             view.loadUrl(javascript2);
             view.loadUrl("javascript:hideOther();");
             mLyWebView.setVisibility(View.VISIBLE);
-
             hideBaseProgressDialog();
         }
     };

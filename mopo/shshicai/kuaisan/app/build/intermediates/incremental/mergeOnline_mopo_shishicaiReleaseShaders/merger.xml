@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\git\lxm_yu\mopo\shshicai\kuaisan\app\src\main\shaders"/></dataSet><dataSet config="online_mopo_shishicai"><source path="E:\git\lxm_yu\mopo\shshicai\kuaisan\app\src\online_mopo_shishicai\shaders"/></dataSet><dataSet config="release"><source path="E:\git\lxm_yu\mopo\shshicai\kuaisan\app\src\release\shaders"/></dataSet><dataSet config="online_mopo_shishicaiRelease"><source path="E:\git\lxm_yu\mopo\shshicai\kuaisan\app\src\online_mopo_shishicaiRelease\shaders"/></dataSet></merger>

@@ -10,10 +10,12 @@ import com.lottery.ui.activity.lottery.NationWideActivity;
 import com.lxm.ss.kuaisan.R;
 import com.lxm.ss.kuaisan.base.BaseActivity;
 import com.lxm.ss.kuaisan.base.BaseFragment;
+import com.lxm.ss.kuaisan.ui.home.BallHomeFragment;
 import com.lxm.ss.kuaisan.ui.home.HomeFragment;
 import com.lxm.ss.kuaisan.ui.home.HomeFragmentThree;
 import com.lxm.ss.kuaisan.ui.home.HomeFragmentTwo;
 import com.lxm.ss.kuaisan.ui.home.LottertHomeFragment;
+import com.lxm.ss.kuaisan.ui.home.LottertTwoHomeFragment;
 import com.lxm.ss.kuaisan.ui.lottery_infor.LottertInforFragment;
 import com.lxm.ss.kuaisan.ui.more.CommenProblemsActivity;
 import com.lxm.ss.kuaisan.ui.more.CommentProblemsFragment;
@@ -27,7 +29,9 @@ public class MainActivity extends BaseActivity {
 //    private HomeFragment mHomeFragment ;
 //    private HomeFragmentTwo mHomeFragmentTwo ;
 //    private HomeFragmentThree mHomeFragmentThree ;
-    private LottertHomeFragment mLottertHomeFragment ;
+//    private LottertHomeFragment mLottertHomeFragment ;
+//    private LottertTwoHomeFragment mLottertTwoHomeFragment;
+    private BallHomeFragment mBallHomeFragment;
 //    private StyleFragment mStyleFragment ;
 //    private MoreFragment mMoreFragment ;
 
@@ -98,7 +102,9 @@ public class MainActivity extends BaseActivity {
 //        mHomeFragmentTwo = new HomeFragmentTwo();
 //        mHomeFragmentThree = new HomeFragmentThree();
 
-        mLottertHomeFragment = new LottertHomeFragment();
+//        mLottertHomeFragment = new LottertHomeFragment();
+//        mLottertTwoHomeFragment = new LottertTwoHomeFragment();
+        mBallHomeFragment = new BallHomeFragment();
 
         mLottertInforFragment = new LottertInforFragment();
         mCommentProblemsFragment = new CommentProblemsFragment();
@@ -107,7 +113,7 @@ public class MainActivity extends BaseActivity {
         transaction.hide(mLottertInforFragment);
         transaction.add(R.id.main_container, mCommentProblemsFragment);
         transaction.hide(mCommentProblemsFragment);
-        transaction.add(R.id.main_container, mLottertHomeFragment);
+        transaction.add(R.id.main_container, mBallHomeFragment);
         transaction.commitAllowingStateLoss();
 
 
@@ -127,17 +133,17 @@ public class MainActivity extends BaseActivity {
             case ClubMenuLinearLayout.MENU_TYPE_ONE:
                 hideFragment(transaction,mCommentProblemsFragment);
                 hideFragment(transaction,mLottertInforFragment);
-                showFragment(transaction,mLottertHomeFragment,null);
+                showFragment(transaction,mBallHomeFragment,null);
                 break;
             case ClubMenuLinearLayout.MENU_TYPE_FOUR:
-                hideFragment(transaction,mLottertHomeFragment);
+                hideFragment(transaction,mBallHomeFragment);
                 hideFragment(transaction,mCommentProblemsFragment);
                 showFragment(transaction,mLottertInforFragment,null);
 
                 break;
             case ClubMenuLinearLayout.MENU_TYPE_FIVE:
 
-                hideFragment(transaction,mLottertHomeFragment);
+                hideFragment(transaction,mBallHomeFragment);
                 hideFragment(transaction,mLottertInforFragment);
                 showFragment(transaction,mCommentProblemsFragment,bundle);
 

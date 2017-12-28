@@ -1,0 +1,215 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 25
+        multiDexEnabled true
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a'//, 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+//
+//        manifestPlaceholders = [
+//                JPUSH_PKGNAME: applicationId,
+//                //百度 ：de1e9f48aa1f14adccf084e9  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+//                JPUSH_APPKEY : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
+//                JPUSH_CHANNEL: "google", //暂时填写默认值即可.
+//        ]
+    }
+
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+//    可能加快 Android Studio 编译的办法 2. 在 app 级别下 build.gradle 里 加上
+    dexOptions {
+        incremental true
+    }
+
+
+    productFlavors {
+
+        //线上的包
+//        online_baidu {
+//            applicationId "com.lxm.ss.kuaisan"
+//            versionCode 200
+//            versionName "2.0"
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+//                                    APP_NAME           : "快三助手",
+//                                    APP_ICON           : "@mipmap/icon_logo_new_new",
+//                                    JPUSH_PKGNAME      : applicationId,
+//                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+//                                    JPUSH_APPKEY       : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL      : "baidu", //暂时填写默认值即可.
+//            ]
+//
+//            buildConfigField "String", "APPSHOW_ADID", "\"yj20171221002\""
+//
+//            buildConfigField "String", "MY_SWITCH_REG", "\"baidukuaisan=(\\\\d{1})\""
+//            buildConfigField "String", "MAIN_TITLE", "\"快三助手\""
+//            buildConfigField "boolean", "IS_DEBUG", "true"
+//
+//        }
+        online_baidu_new {
+            applicationId "com.lxm.ks"
+            versionCode 101
+            versionName "1.1"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+                    APP_NAME :  "快三助手",
+                    APP_ICON :  "@mipmap/icon_logo_new_new",
+                                    JPUSH_PKGNAME      : applicationId,
+                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+                                    JPUSH_APPKEY       : "a32a73037a7d21296c9c96d4", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL      : "baidu", //暂时填写默认值即可.
+            ]
+
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171120002\""
+
+            buildConfigField "String", "MY_SWITCH_REG", "\"baidukuaisannew=(\\\\d{1})\""
+            buildConfigField "String", "MAIN_TITLE", "\"快三助手\""
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+        }
+        online_baidu_bjsc {
+            applicationId "com.bjsc.zs"
+            versionCode 102
+            versionName "1.2"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+                                    APP_NAME           : "北京赛车",
+                                    APP_ICON           : "@mipmap/icon_logo_bjsc_new",
+                                    JPUSH_PKGNAME      : applicationId,
+                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+                                    JPUSH_APPKEY       : "3fe73bd938a929b672a07e4a", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL      : "baidu", //暂时填写默认值即可.
+            ]
+
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171221003\""
+
+            buildConfigField "String", "MY_SWITCH_REG", "\"baidubjsc=(\\\\d{1})\""
+            buildConfigField "String", "MAIN_TITLE", "\"北京赛车\""
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+        }
+        online_baidu_ssc {
+            applicationId "com.ssc.bd"
+            versionCode 101
+            versionName "1.1"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+                    APP_NAME :  "时时彩",
+                    APP_ICON :  "@mipmap/icon_logo_ssc_new",
+                                    JPUSH_PKGNAME      : applicationId,
+                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+                                    JPUSH_APPKEY       : "7ad966d47702a7b913756857", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL      : "baidu", //暂时填写默认值即可.
+            ]
+
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171206001\""
+
+            buildConfigField "String", "MY_SWITCH_REG", "\"baidussc=(\\\\d{1})\""
+            buildConfigField "String", "MAIN_TITLE", "\"时时彩\""
+
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+        }
+//        online_mopo {
+//            applicationId "com.lxm.ss.kuaisan"
+//            versionCode 101
+//            versionName "1.1"
+//            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+//                                    APP_NAME           : "快三助手",
+//                                    APP_ICON           : "@mipmap/icon_logo_new_new",
+//                                    JPUSH_PKGNAME      : applicationId,
+//                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+//                                    JPUSH_APPKEY       : "e1711a0a561816785d298b2a", //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL      : "mopo", //暂时填写默认值即可.
+//            ]
+//
+//            buildConfigField "String", "APPSHOW_ADID", "\"yj20171204003\""
+//            buildConfigField "String", "MAIN_TITLE", "\"快三助手\""
+//            buildConfigField "String", "MY_SWITCH_REG", "\"mopokuaisan=(\\\\d{1})\""
+//            buildConfigField "boolean", "IS_DEBUG", "true"
+//
+//        }
+
+        online_mopo_sscmj {
+            applicationId "com.ssc.zs"
+            versionCode 101
+            versionName "1.1"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+                                    APP_NAME           : "时时彩秘籍",
+                                    APP_ICON           : "@mipmap/icon_logo_sscmj",
+                                    JPUSH_PKGNAME      : applicationId,
+                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+                                    JPUSH_APPKEY       : "5d8a379d6fce73b83a5b9a00", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL      : "mopo", //暂时填写默认值即可.
+            ]
+
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171226002\"" //已经用百度时时彩
+            buildConfigField "String", "MAIN_TITLE", "\"时时彩秘籍\""
+            buildConfigField "String", "MY_SWITCH_REG", "\"moposhishicai=(\\\\d{1})\""
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+        }
+
+        online_360 {
+            applicationId "com.lxm.ss.sscai"
+            versionCode 100
+            versionName "1.0"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+                                    APP_NAME :  "快三助手",
+                                    APP_ICON :  "@mipmap/icon_logo_new_new",
+                                    JPUSH_PKGNAME      : applicationId,
+                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+                                    JPUSH_APPKEY       : "de1e9f48aa1f14adccf084e9", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL      : "360", //暂时填写默认值即可.
+            ]
+
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171208008\""
+            buildConfigField "String", "MAIN_TITLE", "\"快三助手\""
+            buildConfigField "String", "MY_SWITCH_REG", "\"360shishicai=(\\\\d{1})\""
+
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+        }
+
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //butterknife 注释框架
+    //    compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'com.jakewharton:butterknife:8.7.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:25.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
+
+    compile 'com.android.support:multidex:1.+'
+    compile project(':baselibrary')
+    compile project(':fresco')
+    compile project(':okhttp')
+    //    compile project(':jpush')
+    //    compile files('libs/jcore-android-1.1.8.jar')
+    //    compile files('libs/jpush-android-3.1.0.jar')
+//        compile 'cn.jiguang.sdk:jpush:3.1.0'  // 此处以JPush 3.0.9 版本为例。
+//        compile 'cn.jiguang.sdk:jcore:1.1.8'  // 此处以JCore 1.1.7 版本为例。
+
+    compile 'org.jsoup:jsoup:1.11.2'
+    compile 'cn.jiguang.sdk:jpush:3.0.9'
+    // 此处以JPush 3.0.9 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.7'
+    // 此处以JCore 1.1.7 版本为例。
+
+    compile project(':webviewpagelottery')
+}

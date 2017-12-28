@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 25
+        multiDexEnabled true
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a'//, 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+//    可能加快 Android Studio 编译的办法 2. 在 app 级别下 build.gradle 里 加上
+    dexOptions {
+        incremental true
+    }
+
+    productFlavors {
+
+        online_yinyongbao_pcdd {
+            applicationId "com.pcdd.yyb.zs"
+            versionCode 100
+            versionName "1.0"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
+                    APP_NAME :  "PC蛋蛋",
+                    APP_ICON :  "@mipmap/icon_logo_pcdd",
+                                    JPUSH_PKGNAME      : applicationId,
+                                    //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
+                                    JPUSH_APPKEY       : "93508a31146f897e7f22ffad", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL      : "yingyongbao", //暂时填写默认值即可.
+            ]
+
+            buildConfigField "String", "APPSHOW_ADID", "\"yj20171226006\""
+
+            buildConfigField "String", "MY_SWITCH_REG", "\"yingyongbaopcdd=(\\\\d{1})\""
+            buildConfigField "String", "MAIN_TITLE", "\"PC蛋蛋\""
+            buildConfigField "boolean", "IS_DEBUG", "true"
+
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //butterknife 注释框架
+    //    compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'com.jakewharton:butterknife:8.7.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:25.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
+
+    compile 'com.android.support:multidex:1.+'
+    compile project(':baselibrary')
+    compile project(':fresco')
+    compile project(':okhttp')
+    //    compile project(':jpush')
+    //    compile files('libs/jcore-android-1.1.8.jar')
+    //    compile files('libs/jpush-android-3.1.0.jar')
+//        compile 'cn.jiguang.sdk:jpush:3.1.0'  // 此处以JPush 3.0.9 版本为例。
+//        compile 'cn.jiguang.sdk:jcore:1.1.8'  // 此处以JCore 1.1.7 版本为例。
+
+    compile 'org.jsoup:jsoup:1.11.2'
+    compile 'cn.jiguang.sdk:jpush:3.0.9'
+    // 此处以JPush 3.0.9 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.7'
+    // 此处以JCore 1.1.7 版本为例。
+
+    compile project(':webviewpagelottery')
+}

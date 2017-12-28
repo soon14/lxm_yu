@@ -66,8 +66,8 @@ android {
             versionCode 101
             versionName "1.1"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                    APP_NAME :  "快三助手",
-                    APP_ICON :  "@mipmap/icon_logo_new_new",
+                                    APP_NAME           : "快三助手",
+                                    APP_ICON           : "@mipmap/icon_logo_new_new",
                                     JPUSH_PKGNAME      : applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
                                     JPUSH_APPKEY       : "a32a73037a7d21296c9c96d4", //JPush上注册的包名对应的appkey.
@@ -106,8 +106,8 @@ android {
             versionCode 101
             versionName "1.1"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                    APP_NAME :  "时时彩",
-                    APP_ICON :  "@mipmap/icon_logo_ssc_new",
+                                    APP_NAME           : "时时彩",
+                                    APP_ICON           : "@mipmap/icon_logo_ssc_new",
                                     JPUSH_PKGNAME      : applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
                                     JPUSH_APPKEY       : "7ad966d47702a7b913756857", //JPush上注册的包名对应的appkey.
@@ -146,8 +146,8 @@ android {
             versionCode 101
             versionName "1.1"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                                    APP_NAME :  "快三助手",
-                                    APP_ICON :  "@mipmap/icon_logo_new_new",
+                                    APP_NAME           : "快三助手",
+                                    APP_ICON           : "@mipmap/icon_logo_new_new",
                                     JPUSH_PKGNAME      : applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
                                     JPUSH_APPKEY       : "15162c1eececd0697b1f2c96", //JPush上注册的包名对应的appkey.
@@ -166,8 +166,8 @@ android {
             versionCode 100
             versionName "1.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                                    APP_NAME :  "快三助手",
-                                    APP_ICON :  "@mipmap/icon_logo_new_new",
+                                    APP_NAME           : "快三助手",
+                                    APP_ICON           : "@mipmap/icon_logo_new_new",
                                     JPUSH_PKGNAME      : applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
                                     JPUSH_APPKEY       : "de1e9f48aa1f14adccf084e9", //JPush上注册的包名对应的appkey.
@@ -181,18 +181,18 @@ android {
             buildConfigField "boolean", "IS_DEBUG", "true"
 
         }
-	//com.lxm.ssc
+        //com.lxm.ssc
         online_360_2 {
             applicationId "com.ssc.zs"
             versionCode 100
             versionName "1.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                                    APP_NAME :  "时时彩",
-                                    APP_ICON :  "@mipmap/icon_logo",
-                                    JPUSH_PKGNAME: applicationId,
+                                    APP_NAME           : "时时彩",
+                                    APP_ICON           : "@mipmap/icon_logo",
+                                    JPUSH_PKGNAME      : applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
-                                    JPUSH_APPKEY : "5d8a379d6fce73b83a5b9a00", //JPush上注册的包名对应的appkey.
-                                    JPUSH_CHANNEL: "360", //暂时填写默认值即可.
+                                    JPUSH_APPKEY       : "5d8a379d6fce73b83a5b9a00", //JPush上注册的包名对应的appkey.
+                                    JPUSH_CHANNEL      : "360", //暂时填写默认值即可.
             ]
 
             buildConfigField "String", "APPSHOW_ADID", "\"yj20171208008\""

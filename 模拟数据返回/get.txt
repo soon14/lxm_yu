@@ -1,0 +1,1 @@
+{"appInfo":{"id":"241","appname":"cc.tianchu.game71","version":null,"appflag":"0","jumplink":"http://android.app0234.com/","updateflag":null,"updatelink":"pcµ°µ°Ô¤²â","navflag":null,"navtitle1":null,"navlink1":null,"navtitle2":null,"navlink2":null,"appmall":null,"state":"0"},"code":"0"}

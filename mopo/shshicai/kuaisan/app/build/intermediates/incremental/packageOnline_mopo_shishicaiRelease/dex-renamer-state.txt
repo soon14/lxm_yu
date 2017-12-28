@@ -1,4 +1,0 @@
-#Wed Dec 06 21:01:03 CST 2017
-base.0=E\:\\git\\lxm_yu\\mopo\\shshicai\\kuaisan\\app\\build\\intermediates\\transforms\\dex\\online_mopo_shishicai\\release\\folders\\1000\\1f\\main
-renamed.0=classes.dex
-file.0=E\:\\git\\lxm_yu\\mopo\\shshicai\\kuaisan\\app\\build\\intermediates\\transforms\\dex\\online_mopo_shishicai\\release\\folders\\1000\\1f\\main\\classes.dex

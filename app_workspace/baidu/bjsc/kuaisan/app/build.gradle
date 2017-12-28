@@ -83,8 +83,8 @@ android {
         }
         online_baidu_bjsc {
             applicationId "com.bjsc.zs"
-            versionCode 102
-            versionName "1.2"
+            versionCode 100
+            versionName "1.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
                                     APP_NAME           : "北京赛车",
                                     APP_ICON           : "@mipmap/icon_logo_bjsc_new",

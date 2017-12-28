@@ -1,7 +1,0 @@
-#Mon Dec 04 21:35:43 CST 2017
-base.0=E\:\\git\\lxm_yu\\mopo\\kuaisan\\app\\build\\intermediates\\transforms\\dex\\online\\debug\\folders\\1000\\10000\\instant-run_21ec9975d976daff3b43daa0b43c7fbd7e26070d
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=E\:\\git\\lxm_yu\\mopo\\kuaisan\\app\\build\\intermediates\\transforms\\dex\\online\\debug\\folders\\1000\\10000\\instant-run-bootstrap_7cac019463563bf59eb8fb565633f77462123b4e\\classes.dex
-base.1=E\:\\git\\lxm_yu\\mopo\\kuaisan\\app\\build\\intermediates\\transforms\\dex\\online\\debug\\folders\\1000\\10000\\instant-run-bootstrap_7cac019463563bf59eb8fb565633f77462123b4e
-file.0=E\:\\git\\lxm_yu\\mopo\\kuaisan\\app\\build\\intermediates\\transforms\\dex\\online\\debug\\folders\\1000\\10000\\instant-run_21ec9975d976daff3b43daa0b43c7fbd7e26070d\\classes.dex

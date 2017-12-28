@@ -21,11 +21,12 @@ import com.tencent.smtt.sdk.WebViewClient;
  */
 public class SsczstFragment  {
 
-    public static BaseWebViewFragment newInstance(String sscUrl,String javascript) {
+    public static BaseWebViewFragment newInstance(String sscUrl,String javascript,boolean isLoad) {
         BaseWebViewFragment newFragment = new BaseWebViewFragment();
         Bundle bundle = new Bundle();
         bundle.putString("fragment_url", sscUrl);
         bundle.putString("javascript", javascript);
+        bundle.putBoolean("is_load", isLoad);
         newFragment.setArguments(bundle);
         return newFragment;
     }

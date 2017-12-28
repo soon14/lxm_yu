@@ -135,6 +135,10 @@ public class DetailWebViewActivity extends BaseActivity {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             Zlog.ii("lxm ss webview shouldOverrideUrlLoading :" + url + "  ");
             mCurrentUrl  = url ;
+//            https://author.baidu.com/home/1576044845145999?from=dusite_artdetailh5
+            if (url.contains("dusite_artdetailh5")) {
+                return true ;
+            }
             if (UriUtils.getInstance().isHtmlUrl(url)){
                 return false ;
             }else {
@@ -159,8 +163,11 @@ public class DetailWebViewActivity extends BaseActivity {
 
         @Override
         public void onPageStarted(WebView view, final String url, Bitmap favicon) {
-            Zlog.ii("lxm ss webview onPageStarted:" + url);
             super.onPageStarted(view, url, favicon);
+            String title = view.getTitle();
+            Zlog.ii("lxm ss webview onPageStarted:" + url  +"  " +  title);
+            mLyWebview.setVisibility(View.GONE);
+            showBaseProgressDialog();
         }
 
         @Override
@@ -192,6 +199,7 @@ public class DetailWebViewActivity extends BaseActivity {
                     view.loadUrl(jsStrList.get(i));
                 }
             }
+            hideBaseProgressDialog();
             mLyWebview.setVisibility(View.VISIBLE);
         }
     };
@@ -206,7 +214,6 @@ public class DetailWebViewActivity extends BaseActivity {
             Zlog.ii("lxm ss webview onProgressChanged 1:" + newProgress);
             if (newProgress >= 75) {
                 Zlog.ii("lxm ss webview onProgressChanged 2:" + newProgress + view.getUrl());
-                mLyWebview.setVisibility(View.VISIBLE);
                 webViewClient.sendStatInfo(getApplicationContext(), view.getUrl());
             } else {
                 webViewClient.showNetToast(getApplicationContext());

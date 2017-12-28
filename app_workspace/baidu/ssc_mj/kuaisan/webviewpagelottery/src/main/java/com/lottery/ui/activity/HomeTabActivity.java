@@ -55,9 +55,9 @@ public class HomeTabActivity extends BaseActivity {
                 "}";
 
 
-        fragments.add(SsczstFragment.newInstance("http://112.74.102.204:86/m/yu.html",javascript));
-        fragments.add(SsczstFragment.newInstance("http://112.74.102.204:86/m/zst.html",javascript));
-        fragments.add(SsczstFragment.newInstance("http://112.74.102.204:86/m/tool.html",javascript));
+        fragments.add(SsczstFragment.newInstance("http://112.74.102.204:86/m/yu.html",javascript,true));
+        fragments.add(SsczstFragment.newInstance("http://112.74.102.204:86/m/zst.html",javascript,false));
+        fragments.add(SsczstFragment.newInstance("http://112.74.102.204:86/m/tool.html",javascript,false));
         titles.add("人工计划");
         titles.add("开奖走势");
         titles.add("号码缩水");
