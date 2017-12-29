@@ -16,6 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import com.lottery.R;
@@ -24,11 +28,6 @@ import com.lottery.receiver.NetBroadcastReceiver;
 import com.lottery.utils.AppLogger;
 import com.lottery.widget.BaseProgressDialog;
 import com.lottery.widget.SnackBarUtils;
-import com.tencent.smtt.sdk.WebChromeClient;
-import com.tencent.smtt.sdk.WebSettings;
-import com.tencent.smtt.sdk.WebView;
-import com.tencent.smtt.sdk.WebViewClient;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

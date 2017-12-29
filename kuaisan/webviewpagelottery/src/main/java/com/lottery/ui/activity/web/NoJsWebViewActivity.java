@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.lottery.R;
 import com.lottery.base.BaseWebViewActivity;
@@ -15,10 +17,6 @@ import com.lottery.constant.Constant;
 import com.lottery.ui.activity.WebViewActivity;
 import com.lottery.ui.activity.ZstActivity;
 import com.lottery.utils.AppLogger;
-import com.tencent.smtt.sdk.WebChromeClient;
-import com.tencent.smtt.sdk.WebView;
-import com.tencent.smtt.sdk.WebViewClient;
-
 import butterknife.BindView;
 import butterknife.OnClick;
 
