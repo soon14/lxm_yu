@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.lottery.base.BaseWebViewActivity;
 import com.lottery.ui.activity.KnowledgeActivity;
-import com.tencent.smtt.sdk.WebView;
-import com.tencent.smtt.sdk.WebViewClient;
 
 /**
  * @author: LiuJinrui
@@ -35,7 +35,7 @@ public class KnowledgeNextActivity extends BaseWebViewActivity {
             intent_title = getIntent().getStringExtra(KnowledgeActivity.KNOWLEDGE_TITLE);
         }
         getToolbar().setVisibility(View.GONE);
-        initToolbar(intent_title, this, false);
+        initToolbar(intent_title, this, true);
         initWebView(intent_url, client);
     }
 

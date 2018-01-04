@@ -93,6 +93,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'com.google.code.gson:gson:2.8.1'
-//    compile files('libs/tbs_sdk_thirdapp.jar')
+
 
 }

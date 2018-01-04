@@ -86,7 +86,7 @@ android {
             versionCode 100
             versionName "1.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
-                                    APP_NAME           : "时时彩-秘籍",
+                                    APP_NAME           : "时时彩秘籍",
                                     APP_ICON           : "@mipmap/icon_logo_sscmj",
                                     JPUSH_PKGNAME      : applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
@@ -97,7 +97,7 @@ android {
             buildConfigField "String", "APPSHOW_ADID", "\"yj20171208008\""
 
             buildConfigField "String", "MY_SWITCH_REG", "\"baidusscmj=(\\\\d{1})\""
-            buildConfigField "String", "MAIN_TITLE", "\"时时彩-秘籍\""
+            buildConfigField "String", "MAIN_TITLE", "\"时时彩秘籍\""
 
             buildConfigField "boolean", "IS_DEBUG", "true"
 

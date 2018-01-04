@@ -7,7 +7,7 @@
     <include layout="@layout/top_toolbar"></include>
 
 
-    <com.tencent.smtt.sdk.WebView
+    <WebView
         android:id="@+id/activity_run_web_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

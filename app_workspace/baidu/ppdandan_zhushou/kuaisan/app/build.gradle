@@ -107,7 +107,7 @@ android {
             versionName "1.0"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "release",
                     APP_NAME :  "PC蛋蛋助手",
-                    APP_ICON :  "@mipmap/icon_logo_pcdd",
+                    APP_ICON :  "@mipmap/icon_logo_pcdd_new",
                                     JPUSH_PKGNAME      : applicationId,
                                     //百度 ：e1711a0a561816785d298b2a  ；冒泡 ：e1711a0a561816785d298b2a  15162c1eececd0697b1f2c96
                                     JPUSH_APPKEY       : "9121a5a68139937da1b7535c", //JPush上注册的包名对应的appkey.

@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.lottery.base.BaseWebViewActivity;
 import com.lottery.ui.activity.web.ZuCaiActivity;
 import com.lottery.ui.activity.web.ZucaiNextActivity;
-import com.tencent.smtt.sdk.WebView;
-import com.tencent.smtt.sdk.WebViewClient;
 
 /**
  * @author: LiuJinrui
@@ -35,19 +35,14 @@ public class ExplainActivity extends BaseWebViewActivity {
         super.onCreate(savedInstanceState);
         initToolbar(title, this, false);
         initWebView(url, client);
-        getToolbar().setVisibility(View.VISIBLE);
+        getToolbar().setVisibility(View.GONE);
     }
 
     private WebViewClient client = new WebViewClient() {
         // 防止加载网页时调起系统浏览器
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-
-            Intent mCircleIntent = new Intent(ExplainActivity.this, ExplainDetailActivity.class);
-            mCircleIntent.putExtra("url", url);
-            mCircleIntent.putExtra("title", "帮助");
-            startActivity(mCircleIntent);
-//            view.loadUrl(url);
-//            getWebView().setVisibility(View.GONE);
+            view.loadUrl(url);
+            getWebView().setVisibility(View.GONE);
             return true;
         }
 

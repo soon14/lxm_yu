@@ -5,6 +5,10 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.lottery.R;
 import butterknife.BindView;
@@ -27,66 +31,33 @@ public class BaseWebViewFragment extends BaseFragment {
     private String javascript;
 
     private String url;
-
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        System.out.println("lxm BaseWebViewFragment onHiddenChanged:" +hidden );
-    }
-
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        System.out.println("lxm BaseWebViewFragment setUserVisibleHint:" +isVisibleToUser );
-        if (isVisibleToUser) {
-            refreshWebView();
-        }
-    }
-
-    boolean is_load ;
-
-    private void refreshWebView() {
-        if (webView != null) {
-            progressShow();
-            webView.loadUrl(url);
-        }
-    }
-
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         url = getArguments().getString("fragment_url");
         javascript=getArguments().getString("javascript");
-        javascript=getArguments().getString("javascript");
-        is_load=getArguments().getBoolean("is_load");
     }
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_nationwide, container, false);
 //        ButterKnife.bind(this, rootView);
-//        progressShow();
+        progressShow();
         BaseFragmentInitView();
         return rootView;
     }
 
     public void BaseFragmentInitView() {
         webView = (WebView) rootView.findViewById(R.id.fragment_nationwide_web_view);
-        WebSettings settings = webView.getSettings();
-        settings.setUseWideViewPort(true);
-        settings.setJavaScriptEnabled(true);
-        settings.setRenderPriority(WebSettings.RenderPriority.HIGH);//提高渲染的优先级
-        settings.setLoadWithOverviewMode(true);
-        settings.setAppCacheEnabled(true); //设置H5的缓存打开,默认关闭
-
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
         webView.setHorizontalScrollBarEnabled(false);
         webView.setVerticalScrollBarEnabled(false);
-
         webView.setWebViewClient(client);
         webView.setWebChromeClient(chromeClient);
         webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
-        if (is_load) {
-            refreshWebView();
-        }
+        webView.loadUrl(url);
+
     }
 
     private WebViewClient client = new WebViewClient() {
