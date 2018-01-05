@@ -12,8 +12,16 @@
         "source": "E:\\git\\lxm_yu\\kuaisan\\JPushExample(774290)\\res\\drawable-hdpi\\richpush_progressbar.xml"
     },
     {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\app_workspace\\kuaisan_yi\\kuaisan\\JPushExample(774290)\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tiledstripes.xml",
+        "source": "G:\\lxm_online_to\\lxm_yu\\app_workspace\\kuaisan_yi\\kuaisan\\JPushExample(774290)\\res\\drawable-hdpi\\tiledstripes.xml"
+    },
+    {
         "merged": "E:\\git\\lxm_yu\\kuaisan\\JPushExample(774290)\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\corners_bg.xml",
         "source": "E:\\git\\lxm_yu\\kuaisan\\JPushExample(774290)\\res\\drawable-hdpi\\corners_bg.xml"
+    },
+    {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\app_workspace\\kuaisan_yi\\kuaisan\\JPushExample(774290)\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\richpush_progressbar.xml",
+        "source": "G:\\lxm_online_to\\lxm_yu\\app_workspace\\kuaisan_yi\\kuaisan\\JPushExample(774290)\\res\\drawable-hdpi\\richpush_progressbar.xml"
     },
     {
         "merged": "E:\\git\\lxm_yu\\kuaisan_yi\\kuaisan\\JPushExample(774290)\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\richpush_progressbar.xml",
@@ -30,5 +38,13 @@
     {
         "merged": "E:\\git\\lxm_yu\\kuaisan_yi\\kuaisan\\JPushExample(774290)\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\richpush_btn_selector.xml",
         "source": "E:\\git\\lxm_yu\\kuaisan_yi\\kuaisan\\JPushExample(774290)\\res\\drawable-hdpi\\richpush_btn_selector.xml"
+    },
+    {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\app_workspace\\kuaisan_yi\\kuaisan\\JPushExample(774290)\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\richpush_btn_selector.xml",
+        "source": "G:\\lxm_online_to\\lxm_yu\\app_workspace\\kuaisan_yi\\kuaisan\\JPushExample(774290)\\res\\drawable-hdpi\\richpush_btn_selector.xml"
+    },
+    {
+        "merged": "G:\\lxm_online_to\\lxm_yu\\app_workspace\\kuaisan_yi\\kuaisan\\JPushExample(774290)\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\corners_bg.xml",
+        "source": "G:\\lxm_online_to\\lxm_yu\\app_workspace\\kuaisan_yi\\kuaisan\\JPushExample(774290)\\res\\drawable-hdpi\\corners_bg.xml"
     }
 ]

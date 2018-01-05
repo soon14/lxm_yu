@@ -3,7 +3,10 @@ package com.lxm.ss.kuaisan.ui.more;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CommenProblemsActivity extends AppCompatActivity {
+import com.lxm.ss.kuaisan.R;
+import com.lxm.ss.kuaisan.base.BaseActivity;
+
+public class CommenProblemsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
