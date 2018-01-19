@@ -12,7 +12,8 @@
         android:layout_height="@dimen/menu_heigth"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        android:background="@drawable/borders_top">
+        android:background="@drawable/borders_top"
+        android:visibility="gone">
 
         <com.lxm.ss.kuaisan.widget.ClubMenuLinearLayout
             android:id="@+id/main_tab_list"

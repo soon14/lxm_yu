@@ -25,6 +25,9 @@ import com.lxm.ss.kuaisan.web.FFWebViewClient;
 import com.lxm.ss.kuaisan.web.FFWebview;
 import com.lxm.ss.kuaisan.widget.CustomTitleLinearlayout;
 
+import java.io.Serializable;
+import java.util.List;
+
 public class DetailWebViewActivity extends BaseActivity {
 
     private CustomTitleLinearlayout mCtlTitle;
@@ -32,6 +35,8 @@ public class DetailWebViewActivity extends BaseActivity {
     private FFWebview mWebView ;
 
     private String mCurrentUrl;
+
+    private List<String> jsStrList ;
 
     /**
      * 启动详情页面
@@ -46,6 +51,20 @@ public class DetailWebViewActivity extends BaseActivity {
         intent.putExtra(Constants.INTENT_URL, url);
         context.startActivity(intent);
     }
+    /**
+     * 启动详情页面
+     *
+     * @param url 需要打开页面的url。
+     */
+    public static void launchActivity(Context context, String url,List<String> jsStrList) {
+        if (url == null || url.length() == 0) {
+            return;
+        }
+        Intent intent = new Intent(context, DetailWebViewActivity.class);
+        intent.putExtra(Constants.INTENT_URL, url);
+        intent.putExtra("js_list", (Serializable) jsStrList);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +73,7 @@ public class DetailWebViewActivity extends BaseActivity {
         // WebView要加载的URL,保存下来是为了断网出错时,刷新时加载原来的页面.
         Intent intent = getIntent();
         mCurrentUrl = intent.getStringExtra(Constants.INTENT_URL);
+        jsStrList = (List<String>) intent.getSerializableExtra("js_list");
         initView();
 
         initData();
@@ -115,6 +135,10 @@ public class DetailWebViewActivity extends BaseActivity {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             Zlog.ii("lxm ss webview shouldOverrideUrlLoading :" + url + "  ");
             mCurrentUrl  = url ;
+//            https://author.baidu.com/home/1576044845145999?from=dusite_artdetailh5
+            if (url.contains("dusite_artdetailh5")) {
+                return true ;
+            }
             if (UriUtils.getInstance().isHtmlUrl(url)){
                 return false ;
             }else {
@@ -139,8 +163,11 @@ public class DetailWebViewActivity extends BaseActivity {
 
         @Override
         public void onPageStarted(WebView view, final String url, Bitmap favicon) {
-            Zlog.ii("lxm ss webview onPageStarted:" + url);
             super.onPageStarted(view, url, favicon);
+            String title = view.getTitle();
+            Zlog.ii("lxm ss webview onPageStarted:" + url  +"  " +  title);
+            mLyWebview.setVisibility(View.GONE);
+            showBaseProgressDialog();
         }
 
         @Override
@@ -163,6 +190,18 @@ public class DetailWebViewActivity extends BaseActivity {
                 }
             }
         }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            if (jsStrList != null) {
+                for (int i = 0; i < jsStrList.size(); i++) {
+                    view.loadUrl(jsStrList.get(i));
+                }
+            }
+            hideBaseProgressDialog();
+            mLyWebview.setVisibility(View.VISIBLE);
+        }
     };
 
     private WebChromeClient webChromeClient = new FFWebChromeClient() {
@@ -175,7 +214,6 @@ public class DetailWebViewActivity extends BaseActivity {
             Zlog.ii("lxm ss webview onProgressChanged 1:" + newProgress);
             if (newProgress >= 75) {
                 Zlog.ii("lxm ss webview onProgressChanged 2:" + newProgress + view.getUrl());
-                mLyWebview.setVisibility(View.VISIBLE);
                 webViewClient.sendStatInfo(getApplicationContext(), view.getUrl());
             } else {
                 webViewClient.showNetToast(getApplicationContext());

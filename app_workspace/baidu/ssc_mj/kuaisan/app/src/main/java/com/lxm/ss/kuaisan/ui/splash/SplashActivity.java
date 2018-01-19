@@ -149,9 +149,9 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void enterMainActivity() {
-//                MainActivity.launchActivity(SplashActivity.this);
-        Intent intent = new Intent(SplashActivity.this, TabMainActivity.class);
-        startActivity(intent);
+                MainActivity.launchActivity(SplashActivity.this);
+//        Intent intent = new Intent(SplashActivity.this, TabMainActivity.class);
+//        startActivity(intent);
         finish();
     }
 

@@ -145,7 +145,7 @@
         <!-- <meta-data android:name="JPUSH_CHANNEL" android:value="${JPUSH_CHANNEL}" tools:replace="android:value"/> -->
         <!-- <meta-data android:name="JPUSH_APPKEY" android:value="${JPUSH_APPKEY}" tools:replace="android:value"/> &lt;!&ndash;  </>值来自开发者平台取得的AppKey&ndash;&gt; -->
 
-
+        <activity android:name=".ui.nabball.NbaBallActivity"></activity>
     </application>
 
 </manifest>
