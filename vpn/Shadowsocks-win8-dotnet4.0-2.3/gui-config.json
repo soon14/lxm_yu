@@ -1,0 +1,37 @@
+{
+"configs" : [
+  {
+"server" : "47.88.85.20",
+"server_port" : 443,
+"password" : "epiclouds",
+"method" : "rc4-md5",
+"remarks" : ""}
+,
+  {
+"server" : "52.197.104.60",
+"server_port" : 443,
+"password" : "epiclouds",
+"method" : "rc4-md5",
+"remarks" : ""}
+,
+  {
+"server" : "52.26.220.210",
+"server_port" : 443,
+"password" : "epiclouds",
+"method" : "rc4-md5",
+"remarks" : ""}
+,
+  {
+"server" : "34.214.15.57",
+"server_port" : 5432,
+"password" : "epiclouds",
+"method" : "rc4-md5",
+"remarks" : ""}
+
+],
+"index" : 2,
+"global" : true,
+"enabled" : true,
+"shareOverLan" : false,
+"isDefault" : false,
+"localPort" : 1080}
