@@ -15,7 +15,10 @@ import android.view.SearchEvent;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 
+import com.lxm.ss.test.camera.CameraMainActivity;
 import com.lxm.ss.test.executors.TaskWithResult;
+import com.lxm.ss.test.opengl.OpenGLTestActivity;
+import com.lxm.ss.test.opengl.opengl.OpenGLTest2Activity;
 import com.lxm.ss.test.retrofif.RetrofitHttp;
 import com.lxm.ss.test.test.Test01Activity;
 import com.lxm.ss.test.test.Test03Activity;
@@ -91,11 +94,13 @@ public class MainActivity extends AppCompatActivity {
 //                    intent.setComponent(new ComponentName("com.lxm.ss.test","com.lxm.ss.test.test.Test01Activity"));
 //                    startActivity(intent);
 
-                    executorsTest();
+//                    executorsTest();
 
+                    Intent intent = new Intent(MainActivity.this, CameraMainActivity.class);
+                    startActivity(intent);
                 }break;
                 case R.id.button2:{
-                    startActivity(new Intent(MainActivity.this,CrassWalksActivity.class));
+                    startActivity(new Intent(MainActivity.this,OpenGLTestActivity.class));
                 }break;
                 case R.id.button3:{
 //                    changeIconNewMessage(50);
@@ -117,12 +122,13 @@ public class MainActivity extends AppCompatActivity {
                 }break;
                 case R.id.button4:{
 //
-//                    Intent[] intents = new Intent[]{new Intent(MainActivity.this,Test03Activity.class),new Intent(MainActivity.this,Test04Activity.class)};
+//                    Intent[] intents = new Intent[]{new Intent(CameraMainActivity.this,Test03Activity.class),new Intent(CameraMainActivity.this,Test04Activity.class)};
 //
 //                    startActivities(intents);
 
-                    rxjava();
+//                    rxjava();
 
+                    startActivity(new Intent(MainActivity.this,OpenGLTest2Activity.class));
                 }break;
                 default:
                     break;
@@ -238,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
 //        ScheduledExecutorService scheduledExecutorService1 = Executors.newScheduledThreadPool(5);
 //        ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
 
-//                    startActivity(new Intent(MainActivity.this,Test01Activity.class));
+//                    startActivity(new Intent(CameraMainActivity.this,Test01Activity.class));
 
 
         ExecutorService executorService = Executors.newCachedThreadPool();
